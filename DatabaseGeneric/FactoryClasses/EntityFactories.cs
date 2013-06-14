@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 3.1
 // Code is generated on: 
-// Code is generated using templates: MonoX.TemplateBindings.General
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -1759,26 +1759,6 @@ namespace MonoSoftware.MonoX.DAL.FactoryClasses
 		#endregion
 	}
 
-	/// <summary>Factory to create new, empty SnInvitationEntity objects.</summary>
-	[Serializable]
-	public partial class SnInvitationEntityFactory : EntityFactoryBase2<SnInvitationEntity> {
-		/// <summary>CTor</summary>
-		public SnInvitationEntityFactory() : base("SnInvitationEntity", MonoSoftware.MonoX.DAL.EntityType.SnInvitationEntity, false) { }
-		
-		/// <summary>Creates a new SnInvitationEntity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
-		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
-		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
-		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new SnInvitationEntity(fields);
-			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewSnInvitationUsingFields
-			// __LLBLGENPRO_USER_CODE_REGION_END
-			return toReturn;
-		}
-		#region Included Code
-
-		#endregion
-	}
-
 	/// <summary>Factory to create new, empty SnMessageEntity objects.</summary>
 	[Serializable]
 	public partial class SnMessageEntityFactory : EntityFactoryBase2<SnMessageEntity> {
@@ -2279,9 +2259,6 @@ namespace MonoSoftware.MonoX.DAL.FactoryClasses
 					break;
 				case MonoSoftware.MonoX.DAL.EntityType.SnGroupRequestEntity:
 					factoryToUse = new SnGroupRequestEntityFactory();
-					break;
-				case MonoSoftware.MonoX.DAL.EntityType.SnInvitationEntity:
-					factoryToUse = new SnInvitationEntityFactory();
 					break;
 				case MonoSoftware.MonoX.DAL.EntityType.SnMessageEntity:
 					factoryToUse = new SnMessageEntityFactory();

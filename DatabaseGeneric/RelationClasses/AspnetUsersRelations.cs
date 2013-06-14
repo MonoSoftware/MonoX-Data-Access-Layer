@@ -72,8 +72,6 @@ namespace MonoSoftware.MonoX.DAL.RelationClasses
 			toReturn.Add(this.SnGroupEntityUsingUserId);
 			toReturn.Add(this.SnGroupMemberEntityUsingUserId);
 			toReturn.Add(this.SnGroupRequestEntityUsingUserId);
-			toReturn.Add(this.SnInvitationEntityUsingUserId);
-			toReturn.Add(this.SnInvitationEntityUsingBecameUserId);
 			toReturn.Add(this.SnMessageEntityUsingUserId);
 			toReturn.Add(this.SnMessageRecipientEntityUsingUserId);
 			toReturn.Add(this.SnNoteEntityUsingUserId);
@@ -722,36 +720,6 @@ namespace MonoSoftware.MonoX.DAL.RelationClasses
 			}
 		}
 
-		/// <summary>Returns a new IEntityRelation object, between AspnetUsersEntity and SnInvitationEntity over the 1:n relation they have, using the relation between the fields:
-		/// AspnetUsers.UserId - SnInvitation.UserId
-		/// </summary>
-		public virtual IEntityRelation SnInvitationEntityUsingUserId
-		{
-			get
-			{
-				IEntityRelation relation = new EntityRelation(SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany, "SnInvitations" , true);
-				relation.AddEntityFieldPair(AspnetUsersFields.UserId, SnInvitationFields.UserId);
-				relation.InheritanceInfoPkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("AspnetUsersEntity", true);
-				relation.InheritanceInfoFkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("SnInvitationEntity", false);
-				return relation;
-			}
-		}
-
-		/// <summary>Returns a new IEntityRelation object, between AspnetUsersEntity and SnInvitationEntity over the 1:n relation they have, using the relation between the fields:
-		/// AspnetUsers.UserId - SnInvitation.BecameUserId
-		/// </summary>
-		public virtual IEntityRelation SnInvitationEntityUsingBecameUserId
-		{
-			get
-			{
-				IEntityRelation relation = new EntityRelation(SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany, "SnInvitationsBecameUsers" , true);
-				relation.AddEntityFieldPair(AspnetUsersFields.UserId, SnInvitationFields.BecameUserId);
-				relation.InheritanceInfoPkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("AspnetUsersEntity", true);
-				relation.InheritanceInfoFkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("SnInvitationEntity", false);
-				return relation;
-			}
-		}
-
 		/// <summary>Returns a new IEntityRelation object, between AspnetUsersEntity and SnMessageEntity over the 1:n relation they have, using the relation between the fields:
 		/// AspnetUsers.UserId - SnMessage.UserId
 		/// </summary>
@@ -1018,8 +986,6 @@ namespace MonoSoftware.MonoX.DAL.RelationClasses
 		internal static readonly IEntityRelation SnGroupEntityUsingUserIdStatic = new AspnetUsersRelations().SnGroupEntityUsingUserId;
 		internal static readonly IEntityRelation SnGroupMemberEntityUsingUserIdStatic = new AspnetUsersRelations().SnGroupMemberEntityUsingUserId;
 		internal static readonly IEntityRelation SnGroupRequestEntityUsingUserIdStatic = new AspnetUsersRelations().SnGroupRequestEntityUsingUserId;
-		internal static readonly IEntityRelation SnInvitationEntityUsingUserIdStatic = new AspnetUsersRelations().SnInvitationEntityUsingUserId;
-		internal static readonly IEntityRelation SnInvitationEntityUsingBecameUserIdStatic = new AspnetUsersRelations().SnInvitationEntityUsingBecameUserId;
 		internal static readonly IEntityRelation SnMessageEntityUsingUserIdStatic = new AspnetUsersRelations().SnMessageEntityUsingUserId;
 		internal static readonly IEntityRelation SnMessageRecipientEntityUsingUserIdStatic = new AspnetUsersRelations().SnMessageRecipientEntityUsingUserId;
 		internal static readonly IEntityRelation SnNoteEntityUsingUserIdStatic = new AspnetUsersRelations().SnNoteEntityUsingUserId;

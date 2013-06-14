@@ -310,9 +310,6 @@ namespace MonoSoftware.MonoX.DAL.Linq
 				case MonoSoftware.MonoX.DAL.EntityType.SnGroupRequestEntity:
 					toReturn = this.SnGroupRequest;
 					break;
-				case MonoSoftware.MonoX.DAL.EntityType.SnInvitationEntity:
-					toReturn = this.SnInvitation;
-					break;
 				case MonoSoftware.MonoX.DAL.EntityType.SnMessageEntity:
 					toReturn = this.SnMessage;
 					break;
@@ -852,12 +849,6 @@ namespace MonoSoftware.MonoX.DAL.Linq
 		public DataSource2<SnGroupRequestEntity> SnGroupRequest
 		{
 			get { return new DataSource2<SnGroupRequestEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
-		}
-		
-		/// <summary>returns the datasource to use in a Linq query when targeting SnInvitationEntity instances in the database.</summary>
-		public DataSource2<SnInvitationEntity> SnInvitation
-		{
-			get { return new DataSource2<SnInvitationEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
 		/// <summary>returns the datasource to use in a Linq query when targeting SnMessageEntity instances in the database.</summary>

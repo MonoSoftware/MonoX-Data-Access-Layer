@@ -49,7 +49,7 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 		/// <summary>Method which initializes the internal datastores.</summary>
 		private void Init()
 		{
-			this.InitClass( (96 + 0));
+			this.InitClass( (95 + 0));
 			InitAdEntityInfos();
 			InitAdPageEntityInfos();
 			InitAspnetApplicationsEntityInfos();
@@ -133,7 +133,6 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 			InitSnGroupCategoryEntityInfos();
 			InitSnGroupMemberEntityInfos();
 			InitSnGroupRequestEntityInfos();
-			InitSnInvitationEntityInfos();
 			InitSnMessageEntityInfos();
 			InitSnMessageRecipientEntityInfos();
 			InitSnNoteEntityInfos();
@@ -1158,16 +1157,6 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 			this.AddElementFieldInfo("SnGroupRequestEntity", "DateCreated", typeof(System.DateTime), false, false, false, false,  (int)SnGroupRequestFieldIndex.DateCreated, 0, 0, 0);
 			this.AddElementFieldInfo("SnGroupRequestEntity", "DateAccepted", typeof(Nullable<System.DateTime>), false, false, false, true,  (int)SnGroupRequestFieldIndex.DateAccepted, 0, 0, 0);
 			this.AddElementFieldInfo("SnGroupRequestEntity", "RequestType", typeof(System.Int32), false, false, false, false,  (int)SnGroupRequestFieldIndex.RequestType, 0, 0, 10);
-		}
-		/// <summary>Inits SnInvitationEntity's FieldInfo objects</summary>
-		private void InitSnInvitationEntityInfos()
-		{
-			this.AddFieldIndexEnumForElementName(typeof(SnInvitationFieldIndex), "SnInvitationEntity");
-			this.AddElementFieldInfo("SnInvitationEntity", "Id", typeof(System.Guid), true, false, false, false,  (int)SnInvitationFieldIndex.Id, 0, 0, 0);
-			this.AddElementFieldInfo("SnInvitationEntity", "UserId", typeof(System.Guid), false, true, false, false,  (int)SnInvitationFieldIndex.UserId, 0, 0, 0);
-			this.AddElementFieldInfo("SnInvitationEntity", "Email", typeof(System.String), false, false, false, false,  (int)SnInvitationFieldIndex.Email, 250, 0, 0);
-			this.AddElementFieldInfo("SnInvitationEntity", "DateCreated", typeof(System.DateTime), false, false, false, false,  (int)SnInvitationFieldIndex.DateCreated, 0, 0, 0);
-			this.AddElementFieldInfo("SnInvitationEntity", "BecameUserId", typeof(Nullable<System.Guid>), false, true, false, true,  (int)SnInvitationFieldIndex.BecameUserId, 0, 0, 0);
 		}
 		/// <summary>Inits SnMessageEntity's FieldInfo objects</summary>
 		private void InitSnMessageEntityInfos()

@@ -3399,36 +3399,6 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 		}
 	}
 
-	/// <summary>Field Creation Class for entity SnInvitationEntity</summary>
-	public partial class SnInvitationFields
-	{
-		/// <summary>Creates a new SnInvitationEntity.Id field instance</summary>
-		public static EntityField2 Id
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(SnInvitationFieldIndex.Id);}
-		}
-		/// <summary>Creates a new SnInvitationEntity.UserId field instance</summary>
-		public static EntityField2 UserId
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(SnInvitationFieldIndex.UserId);}
-		}
-		/// <summary>Creates a new SnInvitationEntity.Email field instance</summary>
-		public static EntityField2 Email
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(SnInvitationFieldIndex.Email);}
-		}
-		/// <summary>Creates a new SnInvitationEntity.DateCreated field instance</summary>
-		public static EntityField2 DateCreated
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(SnInvitationFieldIndex.DateCreated);}
-		}
-		/// <summary>Creates a new SnInvitationEntity.BecameUserId field instance</summary>
-		public static EntityField2 BecameUserId
-		{
-			get { return (EntityField2)EntityFieldFactory.Create(SnInvitationFieldIndex.BecameUserId);}
-		}
-	}
-
 	/// <summary>Field Creation Class for entity SnMessageEntity</summary>
 	public partial class SnMessageFields
 	{

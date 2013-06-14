@@ -64,7 +64,7 @@
   <CodeGenerationCyclePreferences>
     <OutputType Value="3">
       <LastUsedPreferences>
-        <DestinationRootFolder Value=".\DataLayer" />
+        <DestinationRootFolder Value=".\" />
         <FrameworkName Value="LLBLGen Pro Runtime Framework" />
         <LanguageName Value="C#" />
         <PlatformName Value=".NET 4.0" />
@@ -72,7 +72,6 @@
         <RootNamespace Value="MonoSoftware.MonoX.DAL" />
         <TemplateGroup Value="Adapter" />
         <TemplateBindings>
-          <Binding Name="MonoX.TemplateBindings.General" />
           <Binding Name="SD.TemplateBindings.SqlServerSpecific.NET20" />
           <Binding Name="SD.TemplateBindings.SharedTemplates.NET40" />
           <Binding Name="SD.TemplateBindings.SharedTemplates.NET35" />
@@ -1063,15 +1062,6 @@
           <Field Name="UserId" Type="guid" IsAutoCreated="true" FieldIndex="1" />
         </Fields>
       </EntityDefinition>
-      <EntityDefinition Name="SnInvitation">
-        <Fields>
-          <Field Name="BecameUserId" Type="guid" IsOptional="true" IsAutoCreated="true" FieldIndex="4" />
-          <Field Name="DateCreated" Type="datetime" FieldIndex="3" />
-          <Field Name="Email" Type="string" MaxLength="250" FieldIndex="2" />
-          <Field Name="Id" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
-          <Field Name="UserId" Type="guid" IsAutoCreated="true" FieldIndex="1" />
-        </Fields>
-      </EntityDefinition>
       <EntityDefinition Name="SnMessage">
         <Fields>
           <Field Name="Body" Type="string" IsOptional="true" MaxLength="2147483647" FieldIndex="4" />
@@ -1997,16 +1987,6 @@
       <NormalRelationship Name="SnGroupRequest.SnGroup-SnGroup.SnGroupRequests" Start=":SnGroupRequest" End=":SnGroup" StartNavigator="SnGroup" EndNavigator="SnGroupRequests" Type="4">
         <FieldRelationships>
           <FieldFieldRelationship FkField="GroupId" PkField="Id" />
-        </FieldRelationships>
-      </NormalRelationship>
-      <NormalRelationship Name="SnInvitation.AspnetUser-AspnetUsers.SnInvitations" Start=":SnInvitation" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnInvitations" Type="4">
-        <FieldRelationships>
-          <FieldFieldRelationship FkField="UserId" PkField="UserId" />
-        </FieldRelationships>
-      </NormalRelationship>
-      <NormalRelationship Name="SnInvitation.AspnetUserBecameFriend-AspnetUsers.SnInvitationsBecameUsers" Start=":SnInvitation" End=":AspnetUsers" StartNavigator="AspnetUserBecameFriend" EndNavigator="SnInvitationsBecameUsers" Type="4">
-        <FieldRelationships>
-          <FieldFieldRelationship FkField="BecameUserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
       <NormalRelationship Name="SnMessage.AspnetUser-AspnetUsers.SnMessages" Start=":SnMessage" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnMessages" Type="4">
@@ -3179,15 +3159,6 @@
                     <Field Name="RequestType" Ordinal="6" DefaultValue="((0))" DbType="8" Precision="10" />
                   </Fields>
                 </Table>
-                <Table Name="SnInvitation">
-                  <Fields>
-                    <Field Name="Id" Ordinal="1" IsPrimaryKey="true" PkConstraintName="PK_SnInvitation" DbType="25" />
-                    <Field Name="UserId" Ordinal="2" DbType="25" />
-                    <Field Name="Email" Ordinal="3" DbType="12" Length="250" />
-                    <Field Name="DateCreated" Ordinal="4" DbType="4" />
-                    <Field Name="BecameUserId" Ordinal="5" IsOptional="true" DbType="25" />
-                  </Fields>
-                </Table>
                 <Table Name="SnMessage">
                   <Fields>
                     <Field Name="Id" Ordinal="1" IsPrimaryKey="true" PkConstraintName="PK_SnMessage" DbType="25" />
@@ -4151,16 +4122,6 @@
             <ForeignKeyConstraint Name="dbo:SnGroupRequest:FK_SnGroupRequest_SnGroup">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnGroup:Id" FkField="dbo:SnGroupRequest:GroupId" />
-              </FieldPairs>
-            </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnInvitation:FK_SnInvitation_aspnet_Users">
-              <FieldPairs>
-                <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnInvitation:UserId" />
-              </FieldPairs>
-            </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnInvitation:FK_SnInvitation_aspnet_Users1">
-              <FieldPairs>
-                <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnInvitation:BecameUserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
             <ForeignKeyConstraint Name="dbo:SnMessage:FK_SnMessage_aspnet_Users">
@@ -5299,15 +5260,6 @@
             <FieldMapping FieldName="GroupId" TargetFieldName="GroupId" />
             <FieldMapping FieldName="Id" TargetFieldName="Id" />
             <FieldMapping FieldName="RequestType" TargetFieldName="RequestType" />
-            <FieldMapping FieldName="UserId" TargetFieldName="UserId" />
-          </FieldMappings>
-        </EntityMapping>
-        <EntityMapping EntityName=":SnInvitation" TargetName="MonoX2:dbo:SnInvitation">
-          <FieldMappings>
-            <FieldMapping FieldName="BecameUserId" TargetFieldName="BecameUserId" />
-            <FieldMapping FieldName="DateCreated" TargetFieldName="DateCreated" />
-            <FieldMapping FieldName="Email" TargetFieldName="Email" />
-            <FieldMapping FieldName="Id" TargetFieldName="Id" />
             <FieldMapping FieldName="UserId" TargetFieldName="UserId" />
           </FieldMappings>
         </EntityMapping>

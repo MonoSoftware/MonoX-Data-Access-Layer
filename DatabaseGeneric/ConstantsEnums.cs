@@ -1697,22 +1697,6 @@ namespace MonoSoftware.MonoX.DAL
 		/// <summary></summary>
 		AmountOfFields
 	}
-	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: SnInvitation.</summary>
-	public enum SnInvitationFieldIndex
-	{
-		///<summary>Id. </summary>
-		Id,
-		///<summary>UserId. </summary>
-		UserId,
-		///<summary>Email. </summary>
-		Email,
-		///<summary>DateCreated. </summary>
-		DateCreated,
-		///<summary>BecameUserId. </summary>
-		BecameUserId,
-		/// <summary></summary>
-		AmountOfFields
-	}
 	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: SnMessage.</summary>
 	public enum SnMessageFieldIndex
 	{
@@ -2161,8 +2145,6 @@ namespace MonoSoftware.MonoX.DAL
 		SnGroupMemberEntity,
 		///<summary>SnGroupRequest</summary>
 		SnGroupRequestEntity,
-		///<summary>SnInvitation</summary>
-		SnInvitationEntity,
 		///<summary>SnMessage</summary>
 		SnMessageEntity,
 		///<summary>SnMessageRecipient</summary>

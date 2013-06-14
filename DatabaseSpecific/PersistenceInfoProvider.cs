@@ -47,7 +47,7 @@ namespace MonoSoftware.MonoX.DAL.DatabaseSpecific
 		/// <summary>Method which initializes the internal datastores with the structure of hierarchical types.</summary>
 		private void Init()
 		{
-			this.InitClass((96 + 0));
+			this.InitClass((95 + 0));
 			InitAdEntityMappings();
 			InitAdPageEntityMappings();
 			InitAspnetApplicationsEntityMappings();
@@ -131,7 +131,6 @@ namespace MonoSoftware.MonoX.DAL.DatabaseSpecific
 			InitSnGroupCategoryEntityMappings();
 			InitSnGroupMemberEntityMappings();
 			InitSnGroupRequestEntityMappings();
-			InitSnInvitationEntityMappings();
 			InitSnMessageEntityMappings();
 			InitSnMessageRecipientEntityMappings();
 			InitSnNoteEntityMappings();
@@ -1156,16 +1155,6 @@ namespace MonoSoftware.MonoX.DAL.DatabaseSpecific
 			this.AddElementFieldMapping( "SnGroupRequestEntity", "DateCreated", "DateCreated", false, "DateTime", 0, 0, 0, false, "", null, typeof(System.DateTime), 3 );
 			this.AddElementFieldMapping( "SnGroupRequestEntity", "DateAccepted", "DateAccepted", true, "DateTime", 0, 0, 0, false, "", null, typeof(System.DateTime), 4 );
 			this.AddElementFieldMapping( "SnGroupRequestEntity", "RequestType", "RequestType", false, "Int", 0, 0, 10, false, "", null, typeof(System.Int32), 5 );
-		}
-		/// <summary>Inits SnInvitationEntity's mappings</summary>
-		private void InitSnInvitationEntityMappings()
-		{
-			this.AddElementMapping( "SnInvitationEntity", "MonoX2", @"dbo", "SnInvitation", 5 );
-			this.AddElementFieldMapping( "SnInvitationEntity", "Id", "Id", false, "UniqueIdentifier", 0, 0, 0, false, "", null, typeof(System.Guid), 0 );
-			this.AddElementFieldMapping( "SnInvitationEntity", "UserId", "UserId", false, "UniqueIdentifier", 0, 0, 0, false, "", null, typeof(System.Guid), 1 );
-			this.AddElementFieldMapping( "SnInvitationEntity", "Email", "Email", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 2 );
-			this.AddElementFieldMapping( "SnInvitationEntity", "DateCreated", "DateCreated", false, "DateTime", 0, 0, 0, false, "", null, typeof(System.DateTime), 3 );
-			this.AddElementFieldMapping( "SnInvitationEntity", "BecameUserId", "BecameUserId", true, "UniqueIdentifier", 0, 0, 0, false, "", null, typeof(System.Guid), 4 );
 		}
 		/// <summary>Inits SnMessageEntity's mappings</summary>
 		private void InitSnMessageEntityMappings()

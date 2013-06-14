@@ -9,7 +9,32 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 {
     public partial class SnCommentEntity : IAntiSpamContent
     {
+        #region Properties
+        /// <summary>
+        /// Gets a value indicating that comment parent entity is blog.
+        /// </summary>
+        public bool IsBlogPostParent
+        {
+            get
+            {
+                return (this.SnRelationship != null &&
+                    this.SnRelationship.BlogPost != null);
+            }
+        }
 
+        /// <summary>
+        /// Gets the blog post parent entity.
+        /// </summary>
+        public BlogPostEntity BlogPost
+        {
+            get
+            {
+                if (this.SnRelationship != null)
+                    return this.SnRelationship.BlogPost;
+                return null;
+            }
+        }
+        #endregion
 
         #region IAntiSpamContent Members
 

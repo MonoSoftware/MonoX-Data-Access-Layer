@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 3.1
 // Code is generated on: 
-// Code is generated using templates: MonoX.TemplateBindings.General
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -66,8 +66,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		private EntityCollection<SnGroupEntity> _snGroups;
 		private EntityCollection<SnGroupMemberEntity> _snGroupMembers;
 		private EntityCollection<SnGroupRequestEntity> _snGroupRequests;
-		private EntityCollection<SnInvitationEntity> _snInvitations;
-		private EntityCollection<SnInvitationEntity> _snInvitationsBecameUsers;
 		private EntityCollection<SnMessageEntity> _snMessages;
 		private EntityCollection<SnMessageRecipientEntity> _snMessageRecipients;
 		private EntityCollection<SnNoteEntity> _snNotesPostedTo;
@@ -163,10 +161,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			public static readonly string SnGroupMembers = "SnGroupMembers";
 			/// <summary>Member name SnGroupRequests</summary>
 			public static readonly string SnGroupRequests = "SnGroupRequests";
-			/// <summary>Member name SnInvitations</summary>
-			public static readonly string SnInvitations = "SnInvitations";
-			/// <summary>Member name SnInvitationsBecameUsers</summary>
-			public static readonly string SnInvitationsBecameUsers = "SnInvitationsBecameUsers";
 			/// <summary>Member name SnMessages</summary>
 			public static readonly string SnMessages = "SnMessages";
 			/// <summary>Member name SnMessageRecipients</summary>
@@ -282,8 +276,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 				_snGroups = (EntityCollection<SnGroupEntity>)info.GetValue("_snGroups", typeof(EntityCollection<SnGroupEntity>));
 				_snGroupMembers = (EntityCollection<SnGroupMemberEntity>)info.GetValue("_snGroupMembers", typeof(EntityCollection<SnGroupMemberEntity>));
 				_snGroupRequests = (EntityCollection<SnGroupRequestEntity>)info.GetValue("_snGroupRequests", typeof(EntityCollection<SnGroupRequestEntity>));
-				_snInvitations = (EntityCollection<SnInvitationEntity>)info.GetValue("_snInvitations", typeof(EntityCollection<SnInvitationEntity>));
-				_snInvitationsBecameUsers = (EntityCollection<SnInvitationEntity>)info.GetValue("_snInvitationsBecameUsers", typeof(EntityCollection<SnInvitationEntity>));
 				_snMessages = (EntityCollection<SnMessageEntity>)info.GetValue("_snMessages", typeof(EntityCollection<SnMessageEntity>));
 				_snMessageRecipients = (EntityCollection<SnMessageRecipientEntity>)info.GetValue("_snMessageRecipients", typeof(EntityCollection<SnMessageRecipientEntity>));
 				_snNotesPostedTo = (EntityCollection<SnNoteEntity>)info.GetValue("_snNotesPostedTo", typeof(EntityCollection<SnNoteEntity>));
@@ -452,12 +444,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 				case "SnGroupRequests":
 					this.SnGroupRequests.Add((SnGroupRequestEntity)entity);
 					break;
-				case "SnInvitations":
-					this.SnInvitations.Add((SnInvitationEntity)entity);
-					break;
-				case "SnInvitationsBecameUsers":
-					this.SnInvitationsBecameUsers.Add((SnInvitationEntity)entity);
-					break;
 				case "SnMessages":
 					this.SnMessages.Add((SnMessageEntity)entity);
 					break;
@@ -620,12 +606,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 					break;
 				case "SnGroupRequests":
 					toReturn.Add(Relations.SnGroupRequestEntityUsingUserId);
-					break;
-				case "SnInvitations":
-					toReturn.Add(Relations.SnInvitationEntityUsingUserId);
-					break;
-				case "SnInvitationsBecameUsers":
-					toReturn.Add(Relations.SnInvitationEntityUsingBecameUserId);
 					break;
 				case "SnMessages":
 					toReturn.Add(Relations.SnMessageEntityUsingUserId);
@@ -798,12 +778,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 				case "SnGroupRequests":
 					this.SnGroupRequests.Add((SnGroupRequestEntity)relatedEntity);
 					break;
-				case "SnInvitations":
-					this.SnInvitations.Add((SnInvitationEntity)relatedEntity);
-					break;
-				case "SnInvitationsBecameUsers":
-					this.SnInvitationsBecameUsers.Add((SnInvitationEntity)relatedEntity);
-					break;
 				case "SnMessages":
 					this.SnMessages.Add((SnMessageEntity)relatedEntity);
 					break;
@@ -958,12 +932,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 				case "SnGroupRequests":
 					this.PerformRelatedEntityRemoval(this.SnGroupRequests, relatedEntity, signalRelatedEntityManyToOne);
 					break;
-				case "SnInvitations":
-					this.PerformRelatedEntityRemoval(this.SnInvitations, relatedEntity, signalRelatedEntityManyToOne);
-					break;
-				case "SnInvitationsBecameUsers":
-					this.PerformRelatedEntityRemoval(this.SnInvitationsBecameUsers, relatedEntity, signalRelatedEntityManyToOne);
-					break;
 				case "SnMessages":
 					this.PerformRelatedEntityRemoval(this.SnMessages, relatedEntity, signalRelatedEntityManyToOne);
 					break;
@@ -1093,8 +1061,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			toReturn.Add(this.SnGroups);
 			toReturn.Add(this.SnGroupMembers);
 			toReturn.Add(this.SnGroupRequests);
-			toReturn.Add(this.SnInvitations);
-			toReturn.Add(this.SnInvitationsBecameUsers);
 			toReturn.Add(this.SnMessages);
 			toReturn.Add(this.SnMessageRecipients);
 			toReturn.Add(this.SnNotesPostedTo);
@@ -1148,8 +1114,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 				info.AddValue("_snGroups", ((_snGroups!=null) && (_snGroups.Count>0) && !this.MarkedForDeletion)?_snGroups:null);
 				info.AddValue("_snGroupMembers", ((_snGroupMembers!=null) && (_snGroupMembers.Count>0) && !this.MarkedForDeletion)?_snGroupMembers:null);
 				info.AddValue("_snGroupRequests", ((_snGroupRequests!=null) && (_snGroupRequests.Count>0) && !this.MarkedForDeletion)?_snGroupRequests:null);
-				info.AddValue("_snInvitations", ((_snInvitations!=null) && (_snInvitations.Count>0) && !this.MarkedForDeletion)?_snInvitations:null);
-				info.AddValue("_snInvitationsBecameUsers", ((_snInvitationsBecameUsers!=null) && (_snInvitationsBecameUsers.Count>0) && !this.MarkedForDeletion)?_snInvitationsBecameUsers:null);
 				info.AddValue("_snMessages", ((_snMessages!=null) && (_snMessages.Count>0) && !this.MarkedForDeletion)?_snMessages:null);
 				info.AddValue("_snMessageRecipients", ((_snMessageRecipients!=null) && (_snMessageRecipients.Count>0) && !this.MarkedForDeletion)?_snMessageRecipients:null);
 				info.AddValue("_snNotesPostedTo", ((_snNotesPostedTo!=null) && (_snNotesPostedTo.Count>0) && !this.MarkedForDeletion)?_snNotesPostedTo:null);
@@ -1484,24 +1448,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			return bucket;
 		}
 
-		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'SnInvitation' to this entity.</summary>
-		/// <returns></returns>
-		public virtual IRelationPredicateBucket GetRelationInfoSnInvitations()
-		{
-			IRelationPredicateBucket bucket = new RelationPredicateBucket();
-			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(SnInvitationFields.UserId, null, ComparisonOperator.Equal, this.UserId));
-			return bucket;
-		}
-
-		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'SnInvitation' to this entity.</summary>
-		/// <returns></returns>
-		public virtual IRelationPredicateBucket GetRelationInfoSnInvitationsBecameUsers()
-		{
-			IRelationPredicateBucket bucket = new RelationPredicateBucket();
-			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(SnInvitationFields.BecameUserId, null, ComparisonOperator.Equal, this.UserId));
-			return bucket;
-		}
-
 		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'SnMessage' to this entity.</summary>
 		/// <returns></returns>
 		public virtual IRelationPredicateBucket GetRelationInfoSnMessages()
@@ -1665,8 +1611,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			collectionsQueue.Enqueue(this._snGroups);
 			collectionsQueue.Enqueue(this._snGroupMembers);
 			collectionsQueue.Enqueue(this._snGroupRequests);
-			collectionsQueue.Enqueue(this._snInvitations);
-			collectionsQueue.Enqueue(this._snInvitationsBecameUsers);
 			collectionsQueue.Enqueue(this._snMessages);
 			collectionsQueue.Enqueue(this._snMessageRecipients);
 			collectionsQueue.Enqueue(this._snNotesPostedTo);
@@ -1716,8 +1660,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			this._snGroups = (EntityCollection<SnGroupEntity>) collectionsQueue.Dequeue();
 			this._snGroupMembers = (EntityCollection<SnGroupMemberEntity>) collectionsQueue.Dequeue();
 			this._snGroupRequests = (EntityCollection<SnGroupRequestEntity>) collectionsQueue.Dequeue();
-			this._snInvitations = (EntityCollection<SnInvitationEntity>) collectionsQueue.Dequeue();
-			this._snInvitationsBecameUsers = (EntityCollection<SnInvitationEntity>) collectionsQueue.Dequeue();
 			this._snMessages = (EntityCollection<SnMessageEntity>) collectionsQueue.Dequeue();
 			this._snMessageRecipients = (EntityCollection<SnMessageRecipientEntity>) collectionsQueue.Dequeue();
 			this._snNotesPostedTo = (EntityCollection<SnNoteEntity>) collectionsQueue.Dequeue();
@@ -1768,8 +1710,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			toReturn |=(this._snGroups != null);
 			toReturn |=(this._snGroupMembers != null);
 			toReturn |=(this._snGroupRequests != null);
-			toReturn |=(this._snInvitations != null);
-			toReturn |=(this._snInvitationsBecameUsers != null);
 			toReturn |=(this._snMessages != null);
 			toReturn |=(this._snMessageRecipients != null);
 			toReturn |=(this._snNotesPostedTo != null);
@@ -1821,8 +1761,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnGroupEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnGroupEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnGroupMemberEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnGroupMemberEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnGroupRequestEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnGroupRequestEntityFactory))) : null);
-			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnInvitationEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnInvitationEntityFactory))) : null);
-			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnInvitationEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnInvitationEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnMessageEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnMessageEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnMessageRecipientEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnMessageRecipientEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<SnNoteEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnNoteEntityFactory))) : null);
@@ -1873,8 +1811,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			toReturn.Add("SnGroups", _snGroups);
 			toReturn.Add("SnGroupMembers", _snGroupMembers);
 			toReturn.Add("SnGroupRequests", _snGroupRequests);
-			toReturn.Add("SnInvitations", _snInvitations);
-			toReturn.Add("SnInvitationsBecameUsers", _snInvitationsBecameUsers);
 			toReturn.Add("SnMessages", _snMessages);
 			toReturn.Add("SnMessageRecipients", _snMessageRecipients);
 			toReturn.Add("SnNotesPostedTo", _snNotesPostedTo);
@@ -2359,20 +2295,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			get	{ return new PrefetchPathElement2( new EntityCollection<SnGroupRequestEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnGroupRequestEntityFactory))), (IEntityRelation)GetRelationsForField("SnGroupRequests")[0], (int)MonoSoftware.MonoX.DAL.EntityType.AspnetUsersEntity, (int)MonoSoftware.MonoX.DAL.EntityType.SnGroupRequestEntity, 0, null, null, null, null, "SnGroupRequests", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
-		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'SnInvitation' for this entity.</summary>
-		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
-		public static IPrefetchPathElement2 PrefetchPathSnInvitations
-		{
-			get	{ return new PrefetchPathElement2( new EntityCollection<SnInvitationEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnInvitationEntityFactory))), (IEntityRelation)GetRelationsForField("SnInvitations")[0], (int)MonoSoftware.MonoX.DAL.EntityType.AspnetUsersEntity, (int)MonoSoftware.MonoX.DAL.EntityType.SnInvitationEntity, 0, null, null, null, null, "SnInvitations", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
-		}
-
-		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'SnInvitation' for this entity.</summary>
-		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
-		public static IPrefetchPathElement2 PrefetchPathSnInvitationsBecameUsers
-		{
-			get	{ return new PrefetchPathElement2( new EntityCollection<SnInvitationEntity>(EntityFactoryCache2.GetEntityFactory(typeof(SnInvitationEntityFactory))), (IEntityRelation)GetRelationsForField("SnInvitationsBecameUsers")[0], (int)MonoSoftware.MonoX.DAL.EntityType.AspnetUsersEntity, (int)MonoSoftware.MonoX.DAL.EntityType.SnInvitationEntity, 0, null, null, null, null, "SnInvitationsBecameUsers", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
-		}
-
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'SnMessage' for this entity.</summary>
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathSnMessages
@@ -2794,20 +2716,6 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		public virtual EntityCollection<SnGroupRequestEntity> SnGroupRequests
 		{
 			get { return GetOrCreateEntityCollection<SnGroupRequestEntity, SnGroupRequestEntityFactory>("AspnetUser", true, false, ref _snGroupRequests);	}
-		}
-
-		/// <summary> Gets the EntityCollection with the related entities of type 'SnInvitationEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnInvitationEntity))]
-		public virtual EntityCollection<SnInvitationEntity> SnInvitations
-		{
-			get { return GetOrCreateEntityCollection<SnInvitationEntity, SnInvitationEntityFactory>("AspnetUser", true, false, ref _snInvitations);	}
-		}
-
-		/// <summary> Gets the EntityCollection with the related entities of type 'SnInvitationEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnInvitationEntity))]
-		public virtual EntityCollection<SnInvitationEntity> SnInvitationsBecameUsers
-		{
-			get { return GetOrCreateEntityCollection<SnInvitationEntity, SnInvitationEntityFactory>("AspnetUserBecameFriend", true, false, ref _snInvitationsBecameUsers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnMessageEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
