@@ -13,6 +13,7 @@ using <[RootNamespace]>.EntityClasses;
 using <[RootNamespace]>.HelperClasses;
 using <[RootNamespace]>.RelationClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
+using MonoSoftware.MonoX.Common.DependencyInjection;
 
 namespace <[RootNamespace]>.FactoryClasses
 {
@@ -28,6 +29,22 @@ namespace <[RootNamespace]>.FactoryClasses
 	{
 		private readonly <[RootNamespace]>.EntityType _typeOfEntity;
 		private readonly bool _isInHierarchy;
+		
+		#region Properties
+		[NonSerialized]
+		private DIFactory _dependencyInjectionFactory = null;
+        /// <summary>
+        /// Gets or sets the dependency injection factory instance.
+        /// </summary>
+        [MonoXInjectAttribute]        
+        [System.Xml.Serialization.XmlIgnore]
+        protected DIFactory DependencyInjectionFactory
+        {
+            get { return _dependencyInjectionFactory; }
+            set { _dependencyInjectionFactory = value; }
+        }
+        #endregion
+
 		
 		/// <summary>CTor</summary>
 		/// <param name="entityName">Name of the entity.</param>
@@ -104,13 +121,16 @@ namespace <[RootNamespace]>.FactoryClasses
 	[Serializable]
 	public <[If UsePartialClasses]>partial <[EndIf]>class <[CurrentEntityName]>EntityFactory : EntityFactoryBase2<<[CurrentEntityName]>Entity> {
 		/// <summary>CTor</summary>
-		public <[CurrentEntityName]>EntityFactory() : base("<[CurrentEntityName]>Entity", <[RootNamespace]>.EntityType.<[CurrentEntityName]>Entity, <[ If Not IsInHierarchyType None ]>true<[Else]>false<[EndIf]>) { }
+		public <[CurrentEntityName]>EntityFactory() : base("<[CurrentEntityName]>Entity", <[RootNamespace]>.EntityType.<[CurrentEntityName]>Entity, <[ If Not IsInHierarchyType None ]>true<[Else]>false<[EndIf]>) 
+		{ 
+			DIFactory.Inject(this);
+		}
 		
 		/// <summary>Creates a new <[CurrentEntityName]>Entity instance but uses a special constructor which will set the Fields object of the new IEntity2 instance to the passed in fields object.</summary>
 		/// <param name="fields">Populated IEntityFields2 object for the new IEntity2 to create</param>
 		/// <returns>Fully created and populated (due to the IEntityFields2 object) IEntity2 object</returns>
 		public override IEntity2 Create(IEntityFields2 fields) {
-			IEntity2 toReturn = new <[CurrentEntityName]>Entity(fields);<[ UserCodeRegion CurrentEntityName "CreateNew($VALUE)UsingFields" ]>
+			IEntity2 toReturn = DependencyInjectionFactory.Resolve<<[CurrentEntityName]>Entity>("fields", fields);<[ UserCodeRegion CurrentEntityName "CreateNew($VALUE)UsingFields" ]>
 			// __LLBLGENPRO_USER_CODE_REGION_START <[ UserCodeRegionName ]>
 			// __LLBLGENPRO_USER_CODE_REGION_END
 			<[ EndUserCodeRegion ]>
@@ -135,6 +155,7 @@ namespace <[RootNamespace]>.FactoryClasses
 			{
 <[Foreach Entity CrLf]>				case <[RootNamespace]>.EntityType.<[CurrentEntityName]>Entity:
 					factoryToUse = new <[CurrentEntityName]>EntityFactory();
+					DIFactory.Inject(factoryToUse);
 					break;<[NextForeach]>
 			}
 			IEntity2 toReturn = null;
@@ -150,15 +171,6 @@ namespace <[RootNamespace]>.FactoryClasses
 	[Serializable]
 	public static class EntityFactoryFactory
 	{
-#if CF
-		/// <summary>Gets the factory of the entity with the <[RootNamespace]>.EntityType specified</summary>
-		/// <param name="typeOfEntity">The type of entity.</param>
-		/// <returns>factory to use or null if not found</returns>
-		public static IEntityFactory2 GetFactory(<[RootNamespace]>.EntityType typeOfEntity)
-		{
-			return GeneralEntityFactory.Create(typeOfEntity).GetEntityFactory();
-		}
-#else
 		private static Dictionary<Type, IEntityFactory2> _factoryPerType = new Dictionary<Type, IEntityFactory2>();
 
 		/// <summary>Initializes the <see cref="EntityFactoryFactory"/> class.</summary>
@@ -189,8 +201,7 @@ namespace <[RootNamespace]>.FactoryClasses
 		{
 			return GetFactory(GeneralEntityFactory.Create(typeOfEntity).GetType());
 		}
-#endif		
-	}
+	}<[EndIf]>
 		
 	/// <summary>Element creator for creating project elements from somewhere else, like inside Linq providers.</summary>
 	public class ElementCreator : ElementCreatorBase, IElementCreator2
@@ -238,6 +249,13 @@ namespace <[RootNamespace]>.FactoryClasses
 			return new DynamicRelation(leftOperand, joinType, rightOperand, onClause);
 		}
 
+		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
+		/// <returns>The singleton instance of the inheritance info provider</returns>
+		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+		{
+			return InheritanceInfoProviderSingleton.GetInstance();
+		}
+<[If HasEntity]>
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
 		/// <param name="joinType">Type of the join. If None is specified, Inner is assumed.</param>
@@ -263,13 +281,6 @@ namespace <[RootNamespace]>.FactoryClasses
 			return new DynamicRelation((<[RootNamespace]>.EntityType)Enum.Parse(typeof(<[RootNamespace]>.EntityType), leftOperandEntityName, false), joinType, (<[RootNamespace]>.EntityType)Enum.Parse(typeof(<[RootNamespace]>.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
 		}
 		
-		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
-		/// <returns>The singleton instance of the inheritance info provider</returns>
-		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
-		{
-			return InheritanceInfoProviderSingleton.GetInstance();
-		}
-		
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the <[RootNamespace]>.EntityType value passed in</summary>
 		/// <param name="entityTypeValue">The entity type value.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
@@ -277,7 +288,7 @@ namespace <[RootNamespace]>.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory((<[RootNamespace]>.EntityType)entityTypeValue);
 		}
-#if !CF		
+
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the .NET type passed in</summary>
 		/// <param name="typeOfEntity">The type of entity.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
@@ -285,6 +296,6 @@ namespace <[RootNamespace]>.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory(typeOfEntity);
 		}
-#endif
-	}<[EndIf]>
+<[EndIf]>
+	}
 }

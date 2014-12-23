@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -146,7 +146,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -210,7 +210,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -229,7 +229,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -445,7 +445,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplications</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplications(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplications(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplications!=relatedEntity)
 			{
@@ -478,7 +478,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _aspnetUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUsers(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUsers(IEntityCore relatedEntity)
 		{
 			if(_aspnetUsers!=relatedEntity)
 			{
@@ -572,7 +572,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)AspnetMembershipFieldIndex.ApplicationId, true); }
@@ -582,7 +582,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)AspnetMembershipFieldIndex.UserId, true); }
@@ -592,7 +592,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Password property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."Password"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 128<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Password
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.Password, true); }
@@ -602,7 +602,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PasswordFormat property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."PasswordFormat"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 PasswordFormat
 		{
 			get { return (System.Int32)GetValue((int)AspnetMembershipFieldIndex.PasswordFormat, true); }
@@ -612,7 +612,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PasswordSalt property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."PasswordSalt"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 128<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String PasswordSalt
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.PasswordSalt, true); }
@@ -622,7 +622,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MobilePin property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."MobilePIN"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 16<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String MobilePin
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.MobilePin, true); }
@@ -632,7 +632,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Email property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."Email"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Email
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.Email, true); }
@@ -642,7 +642,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LoweredEmail property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."LoweredEmail"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String LoweredEmail
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.LoweredEmail, true); }
@@ -652,7 +652,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PasswordQuestion property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."PasswordQuestion"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String PasswordQuestion
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.PasswordQuestion, true); }
@@ -662,7 +662,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PasswordAnswer property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."PasswordAnswer"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 128<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String PasswordAnswer
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.PasswordAnswer, true); }
@@ -672,7 +672,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsApproved property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."IsApproved"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsApproved
 		{
 			get { return (System.Boolean)GetValue((int)AspnetMembershipFieldIndex.IsApproved, true); }
@@ -682,7 +682,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsLockedOut property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."IsLockedOut"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsLockedOut
 		{
 			get { return (System.Boolean)GetValue((int)AspnetMembershipFieldIndex.IsLockedOut, true); }
@@ -692,7 +692,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CreateDate property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."CreateDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime CreateDate
 		{
 			get { return (System.DateTime)GetValue((int)AspnetMembershipFieldIndex.CreateDate, true); }
@@ -702,7 +702,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LastLoginDate property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."LastLoginDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime LastLoginDate
 		{
 			get { return (System.DateTime)GetValue((int)AspnetMembershipFieldIndex.LastLoginDate, true); }
@@ -712,7 +712,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LastPasswordChangedDate property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."LastPasswordChangedDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime LastPasswordChangedDate
 		{
 			get { return (System.DateTime)GetValue((int)AspnetMembershipFieldIndex.LastPasswordChangedDate, true); }
@@ -722,7 +722,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LastLockoutDate property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."LastLockoutDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime LastLockoutDate
 		{
 			get { return (System.DateTime)GetValue((int)AspnetMembershipFieldIndex.LastLockoutDate, true); }
@@ -732,7 +732,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FailedPasswordAttemptCount property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."FailedPasswordAttemptCount"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 FailedPasswordAttemptCount
 		{
 			get { return (System.Int32)GetValue((int)AspnetMembershipFieldIndex.FailedPasswordAttemptCount, true); }
@@ -742,7 +742,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FailedPasswordAttemptWindowStart property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."FailedPasswordAttemptWindowStart"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime FailedPasswordAttemptWindowStart
 		{
 			get { return (System.DateTime)GetValue((int)AspnetMembershipFieldIndex.FailedPasswordAttemptWindowStart, true); }
@@ -752,7 +752,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FailedPasswordAnswerAttemptCount property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."FailedPasswordAnswerAttemptCount"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 FailedPasswordAnswerAttemptCount
 		{
 			get { return (System.Int32)GetValue((int)AspnetMembershipFieldIndex.FailedPasswordAnswerAttemptCount, true); }
@@ -762,7 +762,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FailedPasswordAnswerAttemptWindowStart property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."FailedPasswordAnswerAttemptWindowStart"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime FailedPasswordAnswerAttemptWindowStart
 		{
 			get { return (System.DateTime)GetValue((int)AspnetMembershipFieldIndex.FailedPasswordAnswerAttemptWindowStart, true); }
@@ -772,7 +772,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Comment property of the Entity AspnetMembership<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Membership"."Comment"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NText, 0, 0, 1073741823<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Comment
 		{
 			get { return (System.String)GetValue((int)AspnetMembershipFieldIndex.Comment, true); }
@@ -780,7 +780,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplications
 		{
 			get	{ return _aspnetApplications; }
@@ -799,7 +799,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUsers
 		{
 			get { return _aspnetUsers; }

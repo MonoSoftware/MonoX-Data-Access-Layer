@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -32,6 +32,7 @@ namespace MonoSoftware.MonoX.DAL.RelationClasses
 			List<IEntityRelation> toReturn = new List<IEntityRelation>();
 			toReturn.Add(this.AspnetPersonalizationPerUserEntityUsingUserId);
 			toReturn.Add(this.AspnetUsersInRolesEntityUsingUserId);
+			toReturn.Add(this.AuditInfoEntityUsingUserId);
 			toReturn.Add(this.BlogEntityUsingUserId);
 			toReturn.Add(this.BlogEditorEntityUsingUserId);
 			toReturn.Add(this.BlogPostEntityUsingUserId);
@@ -116,6 +117,21 @@ namespace MonoSoftware.MonoX.DAL.RelationClasses
 				relation.AddEntityFieldPair(AspnetUsersFields.UserId, AspnetUsersInRolesFields.UserId);
 				relation.InheritanceInfoPkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("AspnetUsersEntity", true);
 				relation.InheritanceInfoFkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("AspnetUsersInRolesEntity", false);
+				return relation;
+			}
+		}
+
+		/// <summary>Returns a new IEntityRelation object, between AspnetUsersEntity and AuditInfoEntity over the 1:n relation they have, using the relation between the fields:
+		/// AspnetUsers.UserId - AuditInfo.UserId
+		/// </summary>
+		public virtual IEntityRelation AuditInfoEntityUsingUserId
+		{
+			get
+			{
+				IEntityRelation relation = new EntityRelation(SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany, "AuditInfos" , true);
+				relation.AddEntityFieldPair(AspnetUsersFields.UserId, AuditInfoFields.UserId);
+				relation.InheritanceInfoPkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("AspnetUsersEntity", true);
+				relation.InheritanceInfoFkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("AuditInfoEntity", false);
 				return relation;
 			}
 		}
@@ -946,6 +962,7 @@ namespace MonoSoftware.MonoX.DAL.RelationClasses
 	{
 		internal static readonly IEntityRelation AspnetPersonalizationPerUserEntityUsingUserIdStatic = new AspnetUsersRelations().AspnetPersonalizationPerUserEntityUsingUserId;
 		internal static readonly IEntityRelation AspnetUsersInRolesEntityUsingUserIdStatic = new AspnetUsersRelations().AspnetUsersInRolesEntityUsingUserId;
+		internal static readonly IEntityRelation AuditInfoEntityUsingUserIdStatic = new AspnetUsersRelations().AuditInfoEntityUsingUserId;
 		internal static readonly IEntityRelation BlogEntityUsingUserIdStatic = new AspnetUsersRelations().BlogEntityUsingUserId;
 		internal static readonly IEntityRelation BlogEditorEntityUsingUserIdStatic = new AspnetUsersRelations().BlogEditorEntityUsingUserId;
 		internal static readonly IEntityRelation BlogPostEntityUsingUserIdStatic = new AspnetUsersRelations().BlogPostEntityUsingUserId;

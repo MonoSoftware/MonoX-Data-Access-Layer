@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -146,7 +146,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -208,7 +208,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -227,7 +227,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -412,7 +412,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUsers(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUsers(IEntityCore relatedEntity)
 		{
 			if(_aspnetUsers!=relatedEntity)
 			{
@@ -445,7 +445,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _privacyLevel</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncPrivacyLevel(IEntity2 relatedEntity)
+		private void SetupSyncPrivacyLevel(IEntityCore relatedEntity)
 		{
 			if(_privacyLevel!=relatedEntity)
 			{
@@ -539,7 +539,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity PrivacyLevelDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevelDefinition"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)PrivacyLevelDefinitionFieldIndex.Id, true); }
@@ -549,7 +549,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity PrivacyLevelDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevelDefinition"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)PrivacyLevelDefinitionFieldIndex.UserId, true); }
@@ -559,7 +559,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ObjectName property of the Entity PrivacyLevelDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevelDefinition"."ObjectName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 150<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String ObjectName
 		{
 			get { return (System.String)GetValue((int)PrivacyLevelDefinitionFieldIndex.ObjectName, true); }
@@ -569,7 +569,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FieldName property of the Entity PrivacyLevelDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevelDefinition"."FieldName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 150<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String FieldName
 		{
 			get { return (System.String)GetValue((int)PrivacyLevelDefinitionFieldIndex.FieldName, true); }
@@ -579,7 +579,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PrivacyLevelId property of the Entity PrivacyLevelDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevelDefinition"."PrivacyLevelId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid PrivacyLevelId
 		{
 			get { return (System.Guid)GetValue((int)PrivacyLevelDefinitionFieldIndex.PrivacyLevelId, true); }
@@ -589,7 +589,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateEntered property of the Entity PrivacyLevelDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevelDefinition"."DateEntered"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateEntered
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)PrivacyLevelDefinitionFieldIndex.DateEntered, false); }
@@ -599,7 +599,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity PrivacyLevelDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevelDefinition"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateModified
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)PrivacyLevelDefinitionFieldIndex.DateModified, false); }
@@ -607,7 +607,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUsers
 		{
 			get	{ return _aspnetUsers; }
@@ -625,7 +625,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'PrivacyLevelEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual PrivacyLevelEntity PrivacyLevel
 		{
 			get	{ return _privacyLevel; }

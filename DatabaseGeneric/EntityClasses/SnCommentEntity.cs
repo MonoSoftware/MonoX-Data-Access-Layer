@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -146,7 +146,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -208,7 +208,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -227,7 +227,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -430,7 +430,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUser(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUser(IEntityCore relatedEntity)
 		{
 			if(_aspnetUser!=relatedEntity)
 			{
@@ -463,7 +463,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snRelationship</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnRelationship(IEntity2 relatedEntity)
+		private void SetupSyncSnRelationship(IEntityCore relatedEntity)
 		{
 			if(_snRelationship!=relatedEntity)
 			{
@@ -557,7 +557,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)SnCommentFieldIndex.Id, true); }
@@ -567,7 +567,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> UserId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnCommentFieldIndex.UserId, false); }
@@ -577,7 +577,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RelationshipId property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."RelationshipId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid RelationshipId
 		{
 			get { return (System.Guid)GetValue((int)SnCommentFieldIndex.RelationshipId, true); }
@@ -587,7 +587,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Comment property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Comment"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Comment
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.Comment, true); }
@@ -597,7 +597,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateCreated
 		{
 			get { return (System.DateTime)GetValue((int)SnCommentFieldIndex.DateCreated, true); }
@@ -607,7 +607,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Author property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Author"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Author
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.Author, true); }
@@ -617,7 +617,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Email property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Email"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Email
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.Email, true); }
@@ -627,7 +627,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Website property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Website"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Website
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.Website, true); }
@@ -637,7 +637,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Ip property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Ip"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 50<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Ip
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.Ip, true); }
@@ -647,7 +647,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Referrer property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Referrer"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Referrer
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.Referrer, true); }
@@ -657,7 +657,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserAgent property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."UserAgent"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String UserAgent
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.UserAgent, true); }
@@ -667,7 +667,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsApproved property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."IsApproved"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsApproved
 		{
 			get { return (System.Boolean)GetValue((int)SnCommentFieldIndex.IsApproved, true); }
@@ -677,7 +677,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsSpam property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."IsSpam"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsSpam
 		{
 			get { return (System.Boolean)GetValue((int)SnCommentFieldIndex.IsSpam, true); }
@@ -687,7 +687,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Spaminess property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Spaminess"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Decimal, 18, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Decimal Spaminess
 		{
 			get { return (System.Decimal)GetValue((int)SnCommentFieldIndex.Spaminess, true); }
@@ -697,7 +697,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Signature property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Signature"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Signature
 		{
 			get { return (System.String)GetValue((int)SnCommentFieldIndex.Signature, true); }
@@ -707,7 +707,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Rating property of the Entity SnComment<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnComment"."Rating"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Float, 38, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Double Rating
 		{
 			get { return (System.Double)GetValue((int)SnCommentFieldIndex.Rating, true); }
@@ -715,7 +715,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUser
 		{
 			get	{ return _aspnetUser; }
@@ -733,7 +733,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnRelationshipEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnRelationshipEntity SnRelationship
 		{
 			get	{ return _snRelationship; }

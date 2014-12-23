@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -272,6 +272,42 @@ namespace MonoSoftware.MonoX.DAL
 		ExceptionType,
 		///<summary>Details. </summary>
 		Details,
+		/// <summary></summary>
+		AmountOfFields
+	}
+	/// <summary>Index enum to fast-access EntityFields in the IEntityFields collection for the entity: AuditInfo.</summary>
+	public enum AuditInfoFieldIndex
+	{
+		///<summary>Id. </summary>
+		Id,
+		///<summary>UserId. </summary>
+		UserId,
+		///<summary>AffectedEntityName. </summary>
+		AffectedEntityName,
+		///<summary>ActionDateTime. </summary>
+		ActionDateTime,
+		///<summary>ActionType. </summary>
+		ActionType,
+		///<summary>ActionTypeName. </summary>
+		ActionTypeName,
+		///<summary>ActionPerformedByUser. </summary>
+		ActionPerformedByUser,
+		///<summary>ActionData. </summary>
+		ActionData,
+		///<summary>ActionDataBinary. </summary>
+		ActionDataBinary,
+		///<summary>DateCreated. </summary>
+		DateCreated,
+		///<summary>DateUpdated. </summary>
+		DateUpdated,
+		///<summary>ConcurrencyTimeStamp. </summary>
+		ConcurrencyTimeStamp,
+		///<summary>IpAddress. </summary>
+		IpAddress,
+		///<summary>UserAgent. </summary>
+		UserAgent,
+		///<summary>Referrer. </summary>
+		Referrer,
 		/// <summary></summary>
 		AmountOfFields
 	}
@@ -2005,6 +2041,8 @@ namespace MonoSoftware.MonoX.DAL
 		AspnetUsersInRolesEntity,
 		///<summary>AspnetWebEventEvents</summary>
 		AspnetWebEventEventsEntity,
+		///<summary>AuditInfo</summary>
+		AuditInfoEntity,
 		///<summary>Blog</summary>
 		BlogEntity,
 		///<summary>BlogCategory</summary>

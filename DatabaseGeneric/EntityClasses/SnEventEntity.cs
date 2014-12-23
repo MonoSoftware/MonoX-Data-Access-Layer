@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -245,7 +245,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -363,7 +363,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -409,7 +409,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -780,7 +780,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUsers(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUsers(IEntityCore relatedEntity)
 		{
 			if(_aspnetUsers!=relatedEntity)
 			{
@@ -813,7 +813,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _friendAspnetUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncFriendAspnetUsers(IEntity2 relatedEntity)
+		private void SetupSyncFriendAspnetUsers(IEntityCore relatedEntity)
 		{
 			if(_friendAspnetUsers!=relatedEntity)
 			{
@@ -846,7 +846,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _blogPost</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncBlogPost(IEntity2 relatedEntity)
+		private void SetupSyncBlogPost(IEntityCore relatedEntity)
 		{
 			if(_blogPost!=relatedEntity)
 			{
@@ -879,7 +879,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _oaConsumer</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncOaConsumer(IEntity2 relatedEntity)
+		private void SetupSyncOaConsumer(IEntityCore relatedEntity)
 		{
 			if(_oaConsumer!=relatedEntity)
 			{
@@ -912,7 +912,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snAlbum</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnAlbum(IEntity2 relatedEntity)
+		private void SetupSyncSnAlbum(IEntityCore relatedEntity)
 		{
 			if(_snAlbum!=relatedEntity)
 			{
@@ -945,7 +945,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snDiscussionBoard</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnDiscussionBoard(IEntity2 relatedEntity)
+		private void SetupSyncSnDiscussionBoard(IEntityCore relatedEntity)
 		{
 			if(_snDiscussionBoard!=relatedEntity)
 			{
@@ -978,7 +978,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snDiscussionTopic</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnDiscussionTopic(IEntity2 relatedEntity)
+		private void SetupSyncSnDiscussionTopic(IEntityCore relatedEntity)
 		{
 			if(_snDiscussionTopic!=relatedEntity)
 			{
@@ -1011,7 +1011,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snEventType</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnEventType(IEntity2 relatedEntity)
+		private void SetupSyncSnEventType(IEntityCore relatedEntity)
 		{
 			if(_snEventType!=relatedEntity)
 			{
@@ -1044,7 +1044,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snFile</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnFile(IEntity2 relatedEntity)
+		private void SetupSyncSnFile(IEntityCore relatedEntity)
 		{
 			if(_snFile!=relatedEntity)
 			{
@@ -1077,7 +1077,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snGroup</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnGroup(IEntity2 relatedEntity)
+		private void SetupSyncSnGroup(IEntityCore relatedEntity)
 		{
 			if(_snGroup!=relatedEntity)
 			{
@@ -1110,7 +1110,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snNote</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnNote(IEntity2 relatedEntity)
+		private void SetupSyncSnNote(IEntityCore relatedEntity)
 		{
 			if(_snNote!=relatedEntity)
 			{
@@ -1267,7 +1267,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)SnEventFieldIndex.Id, true); }
@@ -1277,7 +1277,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)SnEventFieldIndex.UserId, true); }
@@ -1287,7 +1287,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventTypeId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."EventTypeId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid EventTypeId
 		{
 			get { return (System.Guid)GetValue((int)SnEventFieldIndex.EventTypeId, true); }
@@ -1297,7 +1297,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateCreated
 		{
 			get { return (System.DateTime)GetValue((int)SnEventFieldIndex.DateCreated, true); }
@@ -1307,7 +1307,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FriendId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."FriendId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> FriendId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.FriendId, false); }
@@ -1317,7 +1317,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The BlogPostId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."BlogPostId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> BlogPostId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.BlogPostId, false); }
@@ -1327,7 +1327,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnGroupId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."SnGroupId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnGroupId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.SnGroupId, false); }
@@ -1337,7 +1337,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnAlbumId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."SnAlbumId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnAlbumId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.SnAlbumId, false); }
@@ -1347,7 +1347,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnFileId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."SnFileId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnFileId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.SnFileId, false); }
@@ -1357,7 +1357,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnDiscussionBoardId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."SnDiscussionBoardId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnDiscussionBoardId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.SnDiscussionBoardId, false); }
@@ -1367,7 +1367,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnDiscussionTopicId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."SnDiscussionTopicId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnDiscussionTopicId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.SnDiscussionTopicId, false); }
@@ -1377,7 +1377,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The OaConsumerId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."OaConsumerId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> OaConsumerId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.OaConsumerId, false); }
@@ -1387,7 +1387,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CustomId1 property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."CustomId1"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> CustomId1
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.CustomId1, false); }
@@ -1397,7 +1397,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CustomId2 property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."CustomId2"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> CustomId2
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.CustomId2, false); }
@@ -1407,7 +1407,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CustomId3 property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."CustomId3"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> CustomId3
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.CustomId3, false); }
@@ -1417,7 +1417,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventContent property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."EventContent"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String EventContent
 		{
 			get { return (System.String)GetValue((int)SnEventFieldIndex.EventContent, true); }
@@ -1427,7 +1427,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PlainEventTitle property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."PlainEventTitle"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 150<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String PlainEventTitle
 		{
 			get { return (System.String)GetValue((int)SnEventFieldIndex.PlainEventTitle, true); }
@@ -1437,7 +1437,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PlainEventUrl property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."PlainEventUrl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String PlainEventUrl
 		{
 			get { return (System.String)GetValue((int)SnEventFieldIndex.PlainEventUrl, true); }
@@ -1447,7 +1447,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnNoteId property of the Entity SnEvent<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnEvent"."SnNoteId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnNoteId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnEventFieldIndex.SnNoteId, false); }
@@ -1455,7 +1455,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUsers
 		{
 			get	{ return _aspnetUsers; }
@@ -1473,7 +1473,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity FriendAspnetUsers
 		{
 			get	{ return _friendAspnetUsers; }
@@ -1491,7 +1491,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'BlogPostEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual BlogPostEntity BlogPost
 		{
 			get	{ return _blogPost; }
@@ -1509,7 +1509,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'OaConsumerEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual OaConsumerEntity OaConsumer
 		{
 			get	{ return _oaConsumer; }
@@ -1527,7 +1527,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnAlbumEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnAlbumEntity SnAlbum
 		{
 			get	{ return _snAlbum; }
@@ -1545,7 +1545,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnDiscussionBoardEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnDiscussionBoardEntity SnDiscussionBoard
 		{
 			get	{ return _snDiscussionBoard; }
@@ -1563,7 +1563,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnDiscussionTopicEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnDiscussionTopicEntity SnDiscussionTopic
 		{
 			get	{ return _snDiscussionTopic; }
@@ -1581,7 +1581,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnEventTypeEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnEventTypeEntity SnEventType
 		{
 			get	{ return _snEventType; }
@@ -1599,7 +1599,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnFileEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnFileEntity SnFile
 		{
 			get	{ return _snFile; }
@@ -1617,7 +1617,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnGroupEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnGroupEntity SnGroup
 		{
 			get	{ return _snGroup; }
@@ -1635,7 +1635,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnNoteEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnNoteEntity SnNote
 		{
 			get	{ return _snNote; }

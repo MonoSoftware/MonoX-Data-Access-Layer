@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -147,7 +147,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -223,7 +223,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -248,7 +248,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -468,7 +468,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplications</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplications(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplications(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplications!=relatedEntity)
 			{
@@ -576,7 +576,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity AspnetRoles<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Roles"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)AspnetRolesFieldIndex.ApplicationId, true); }
@@ -586,7 +586,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RoleId property of the Entity AspnetRoles<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Roles"."RoleId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid RoleId
 		{
 			get { return (System.Guid)GetValue((int)AspnetRolesFieldIndex.RoleId, true); }
@@ -596,7 +596,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RoleName property of the Entity AspnetRoles<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Roles"."RoleName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String RoleName
 		{
 			get { return (System.String)GetValue((int)AspnetRolesFieldIndex.RoleName, true); }
@@ -606,7 +606,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LoweredRoleName property of the Entity AspnetRoles<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Roles"."LoweredRoleName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String LoweredRoleName
 		{
 			get { return (System.String)GetValue((int)AspnetRolesFieldIndex.LoweredRoleName, true); }
@@ -616,7 +616,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity AspnetRoles<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Roles"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)AspnetRolesFieldIndex.Description, true); }
@@ -624,28 +624,28 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'AspnetUsersInRolesEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(AspnetUsersInRolesEntity))]
+		[TypeContainedAttribute(typeof(AspnetUsersInRolesEntity))]		
 		public virtual EntityCollection<AspnetUsersInRolesEntity> AspnetUsersInRoles
 		{
 			get { return GetOrCreateEntityCollection<AspnetUsersInRolesEntity, AspnetUsersInRolesEntityFactory>("AspnetRoles", true, false, ref _aspnetUsersInRoles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'CalendarEditRoleEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(CalendarEditRoleEntity))]
+		[TypeContainedAttribute(typeof(CalendarEditRoleEntity))]		
 		public virtual EntityCollection<CalendarEditRoleEntity> CalendarEditRoles
 		{
 			get { return GetOrCreateEntityCollection<CalendarEditRoleEntity, CalendarEditRoleEntityFactory>("AspnetRoles", true, false, ref _calendarEditRoles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'CalendarViewRoleEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(CalendarViewRoleEntity))]
+		[TypeContainedAttribute(typeof(CalendarViewRoleEntity))]		
 		public virtual EntityCollection<CalendarViewRoleEntity> CalendarViewRoles
 		{
 			get { return GetOrCreateEntityCollection<CalendarViewRoleEntity, CalendarViewRoleEntityFactory>("AspnetRoles", true, false, ref _calendarViewRoles);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplications
 		{
 			get	{ return _aspnetApplications; }

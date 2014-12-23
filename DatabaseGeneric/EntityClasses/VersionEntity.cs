@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -112,7 +112,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -162,7 +162,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -175,7 +175,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -367,7 +367,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity Version<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Version"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)VersionFieldIndex.Id, true); }
@@ -377,7 +377,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Version property of the Entity Version<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Version"."Version"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 50<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Version
 		{
 			get { return (System.String)GetValue((int)VersionFieldIndex.Version, true); }
@@ -387,7 +387,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Comment property of the Entity Version<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Version"."Comment"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Comment
 		{
 			get { return (System.String)GetValue((int)VersionFieldIndex.Comment, true); }
@@ -397,7 +397,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UpgradeLog property of the Entity Version<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Version"."UpgradeLog"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String UpgradeLog
 		{
 			get { return (System.String)GetValue((int)VersionFieldIndex.UpgradeLog, true); }
@@ -407,7 +407,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateEntered property of the Entity Version<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Version"."DateEntered"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateEntered
 		{
 			get { return (System.DateTime)GetValue((int)VersionFieldIndex.DateEntered, true); }

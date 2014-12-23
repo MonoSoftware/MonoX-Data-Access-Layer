@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -174,7 +174,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -280,7 +280,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -320,7 +320,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -658,7 +658,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplications</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplications(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplications(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplications!=relatedEntity)
 			{
@@ -691,7 +691,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUsers(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUsers(IEntityCore relatedEntity)
 		{
 			if(_aspnetUsers!=relatedEntity)
 			{
@@ -834,7 +834,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)PageFieldIndex.Id, true); }
@@ -844,7 +844,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)PageFieldIndex.ApplicationId, true); }
@@ -854,7 +854,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Url property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."Url"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 450<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Url
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.Url, true); }
@@ -864,7 +864,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> UserId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)PageFieldIndex.UserId, false); }
@@ -874,7 +874,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateCreated
 		{
 			get { return (System.DateTime)GetValue((int)PageFieldIndex.DateCreated, true); }
@@ -884,7 +884,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The TemplateName property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."TemplateName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String TemplateName
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.TemplateName, true); }
@@ -894,7 +894,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CacheDuration property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."CacheDuration"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 CacheDuration
 		{
 			get { return (System.Int32)GetValue((int)PageFieldIndex.CacheDuration, true); }
@@ -904,7 +904,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The VaryByCustom property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."VaryByCustom"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String VaryByCustom
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.VaryByCustom, true); }
@@ -914,7 +914,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The VaryByParam property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."VaryByParam"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String VaryByParam
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.VaryByParam, true); }
@@ -924,7 +924,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The VaryByContentEncoding property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."VaryByContentEncoding"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String VaryByContentEncoding
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.VaryByContentEncoding, true); }
@@ -934,7 +934,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The VaryByHeader property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."VaryByHeader"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String VaryByHeader
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.VaryByHeader, true); }
@@ -944,7 +944,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The VaryByControl property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."VaryByControl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String VaryByControl
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.VaryByControl, true); }
@@ -954,7 +954,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CacheDependencyKeys property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."CacheDependencyKeys"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String CacheDependencyKeys
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.CacheDependencyKeys, true); }
@@ -964,7 +964,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CacheLocation property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."CacheLocation"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 CacheLocation
 		{
 			get { return (System.Int32)GetValue((int)PageFieldIndex.CacheLocation, true); }
@@ -974,7 +974,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SlidingExpiration property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."SlidingExpiration"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 SlidingExpiration
 		{
 			get { return (System.Int32)GetValue((int)PageFieldIndex.SlidingExpiration, true); }
@@ -984,7 +984,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Theme property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."Theme"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 50<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Theme
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.Theme, true); }
@@ -994,7 +994,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MasterPage property of the Entity Page<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Page"."MasterPage"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 50<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String MasterPage
 		{
 			get { return (System.String)GetValue((int)PageFieldIndex.MasterPage, true); }
@@ -1002,56 +1002,56 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'AdPageEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(AdPageEntity))]
+		[TypeContainedAttribute(typeof(AdPageEntity))]		
 		public virtual EntityCollection<AdPageEntity> AdPage
 		{
 			get { return GetOrCreateEntityCollection<AdPageEntity, AdPageEntityFactory>("Page", true, false, ref _adPage);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'DocumentEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(DocumentEntity))]
+		[TypeContainedAttribute(typeof(DocumentEntity))]		
 		public virtual EntityCollection<DocumentEntity> Documents
 		{
 			get { return GetOrCreateEntityCollection<DocumentEntity, DocumentEntityFactory>("Page", true, false, ref _documents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'NavigationEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(NavigationEntity))]
+		[TypeContainedAttribute(typeof(NavigationEntity))]		
 		public virtual EntityCollection<NavigationEntity> NavigationItems
 		{
 			get { return GetOrCreateEntityCollection<NavigationEntity, NavigationEntityFactory>("Page", true, false, ref _navigationItems);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'PageEditRoleEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(PageEditRoleEntity))]
+		[TypeContainedAttribute(typeof(PageEditRoleEntity))]		
 		public virtual EntityCollection<PageEditRoleEntity> PageEditRoles
 		{
 			get { return GetOrCreateEntityCollection<PageEditRoleEntity, PageEditRoleEntityFactory>("Page", true, false, ref _pageEditRoles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'PageLocalizationEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(PageLocalizationEntity))]
+		[TypeContainedAttribute(typeof(PageLocalizationEntity))]		
 		public virtual EntityCollection<PageLocalizationEntity> PageLocalizations
 		{
 			get { return GetOrCreateEntityCollection<PageLocalizationEntity, PageLocalizationEntityFactory>("Page", true, false, ref _pageLocalizations);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'PageRoleEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(PageRoleEntity))]
+		[TypeContainedAttribute(typeof(PageRoleEntity))]		
 		public virtual EntityCollection<PageRoleEntity> PageRoles
 		{
 			get { return GetOrCreateEntityCollection<PageRoleEntity, PageRoleEntityFactory>("Page", true, false, ref _pageRoles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationshipss
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("Page", true, false, ref _snRelationshipss);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplications
 		{
 			get	{ return _aspnetApplications; }
@@ -1069,7 +1069,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUsers
 		{
 			get	{ return _aspnetUsers; }

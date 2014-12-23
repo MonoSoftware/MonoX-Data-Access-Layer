@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -170,7 +170,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -258,7 +258,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -289,7 +289,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -549,7 +549,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplication</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplication(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplication(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplication!=relatedEntity)
 			{
@@ -582,7 +582,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _parentNavigationItem</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncParentNavigationItem(IEntity2 relatedEntity)
+		private void SetupSyncParentNavigationItem(IEntityCore relatedEntity)
 		{
 			if(_parentNavigationItem!=relatedEntity)
 			{
@@ -615,7 +615,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _page</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncPage(IEntity2 relatedEntity)
+		private void SetupSyncPage(IEntityCore relatedEntity)
 		{
 			if(_page!=relatedEntity)
 			{
@@ -737,7 +737,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity Navigation<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Navigation"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)NavigationFieldIndex.Id, true); }
@@ -747,7 +747,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PageId property of the Entity Navigation<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Navigation"."PageId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> PageId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)NavigationFieldIndex.PageId, false); }
@@ -757,7 +757,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity Navigation<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Navigation"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)NavigationFieldIndex.ApplicationId, true); }
@@ -767,7 +767,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ExternalUrl property of the Entity Navigation<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Navigation"."ExternalUrl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ExternalUrl
 		{
 			get { return (System.String)GetValue((int)NavigationFieldIndex.ExternalUrl, true); }
@@ -777,7 +777,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsContainerPage property of the Entity Navigation<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Navigation"."IsContainerPage"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsContainerPage
 		{
 			get { return (System.Boolean)GetValue((int)NavigationFieldIndex.IsContainerPage, true); }
@@ -787,7 +787,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ParentId property of the Entity Navigation<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Navigation"."ParentId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> ParentId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)NavigationFieldIndex.ParentId, false); }
@@ -797,7 +797,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PageOrder property of the Entity Navigation<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Navigation"."PageOrder"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 PageOrder
 		{
 			get { return (System.Int32)GetValue((int)NavigationFieldIndex.PageOrder, true); }
@@ -805,28 +805,28 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'NavigationEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(NavigationEntity))]
+		[TypeContainedAttribute(typeof(NavigationEntity))]		
 		public virtual EntityCollection<NavigationEntity> ChildNavigationItems
 		{
 			get { return GetOrCreateEntityCollection<NavigationEntity, NavigationEntityFactory>("ParentNavigationItem", true, false, ref _childNavigationItems);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'NavigationLocalizationEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(NavigationLocalizationEntity))]
+		[TypeContainedAttribute(typeof(NavigationLocalizationEntity))]		
 		public virtual EntityCollection<NavigationLocalizationEntity> NavigationLocalizations
 		{
 			get { return GetOrCreateEntityCollection<NavigationLocalizationEntity, NavigationLocalizationEntityFactory>("Navigation", true, false, ref _navigationLocalizations);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'NavigationRoleEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(NavigationRoleEntity))]
+		[TypeContainedAttribute(typeof(NavigationRoleEntity))]		
 		public virtual EntityCollection<NavigationRoleEntity> NavigationRoles
 		{
 			get { return GetOrCreateEntityCollection<NavigationRoleEntity, NavigationRoleEntityFactory>("Navigation", true, false, ref _navigationRoles);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplication
 		{
 			get	{ return _aspnetApplication; }
@@ -844,7 +844,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'NavigationEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual NavigationEntity ParentNavigationItem
 		{
 			get	{ return _parentNavigationItem; }
@@ -862,7 +862,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'PageEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual PageEntity Page
 		{
 			get	{ return _page; }

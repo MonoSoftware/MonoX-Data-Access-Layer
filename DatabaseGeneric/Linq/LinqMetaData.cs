@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET35
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
 using System;
@@ -99,6 +99,9 @@ namespace MonoSoftware.MonoX.DAL.Linq
 					break;
 				case MonoSoftware.MonoX.DAL.EntityType.AspnetWebEventEventsEntity:
 					toReturn = this.AspnetWebEventEvents;
+					break;
+				case MonoSoftware.MonoX.DAL.EntityType.AuditInfoEntity:
+					toReturn = this.AuditInfo;
 					break;
 				case MonoSoftware.MonoX.DAL.EntityType.BlogEntity:
 					toReturn = this.Blog;
@@ -353,6 +356,15 @@ namespace MonoSoftware.MonoX.DAL.Linq
 			return toReturn;
 		}
 
+		/// <summary>returns the datasource to use in a Linq query for the entity type specified</summary>
+		/// <typeparam name="TEntity">the type of the entity to get the datasource for</typeparam>
+		/// <returns>the requested datasource</returns>
+		public DataSource2<TEntity> GetQueryableForEntity<TEntity>()
+			    where TEntity : class
+		{
+    		return new DataSource2<TEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse);
+		}
+
 		/// <summary>returns the datasource to use in a Linq query when targeting AdEntity instances in the database.</summary>
 		public DataSource2<AdEntity> Ad
 		{
@@ -429,6 +441,12 @@ namespace MonoSoftware.MonoX.DAL.Linq
 		public DataSource2<AspnetWebEventEventsEntity> AspnetWebEventEvents
 		{
 			get { return new DataSource2<AspnetWebEventEventsEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
+		}
+		
+		/// <summary>returns the datasource to use in a Linq query when targeting AuditInfoEntity instances in the database.</summary>
+		public DataSource2<AuditInfoEntity> AuditInfo
+		{
+			get { return new DataSource2<AuditInfoEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
 		/// <summary>returns the datasource to use in a Linq query when targeting BlogEntity instances in the database.</summary>
@@ -923,7 +941,7 @@ namespace MonoSoftware.MonoX.DAL.Linq
 			get { return new DataSource2<VersionEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
 		
-		
+ 
 		#region Class Property Declarations
 		/// <summary> Gets / sets the IDataAccessAdapter to use for the queries created with this meta data object.</summary>
 		/// <remarks> Be aware that the IDataAccessAdapter object set via this property is kept alive by the LLBLGenProQuery objects created with this meta data

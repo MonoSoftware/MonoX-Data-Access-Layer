@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MonoSoftware.MonoX.DAL.HelperClasses;
 using MonoSoftware.Web.AntiSpam;
+using MonoSoftware.MonoX.Common.DependencyInjection;
 
 namespace MonoSoftware.MonoX.DAL.EntityClasses
 {
@@ -11,16 +12,26 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
     {
 
         #region Properties
+        private string _userDisplayName = String.Empty;
         /// <summary>
-        /// Gets the user display name.
-        /// </summary>
+        /// Gets or sets the user display name.
+        /// </summary>        
         public string UserDisplayName
         {
             get
             {
-                if ((this.UserProfile != null) && (!String.IsNullOrEmpty(UserProfile.FirstName) || !String.IsNullOrEmpty(UserProfile.LastName)))
-                    return String.Format("{0} {1}", UserProfile.FirstName, UserProfile.LastName).Trim(' ');
-                return this.UserName;
+                if (String.IsNullOrWhiteSpace(_userDisplayName))
+                {
+                    if ((this.UserProfile != null) && (!String.IsNullOrEmpty(UserProfile.FirstName) || !String.IsNullOrEmpty(UserProfile.LastName)))
+                        _userDisplayName = String.Format("{0} {1}", UserProfile.FirstName, UserProfile.LastName).Trim(' ');
+                    else
+                        _userDisplayName = this.UserName;
+                }
+                return _userDisplayName;
+            }
+            set
+            {
+                _userDisplayName = value;
             }
         }
 

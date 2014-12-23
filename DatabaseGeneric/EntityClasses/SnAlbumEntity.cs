@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -191,7 +191,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -293,7 +293,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -330,7 +330,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -630,7 +630,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplications</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplications(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplications(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplications!=relatedEntity)
 			{
@@ -663,7 +663,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUser(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUser(IEntityCore relatedEntity)
 		{
 			if(_aspnetUser!=relatedEntity)
 			{
@@ -696,7 +696,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _language</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncLanguage(IEntity2 relatedEntity)
+		private void SetupSyncLanguage(IEntityCore relatedEntity)
 		{
 			if(_language!=relatedEntity)
 			{
@@ -729,7 +729,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _privacyLevel</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncPrivacyLevel(IEntity2 relatedEntity)
+		private void SetupSyncPrivacyLevel(IEntityCore relatedEntity)
 		{
 			if(_privacyLevel!=relatedEntity)
 			{
@@ -762,7 +762,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snGroup</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnGroup(IEntity2 relatedEntity)
+		private void SetupSyncSnGroup(IEntityCore relatedEntity)
 		{
 			if(_snGroup!=relatedEntity)
 			{
@@ -898,7 +898,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)SnAlbumFieldIndex.Id, true); }
@@ -908,7 +908,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> UserId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnAlbumFieldIndex.UserId, false); }
@@ -918,7 +918,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnGroupId property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."SnGroupId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnGroupId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnAlbumFieldIndex.SnGroupId, false); }
@@ -928,7 +928,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Name property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."Name"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 1000<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Name
 		{
 			get { return (System.String)GetValue((int)SnAlbumFieldIndex.Name, true); }
@@ -938,7 +938,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)SnAlbumFieldIndex.Description, true); }
@@ -948,7 +948,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PrivacyLevelId property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."PrivacyLevelId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> PrivacyLevelId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnAlbumFieldIndex.PrivacyLevelId, false); }
@@ -958,7 +958,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateCreated
 		{
 			get { return (System.DateTime)GetValue((int)SnAlbumFieldIndex.DateCreated, true); }
@@ -968,7 +968,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)SnAlbumFieldIndex.ApplicationId, true); }
@@ -978,7 +978,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LanguageId property of the Entity SnAlbum<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnAlbum"."LanguageId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid LanguageId
 		{
 			get { return (System.Guid)GetValue((int)SnAlbumFieldIndex.LanguageId, true); }
@@ -986,28 +986,28 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnEventEntity))]
+		[TypeContainedAttribute(typeof(SnEventEntity))]		
 		public virtual EntityCollection<SnEventEntity> SnEvents
 		{
 			get { return GetOrCreateEntityCollection<SnEventEntity, SnEventEntityFactory>("SnAlbum", true, false, ref _snEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFileEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFileEntity))]
+		[TypeContainedAttribute(typeof(SnFileEntity))]		
 		public virtual EntityCollection<SnFileEntity> SnFiles
 		{
 			get { return GetOrCreateEntityCollection<SnFileEntity, SnFileEntityFactory>("SnAlbum", true, false, ref _snFiles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationships
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("SnAlbum", true, false, ref _snRelationships);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplications
 		{
 			get	{ return _aspnetApplications; }
@@ -1025,7 +1025,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUser
 		{
 			get	{ return _aspnetUser; }
@@ -1043,7 +1043,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'LanguageEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual LanguageEntity Language
 		{
 			get	{ return _language; }
@@ -1061,7 +1061,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'PrivacyLevelEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual PrivacyLevelEntity PrivacyLevel
 		{
 			get	{ return _privacyLevel; }
@@ -1079,7 +1079,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnGroupEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnGroupEntity SnGroup
 		{
 			get	{ return _snGroup; }

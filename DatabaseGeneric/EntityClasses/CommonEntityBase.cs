@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -82,7 +82,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 				destination = new EntityCollection<T>(EntityFactoryCache2.GetEntityFactory(typeof(TFactory)));
 				if(forMN)
 				{
-					destination.IsReadOnly = true;
+					((IEntityCollectionCore)destination).IsForMN = true;
 				}
 				else
 				{
@@ -98,7 +98,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		#region Custom Entity code
 		
-		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCode
+		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCode        
 		// __LLBLGENPRO_USER_CODE_REGION_END
 		#endregion
 

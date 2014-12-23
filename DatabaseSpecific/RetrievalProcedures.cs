@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -80,7 +80,7 @@ namespace MonoSoftware.MonoX.DAL.DatabaseSpecific
 		/// <returns>Ready to use StoredProcedureCall object</returns>
 		private static StoredProcedureCall CreateFriendSuggestionCall(IDataAccessCore dataAccessProvider, System.Guid userId, System.Int32 numberOfLevels, System.Int32 pageNumber, System.Int32 pageSize, System.Boolean isRandom, System.String userName)
 		{
-			return new StoredProcedureCall(dataAccessProvider, "[MonoX2].[dbo].[FriendSuggestion]", "FriendSuggestion")
+			return new StoredProcedureCall(dataAccessProvider, @"[MonoX2].[dbo].[FriendSuggestion]", "FriendSuggestion")
 							.AddParameter("@UserId", "UniqueIdentifier", 0, ParameterDirection.Input, true, 0, 0, userId)
 							.AddParameter("@NumberOfLevels", "Int", 0, ParameterDirection.Input, true, 10, 0, numberOfLevels)
 							.AddParameter("@PageNumber", "Int", 0, ParameterDirection.Input, true, 10, 0, pageNumber)

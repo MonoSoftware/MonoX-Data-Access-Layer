@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -95,7 +95,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -145,7 +145,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -158,7 +158,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -352,7 +352,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity FriendSuggestionTypedViewEntry<br/><br/></summary>
 		/// <remarks>Mapped on  view field: "FriendSuggestionTypedViewEntry"."UserId"<br/>
 		/// View field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)FriendSuggestionTypedViewEntryFieldIndex.UserId, true); }
@@ -362,7 +362,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserName property of the Entity FriendSuggestionTypedViewEntry<br/><br/></summary>
 		/// <remarks>Mapped on  view field: "FriendSuggestionTypedViewEntry"."UserName"<br/>
 		/// View field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String UserName
 		{
 			get { return (System.String)GetValue((int)FriendSuggestionTypedViewEntryFieldIndex.UserName, true); }
@@ -372,7 +372,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FirstName property of the Entity FriendSuggestionTypedViewEntry<br/><br/></summary>
 		/// <remarks>Mapped on  view field: "FriendSuggestionTypedViewEntry"."FirstName"<br/>
 		/// View field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// View field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// View field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String FirstName
 		{
 			get { return (System.String)GetValue((int)FriendSuggestionTypedViewEntryFieldIndex.FirstName, true); }
@@ -382,7 +382,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LastName property of the Entity FriendSuggestionTypedViewEntry<br/><br/></summary>
 		/// <remarks>Mapped on  view field: "FriendSuggestionTypedViewEntry"."LastName"<br/>
 		/// View field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// View field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// View field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String LastName
 		{
 			get { return (System.String)GetValue((int)FriendSuggestionTypedViewEntryFieldIndex.LastName, true); }
@@ -392,7 +392,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ConnectionLevel property of the Entity FriendSuggestionTypedViewEntry<br/><br/></summary>
 		/// <remarks>Mapped on  view field: "FriendSuggestionTypedViewEntry"."ConnectionLevel"<br/>
 		/// View field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 ConnectionLevel
 		{
 			get { return (System.Int32)GetValue((int)FriendSuggestionTypedViewEntryFieldIndex.ConnectionLevel, true); }
@@ -402,7 +402,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RecordCount property of the Entity FriendSuggestionTypedViewEntry<br/><br/></summary>
 		/// <remarks>Mapped on  view field: "FriendSuggestionTypedViewEntry"."RecordCount"<br/>
 		/// View field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// View field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 RecordCount
 		{
 			get { return (System.Int32)GetValue((int)FriendSuggestionTypedViewEntryFieldIndex.RecordCount, true); }

@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -147,7 +147,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -217,7 +217,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -239,7 +239,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -440,7 +440,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplications</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplications(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplications(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplications!=relatedEntity)
 			{
@@ -473,7 +473,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _aspnetPersonalizationAllUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetPersonalizationAllUsers(IEntity2 relatedEntity)
+		private void SetupSyncAspnetPersonalizationAllUsers(IEntityCore relatedEntity)
 		{
 			if(_aspnetPersonalizationAllUsers!=relatedEntity)
 			{
@@ -574,7 +574,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity AspnetPaths<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Paths"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)AspnetPathsFieldIndex.ApplicationId, true); }
@@ -584,7 +584,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PathId property of the Entity AspnetPaths<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Paths"."PathId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid PathId
 		{
 			get { return (System.Guid)GetValue((int)AspnetPathsFieldIndex.PathId, true); }
@@ -594,7 +594,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Path property of the Entity AspnetPaths<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Paths"."Path"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Path
 		{
 			get { return (System.String)GetValue((int)AspnetPathsFieldIndex.Path, true); }
@@ -604,7 +604,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LoweredPath property of the Entity AspnetPaths<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Paths"."LoweredPath"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String LoweredPath
 		{
 			get { return (System.String)GetValue((int)AspnetPathsFieldIndex.LoweredPath, true); }
@@ -612,14 +612,14 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'AspnetPersonalizationPerUserEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(AspnetPersonalizationPerUserEntity))]
+		[TypeContainedAttribute(typeof(AspnetPersonalizationPerUserEntity))]		
 		public virtual EntityCollection<AspnetPersonalizationPerUserEntity> AspnetPersonalizationPerUser
 		{
 			get { return GetOrCreateEntityCollection<AspnetPersonalizationPerUserEntity, AspnetPersonalizationPerUserEntityFactory>("AspnetPaths", true, false, ref _aspnetPersonalizationPerUser);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplications
 		{
 			get	{ return _aspnetApplications; }
@@ -638,7 +638,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'AspnetPersonalizationAllUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetPersonalizationAllUsersEntity AspnetPersonalizationAllUsers
 		{
 			get { return _aspnetPersonalizationAllUsers; }

@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -135,7 +135,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -191,7 +191,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -207,7 +207,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -373,7 +373,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _aspnetUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUsers(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUsers(IEntityCore relatedEntity)
 		{
 			if(_aspnetUsers!=relatedEntity)
 			{
@@ -460,7 +460,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity AspnetProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Profile"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)AspnetProfileFieldIndex.UserId, true); }
@@ -470,7 +470,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PropertyNames property of the Entity AspnetProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Profile"."PropertyNames"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NText, 0, 0, 1073741823<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String PropertyNames
 		{
 			get { return (System.String)GetValue((int)AspnetProfileFieldIndex.PropertyNames, true); }
@@ -480,7 +480,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PropertyValuesString property of the Entity AspnetProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Profile"."PropertyValuesString"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NText, 0, 0, 1073741823<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String PropertyValuesString
 		{
 			get { return (System.String)GetValue((int)AspnetProfileFieldIndex.PropertyValuesString, true); }
@@ -490,7 +490,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PropertyValuesBinary property of the Entity AspnetProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Profile"."PropertyValuesBinary"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Image, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Byte[] PropertyValuesBinary
 		{
 			get { return (System.Byte[])GetValue((int)AspnetProfileFieldIndex.PropertyValuesBinary, true); }
@@ -500,7 +500,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LastUpdatedDate property of the Entity AspnetProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Profile"."LastUpdatedDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime LastUpdatedDate
 		{
 			get { return (System.DateTime)GetValue((int)AspnetProfileFieldIndex.LastUpdatedDate, true); }
@@ -509,7 +509,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUsers
 		{
 			get { return _aspnetUsers; }

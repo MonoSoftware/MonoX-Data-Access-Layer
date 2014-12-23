@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -174,7 +174,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -278,7 +278,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -318,7 +318,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -642,7 +642,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUser(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUser(IEntityCore relatedEntity)
 		{
 			if(_aspnetUser!=relatedEntity)
 			{
@@ -675,7 +675,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snGroupCategory</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnGroupCategory(IEntity2 relatedEntity)
+		private void SetupSyncSnGroupCategory(IEntityCore relatedEntity)
 		{
 			if(_snGroupCategory!=relatedEntity)
 			{
@@ -818,7 +818,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)SnGroupFieldIndex.Id, true); }
@@ -828,7 +828,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Name property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."Name"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Name
 		{
 			get { return (System.String)GetValue((int)SnGroupFieldIndex.Name, true); }
@@ -838,7 +838,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateCreated
 		{
 			get { return (System.DateTime)GetValue((int)SnGroupFieldIndex.DateCreated, true); }
@@ -848,7 +848,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MemberCount property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."MemberCount"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 MemberCount
 		{
 			get { return (System.Int32)GetValue((int)SnGroupFieldIndex.MemberCount, true); }
@@ -858,7 +858,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)SnGroupFieldIndex.Description, true); }
@@ -868,7 +868,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsPublic property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."IsPublic"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsPublic
 		{
 			get { return (System.Boolean)GetValue((int)SnGroupFieldIndex.IsPublic, true); }
@@ -878,7 +878,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> UserId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnGroupFieldIndex.UserId, false); }
@@ -888,7 +888,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ImageUrl property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."ImageUrl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ImageUrl
 		{
 			get { return (System.String)GetValue((int)SnGroupFieldIndex.ImageUrl, true); }
@@ -898,7 +898,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The GroupCategoryId property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."GroupCategoryId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> GroupCategoryId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnGroupFieldIndex.GroupCategoryId, false); }
@@ -908,7 +908,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Slug property of the Entity SnGroup<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnGroup"."Slug"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Slug
 		{
 			get { return (System.String)GetValue((int)SnGroupFieldIndex.Slug, true); }
@@ -916,56 +916,56 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnAlbumEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnAlbumEntity))]
+		[TypeContainedAttribute(typeof(SnAlbumEntity))]		
 		public virtual EntityCollection<SnAlbumEntity> SnAlbum
 		{
 			get { return GetOrCreateEntityCollection<SnAlbumEntity, SnAlbumEntityFactory>("SnGroup", true, false, ref _snAlbum);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnDiscussionBoardEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnDiscussionBoardEntity))]
+		[TypeContainedAttribute(typeof(SnDiscussionBoardEntity))]		
 		public virtual EntityCollection<SnDiscussionBoardEntity> SnDiscussionBoard
 		{
 			get { return GetOrCreateEntityCollection<SnDiscussionBoardEntity, SnDiscussionBoardEntityFactory>("SnGroup", true, false, ref _snDiscussionBoard);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnEventEntity))]
+		[TypeContainedAttribute(typeof(SnEventEntity))]		
 		public virtual EntityCollection<SnEventEntity> SnEvents
 		{
 			get { return GetOrCreateEntityCollection<SnEventEntity, SnEventEntityFactory>("SnGroup", true, false, ref _snEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnGroupMemberEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnGroupMemberEntity))]
+		[TypeContainedAttribute(typeof(SnGroupMemberEntity))]		
 		public virtual EntityCollection<SnGroupMemberEntity> SnGroupMembers
 		{
 			get { return GetOrCreateEntityCollection<SnGroupMemberEntity, SnGroupMemberEntityFactory>("SnGroup", true, false, ref _snGroupMembers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnGroupRequestEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnGroupRequestEntity))]
+		[TypeContainedAttribute(typeof(SnGroupRequestEntity))]		
 		public virtual EntityCollection<SnGroupRequestEntity> SnGroupRequests
 		{
 			get { return GetOrCreateEntityCollection<SnGroupRequestEntity, SnGroupRequestEntityFactory>("SnGroup", true, false, ref _snGroupRequests);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnNoteEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnNoteEntity))]
+		[TypeContainedAttribute(typeof(SnNoteEntity))]		
 		public virtual EntityCollection<SnNoteEntity> SnNotes
 		{
 			get { return GetOrCreateEntityCollection<SnNoteEntity, SnNoteEntityFactory>("SnGroup", true, false, ref _snNotes);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationshipss
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("SnGroup", true, false, ref _snRelationshipss);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUser
 		{
 			get	{ return _aspnetUser; }
@@ -983,7 +983,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnGroupCategoryEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnGroupCategoryEntity SnGroupCategory
 		{
 			get	{ return _snGroupCategory; }

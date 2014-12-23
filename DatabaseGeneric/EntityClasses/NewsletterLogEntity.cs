@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -135,7 +135,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -191,7 +191,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -207,7 +207,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -372,7 +372,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _newsletter</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncNewsletter(IEntity2 relatedEntity)
+		private void SetupSyncNewsletter(IEntityCore relatedEntity)
 		{
 			if(_newsletter!=relatedEntity)
 			{
@@ -459,7 +459,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity NewsletterLog<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsletterLog"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)NewsletterLogFieldIndex.Id, true); }
@@ -469,7 +469,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The NewsletterId property of the Entity NewsletterLog<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsletterLog"."NewsletterId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid NewsletterId
 		{
 			get { return (System.Guid)GetValue((int)NewsletterLogFieldIndex.NewsletterId, true); }
@@ -479,7 +479,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Email property of the Entity NewsletterLog<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsletterLog"."Email"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 200<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Email
 		{
 			get { return (System.String)GetValue((int)NewsletterLogFieldIndex.Email, true); }
@@ -489,7 +489,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SentOn property of the Entity NewsletterLog<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsletterLog"."SentOn"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime SentOn
 		{
 			get { return (System.DateTime)GetValue((int)NewsletterLogFieldIndex.SentOn, true); }
@@ -499,7 +499,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Success property of the Entity NewsletterLog<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsletterLog"."Success"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Success
 		{
 			get { return (System.Boolean)GetValue((int)NewsletterLogFieldIndex.Success, true); }
@@ -509,7 +509,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Message property of the Entity NewsletterLog<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsletterLog"."Message"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Message
 		{
 			get { return (System.String)GetValue((int)NewsletterLogFieldIndex.Message, true); }
@@ -517,7 +517,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'NewsletterEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual NewsletterEntity Newsletter
 		{
 			get	{ return _newsletter; }

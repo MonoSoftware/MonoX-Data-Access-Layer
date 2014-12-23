@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -143,7 +143,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -213,7 +213,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -235,7 +235,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -442,7 +442,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplications</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplications(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplications(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplications!=relatedEntity)
 			{
@@ -543,7 +543,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)CampaignFieldIndex.Id, true); }
@@ -553,7 +553,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)CampaignFieldIndex.ApplicationId, true); }
@@ -563,7 +563,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Name property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."Name"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Name
 		{
 			get { return (System.String)GetValue((int)CampaignFieldIndex.Name, true); }
@@ -573,7 +573,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Start property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."Start"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> Start
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)CampaignFieldIndex.Start, false); }
@@ -583,7 +583,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The End property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."End"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> End
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)CampaignFieldIndex.End, false); }
@@ -593,7 +593,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Active property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."Active"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Active
 		{
 			get { return (System.Boolean)GetValue((int)CampaignFieldIndex.Active, true); }
@@ -603,7 +603,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateEntered property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."DateEntered"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateEntered
 		{
 			get { return (System.DateTime)GetValue((int)CampaignFieldIndex.DateEntered, true); }
@@ -613,7 +613,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity Campaign<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Campaign"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateModified
 		{
 			get { return (System.DateTime)GetValue((int)CampaignFieldIndex.DateModified, true); }
@@ -621,21 +621,21 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'AdEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(AdEntity))]
+		[TypeContainedAttribute(typeof(AdEntity))]		
 		public virtual EntityCollection<AdEntity> Ad
 		{
 			get { return GetOrCreateEntityCollection<AdEntity, AdEntityFactory>("Campaign", true, false, ref _ad);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationshipss
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("Campaign", true, false, ref _snRelationshipss);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplications
 		{
 			get	{ return _aspnetApplications; }

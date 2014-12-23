@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -112,7 +112,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -162,7 +162,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -175,7 +175,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -387,7 +387,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventId property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Char, 0, 0, 32<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.String EventId
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.EventId, true); }
@@ -397,7 +397,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventTimeUtc property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventTimeUtc"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime EventTimeUtc
 		{
 			get { return (System.DateTime)GetValue((int)AspnetWebEventEventsFieldIndex.EventTimeUtc, true); }
@@ -407,7 +407,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventTime property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventTime"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime EventTime
 		{
 			get { return (System.DateTime)GetValue((int)AspnetWebEventEventsFieldIndex.EventTime, true); }
@@ -417,7 +417,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventType property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventType"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String EventType
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.EventType, true); }
@@ -427,7 +427,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventSequence property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventSequence"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Decimal, 19, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Decimal EventSequence
 		{
 			get { return (System.Decimal)GetValue((int)AspnetWebEventEventsFieldIndex.EventSequence, true); }
@@ -437,7 +437,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventOccurrence property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventOccurrence"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Decimal, 19, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Decimal EventOccurrence
 		{
 			get { return (System.Decimal)GetValue((int)AspnetWebEventEventsFieldIndex.EventOccurrence, true); }
@@ -447,7 +447,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventCode property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventCode"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 EventCode
 		{
 			get { return (System.Int32)GetValue((int)AspnetWebEventEventsFieldIndex.EventCode, true); }
@@ -457,7 +457,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EventDetailCode property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."EventDetailCode"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 EventDetailCode
 		{
 			get { return (System.Int32)GetValue((int)AspnetWebEventEventsFieldIndex.EventDetailCode, true); }
@@ -467,7 +467,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Message property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."Message"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 1024<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Message
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.Message, true); }
@@ -477,7 +477,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationPath property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."ApplicationPath"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ApplicationPath
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.ApplicationPath, true); }
@@ -487,7 +487,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationVirtualPath property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."ApplicationVirtualPath"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ApplicationVirtualPath
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.ApplicationVirtualPath, true); }
@@ -497,7 +497,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MachineName property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."MachineName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String MachineName
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.MachineName, true); }
@@ -507,7 +507,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RequestUrl property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."RequestUrl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 1024<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String RequestUrl
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.RequestUrl, true); }
@@ -517,7 +517,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ExceptionType property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."ExceptionType"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ExceptionType
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.ExceptionType, true); }
@@ -527,7 +527,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Details property of the Entity AspnetWebEventEvents<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_WebEvent_Events"."Details"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NText, 0, 0, 1073741823<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Details
 		{
 			get { return (System.String)GetValue((int)AspnetWebEventEventsFieldIndex.Details, true); }

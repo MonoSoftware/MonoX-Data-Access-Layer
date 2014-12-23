@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -199,7 +199,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -317,7 +317,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -360,7 +360,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -706,7 +706,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplication</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplication(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplication(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplication!=relatedEntity)
 			{
@@ -739,7 +739,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUser(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUser(IEntityCore relatedEntity)
 		{
 			if(_aspnetUser!=relatedEntity)
 			{
@@ -772,7 +772,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _pinnedByUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncPinnedByUser(IEntity2 relatedEntity)
+		private void SetupSyncPinnedByUser(IEntityCore relatedEntity)
 		{
 			if(_pinnedByUser!=relatedEntity)
 			{
@@ -805,7 +805,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _language</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncLanguage(IEntity2 relatedEntity)
+		private void SetupSyncLanguage(IEntityCore relatedEntity)
 		{
 			if(_language!=relatedEntity)
 			{
@@ -838,7 +838,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snGroup</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnGroup(IEntity2 relatedEntity)
+		private void SetupSyncSnGroup(IEntityCore relatedEntity)
 		{
 			if(_snGroup!=relatedEntity)
 			{
@@ -988,7 +988,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)SnDiscussionBoardFieldIndex.Id, true); }
@@ -998,7 +998,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)SnDiscussionBoardFieldIndex.ApplicationId, true); }
@@ -1008,7 +1008,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LanguageId property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."LanguageId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid LanguageId
 		{
 			get { return (System.Guid)GetValue((int)SnDiscussionBoardFieldIndex.LanguageId, true); }
@@ -1018,7 +1018,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SnGroupId property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."SnGroupId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> SnGroupId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnDiscussionBoardFieldIndex.SnGroupId, false); }
@@ -1028,7 +1028,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Name property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."Name"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Name
 		{
 			get { return (System.String)GetValue((int)SnDiscussionBoardFieldIndex.Name, true); }
@@ -1038,7 +1038,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> UserId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnDiscussionBoardFieldIndex.UserId, false); }
@@ -1048,7 +1048,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateCreated
 		{
 			get { return (System.DateTime)GetValue((int)SnDiscussionBoardFieldIndex.DateCreated, true); }
@@ -1058,7 +1058,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)SnDiscussionBoardFieldIndex.Description, true); }
@@ -1068,7 +1068,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DailyReportSentOn property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."DailyReportSentOn"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DailyReportSentOn
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)SnDiscussionBoardFieldIndex.DailyReportSentOn, false); }
@@ -1078,7 +1078,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsClosed property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."IsClosed"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsClosed
 		{
 			get { return (System.Boolean)GetValue((int)SnDiscussionBoardFieldIndex.IsClosed, true); }
@@ -1088,7 +1088,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsPinned property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."IsPinned"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsPinned
 		{
 			get { return (System.Boolean)GetValue((int)SnDiscussionBoardFieldIndex.IsPinned, true); }
@@ -1098,7 +1098,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PinnedOn property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."PinnedOn"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> PinnedOn
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)SnDiscussionBoardFieldIndex.PinnedOn, false); }
@@ -1108,7 +1108,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PinnedByUserId property of the Entity SnDiscussionBoard<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnDiscussionBoard"."PinnedByUserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> PinnedByUserId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnDiscussionBoardFieldIndex.PinnedByUserId, false); }
@@ -1116,42 +1116,42 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnDiscussionBoardInRoleEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnDiscussionBoardInRoleEntity))]
+		[TypeContainedAttribute(typeof(SnDiscussionBoardInRoleEntity))]		
 		public virtual EntityCollection<SnDiscussionBoardInRoleEntity> SnDiscussionBoardInRoles
 		{
 			get { return GetOrCreateEntityCollection<SnDiscussionBoardInRoleEntity, SnDiscussionBoardInRoleEntityFactory>("SnDiscussionBoard", true, false, ref _snDiscussionBoardInRoles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnDiscussionBoardModeratorEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnDiscussionBoardModeratorEntity))]
+		[TypeContainedAttribute(typeof(SnDiscussionBoardModeratorEntity))]		
 		public virtual EntityCollection<SnDiscussionBoardModeratorEntity> SnDiscussionBoardModerators
 		{
 			get { return GetOrCreateEntityCollection<SnDiscussionBoardModeratorEntity, SnDiscussionBoardModeratorEntityFactory>("SnDiscussionBoard", true, false, ref _snDiscussionBoardModerators);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnDiscussionTopicEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnDiscussionTopicEntity))]
+		[TypeContainedAttribute(typeof(SnDiscussionTopicEntity))]		
 		public virtual EntityCollection<SnDiscussionTopicEntity> SnDiscussionTopics
 		{
 			get { return GetOrCreateEntityCollection<SnDiscussionTopicEntity, SnDiscussionTopicEntityFactory>("SnDiscussionBoard", true, false, ref _snDiscussionTopics);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnEventEntity))]
+		[TypeContainedAttribute(typeof(SnEventEntity))]		
 		public virtual EntityCollection<SnEventEntity> SnEvents
 		{
 			get { return GetOrCreateEntityCollection<SnEventEntity, SnEventEntityFactory>("SnDiscussionBoard", true, false, ref _snEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationships
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("SnDiscussionBoard", true, false, ref _snRelationships);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplication
 		{
 			get	{ return _aspnetApplication; }
@@ -1169,7 +1169,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUser
 		{
 			get	{ return _aspnetUser; }
@@ -1187,7 +1187,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity PinnedByUser
 		{
 			get	{ return _pinnedByUser; }
@@ -1205,7 +1205,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'LanguageEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual LanguageEntity Language
 		{
 			get	{ return _language; }
@@ -1223,7 +1223,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnGroupEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnGroupEntity SnGroup
 		{
 			get	{ return _snGroup; }

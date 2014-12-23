@@ -112,13 +112,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\MonoSoftware.Web.Workspace.dll</HintPath>
     </Reference>
-    <Reference Include="SD.LLBLGen.Pro.LinqSupportClasses.NET35, Version=2.6.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\References\SD.LLBLGen.Pro.LinqSupportClasses.NET35.dll</HintPath>
+      <HintPath>..\References\Ninject.dll</HintPath>
     </Reference>
-    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses.NET20, Version=3.1.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\References\SD.LLBLGen.Pro.ORMSupportClasses.NET20.dll</HintPath>
+      <HintPath>..\References\SD.LLBLGen.Pro.DQE.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -136,9 +140,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Auditing\AnalyticsAuditor.cs" />
+    <Compile Include="Classes\Auditing\AuditType.cs" />
+    <Compile Include="Classes\Auditing\Auditor.cs" />
+    <Compile Include="Classes\Auditing\LogInAudit.cs" />
+    <Compile Include="Classes\Auditing\LogOutAudit.cs" />
+    <Compile Include="DatabaseGeneric\PartialClasses\AuditInfoEntity.cs" />
     <Compile Include="DatabaseGeneric\PartialClasses\BlogPostEntity.cs" />
     <Compile Include="DatabaseGeneric\PartialClasses\AspnetUsersEntity.cs" />
     <Compile Include="DatabaseGeneric\PartialClasses\CalendarEventRecurringDefinitionTypeEntity.cs" />
+    <Compile Include="DatabaseGeneric\PartialClasses\CommonEntityBase.cs" />
     <Compile Include="DatabaseGeneric\PartialClasses\FriendSuggestionTypedViewEntryEntity.cs" />
     <Compile Include="DatabaseGeneric\PartialClasses\SnMessageEntity.cs" />
     <Compile Include="DatabaseGeneric\PartialClasses\PrivacyLevelEntity.cs" />
@@ -209,6 +220,9 @@
       <GeneratedBy>LLBLGen Pro</GeneratedBy>
     </Compile>
     <Compile Include="DatabaseGeneric\EntityClasses\AspnetWebEventEventsEntity.cs">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="DatabaseGeneric\EntityClasses\AuditInfoEntity.cs">
       <GeneratedBy>LLBLGen Pro</GeneratedBy>
     </Compile>
     <Compile Include="DatabaseGeneric\EntityClasses\BlogCategoryEntity.cs">
@@ -469,6 +483,9 @@
     <Compile Include="DatabaseGeneric\FactoryClasses\EntityFieldsFactory.cs">
       <GeneratedBy>LLBLGen Pro</GeneratedBy>
     </Compile>
+    <Compile Include="DatabaseGeneric\FactoryClasses\QueryFactory.cs">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
     <Compile Include="DatabaseGeneric\HelperClasses\EntityCollection.cs">
       <GeneratedBy>LLBLGen Pro</GeneratedBy>
     </Compile>
@@ -527,6 +544,9 @@
       <GeneratedBy>LLBLGen Pro</GeneratedBy>
     </Compile>
     <Compile Include="DatabaseGeneric\RelationClasses\AspnetWebEventEventsRelations.cs">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="DatabaseGeneric\RelationClasses\AuditInfoRelations.cs">
       <GeneratedBy>LLBLGen Pro</GeneratedBy>
     </Compile>
     <Compile Include="DatabaseGeneric\RelationClasses\BlogCategoryRelations.cs">
@@ -818,6 +838,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoX.Common\MonoX.Common.csproj">
+      <Project>{DEDBD98D-2EE0-43EC-9E03-289D88844F15}</Project>
+      <Name>MonoX.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
   <PropertyGroup>

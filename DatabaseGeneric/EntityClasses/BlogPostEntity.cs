@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -162,7 +162,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -248,7 +248,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -279,7 +279,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -556,7 +556,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUser(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUser(IEntityCore relatedEntity)
 		{
 			if(_aspnetUser!=relatedEntity)
 			{
@@ -589,7 +589,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _blog</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncBlog(IEntity2 relatedEntity)
+		private void SetupSyncBlog(IEntityCore relatedEntity)
 		{
 			if(_blog!=relatedEntity)
 			{
@@ -711,7 +711,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)BlogPostFieldIndex.Id, true); }
@@ -721,7 +721,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IdentityId property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."IdentityId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, true</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, true</remarks>		
 		public virtual System.Int32 IdentityId
 		{
 			get { return (System.Int32)GetValue((int)BlogPostFieldIndex.IdentityId, true); }
@@ -731,7 +731,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The BlogId property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."BlogId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid BlogId
 		{
 			get { return (System.Guid)GetValue((int)BlogPostFieldIndex.BlogId, true); }
@@ -741,7 +741,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Title property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."Title"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 450<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Title
 		{
 			get { return (System.String)GetValue((int)BlogPostFieldIndex.Title, true); }
@@ -751,7 +751,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)BlogPostFieldIndex.Description, true); }
@@ -761,7 +761,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PostContent property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."PostContent"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String PostContent
 		{
 			get { return (System.String)GetValue((int)BlogPostFieldIndex.PostContent, true); }
@@ -771,7 +771,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateCreated
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)BlogPostFieldIndex.DateCreated, false); }
@@ -781,7 +781,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateModified
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)BlogPostFieldIndex.DateModified, false); }
@@ -791,7 +791,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DatePublished property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."DatePublished"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DatePublished
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)BlogPostFieldIndex.DatePublished, false); }
@@ -801,7 +801,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsCommentEnabled property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."IsCommentEnabled"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsCommentEnabled
 		{
 			get { return (System.Boolean)GetValue((int)BlogPostFieldIndex.IsCommentEnabled, true); }
@@ -811,7 +811,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Raters property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."Raters"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 Raters
 		{
 			get { return (System.Int32)GetValue((int)BlogPostFieldIndex.Raters, true); }
@@ -821,7 +821,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Rating property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."Rating"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Float, 38, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Double Rating
 		{
 			get { return (System.Double)GetValue((int)BlogPostFieldIndex.Rating, true); }
@@ -831,7 +831,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Slug property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."Slug"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 450<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Slug
 		{
 			get { return (System.String)GetValue((int)BlogPostFieldIndex.Slug, true); }
@@ -841,7 +841,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)BlogPostFieldIndex.UserId, true); }
@@ -851,7 +851,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsPublished property of the Entity BlogPost<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "BlogPost"."IsPublished"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsPublished
 		{
 			get { return (System.Boolean)GetValue((int)BlogPostFieldIndex.IsPublished, true); }
@@ -859,35 +859,35 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'BlogPostCategoryEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(BlogPostCategoryEntity))]
+		[TypeContainedAttribute(typeof(BlogPostCategoryEntity))]		
 		public virtual EntityCollection<BlogPostCategoryEntity> BlogPostCategories
 		{
 			get { return GetOrCreateEntityCollection<BlogPostCategoryEntity, BlogPostCategoryEntityFactory>("BlogPost", true, false, ref _blogPostCategories);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'BlogPostRoleEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(BlogPostRoleEntity))]
+		[TypeContainedAttribute(typeof(BlogPostRoleEntity))]		
 		public virtual EntityCollection<BlogPostRoleEntity> BlogPostRoles
 		{
 			get { return GetOrCreateEntityCollection<BlogPostRoleEntity, BlogPostRoleEntityFactory>("BlogPost", true, false, ref _blogPostRoles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnEventEntity))]
+		[TypeContainedAttribute(typeof(SnEventEntity))]		
 		public virtual EntityCollection<SnEventEntity> SnEvents
 		{
 			get { return GetOrCreateEntityCollection<SnEventEntity, SnEventEntityFactory>("BlogPost", true, false, ref _snEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationships
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("BlogPost", true, false, ref _snRelationships);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUser
 		{
 			get	{ return _aspnetUser; }
@@ -905,7 +905,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'BlogEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual BlogEntity Blog
 		{
 			get	{ return _blog; }

@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -176,7 +176,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -262,7 +262,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -293,7 +293,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -564,7 +564,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUser(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUser(IEntityCore relatedEntity)
 		{
 			if(_aspnetUser!=relatedEntity)
 			{
@@ -597,7 +597,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _privacyLevel</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncPrivacyLevel(IEntity2 relatedEntity)
+		private void SetupSyncPrivacyLevel(IEntityCore relatedEntity)
 		{
 			if(_privacyLevel!=relatedEntity)
 			{
@@ -630,7 +630,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snAlbum</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnAlbum(IEntity2 relatedEntity)
+		private void SetupSyncSnAlbum(IEntityCore relatedEntity)
 		{
 			if(_snAlbum!=relatedEntity)
 			{
@@ -663,7 +663,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snRelationship</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnRelationship(IEntity2 relatedEntity)
+		private void SetupSyncSnRelationship(IEntityCore relatedEntity)
 		{
 			if(_snRelationship!=relatedEntity)
 			{
@@ -785,7 +785,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)SnFileFieldIndex.Id, true); }
@@ -795,7 +795,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)SnFileFieldIndex.UserId, true); }
@@ -805,7 +805,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RelationshipId property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."RelationshipId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid RelationshipId
 		{
 			get { return (System.Guid)GetValue((int)SnFileFieldIndex.RelationshipId, true); }
@@ -815,7 +815,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Name property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."Name"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Name
 		{
 			get { return (System.String)GetValue((int)SnFileFieldIndex.Name, true); }
@@ -825,7 +825,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Url property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."Url"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2000<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Url
 		{
 			get { return (System.String)GetValue((int)SnFileFieldIndex.Url, true); }
@@ -835,7 +835,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)SnFileFieldIndex.Description, true); }
@@ -845,7 +845,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PrivacyLevelId property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."PrivacyLevelId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> PrivacyLevelId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnFileFieldIndex.PrivacyLevelId, false); }
@@ -855,7 +855,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ThumbnailUrl property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."ThumbnailUrl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2000<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ThumbnailUrl
 		{
 			get { return (System.String)GetValue((int)SnFileFieldIndex.ThumbnailUrl, true); }
@@ -865,7 +865,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateCreated property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."DateCreated"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime DateCreated
 		{
 			get { return (System.DateTime)GetValue((int)SnFileFieldIndex.DateCreated, true); }
@@ -875,7 +875,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The AlbumId property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."AlbumId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> AlbumId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnFileFieldIndex.AlbumId, false); }
@@ -885,7 +885,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsAlbumCover property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."IsAlbumCover"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Boolean> IsAlbumCover
 		{
 			get { return (Nullable<System.Boolean>)GetValue((int)SnFileFieldIndex.IsAlbumCover, false); }
@@ -895,7 +895,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SortOrder property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."SortOrder"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Int32> SortOrder
 		{
 			get { return (Nullable<System.Int32>)GetValue((int)SnFileFieldIndex.SortOrder, false); }
@@ -905,7 +905,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Rating property of the Entity SnFile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnFile"."Rating"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Float, 38, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Double Rating
 		{
 			get { return (System.Double)GetValue((int)SnFileFieldIndex.Rating, true); }
@@ -913,21 +913,21 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnEventEntity))]
+		[TypeContainedAttribute(typeof(SnEventEntity))]		
 		public virtual EntityCollection<SnEventEntity> SnEvents
 		{
 			get { return GetOrCreateEntityCollection<SnEventEntity, SnEventEntityFactory>("SnFile", true, false, ref _snEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationships
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("SnFile", true, false, ref _snRelationships);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUser
 		{
 			get	{ return _aspnetUser; }
@@ -945,7 +945,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'PrivacyLevelEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual PrivacyLevelEntity PrivacyLevel
 		{
 			get	{ return _privacyLevel; }
@@ -963,7 +963,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnAlbumEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnAlbumEntity SnAlbum
 		{
 			get	{ return _snAlbum; }
@@ -981,7 +981,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnRelationshipEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnRelationshipEntity SnRelationship
 		{
 			get	{ return _snRelationship; }

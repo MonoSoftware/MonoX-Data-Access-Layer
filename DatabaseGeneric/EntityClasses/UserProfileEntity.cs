@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -158,7 +158,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -226,7 +226,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -248,7 +248,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -478,7 +478,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _privacyLevel</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncPrivacyLevel(IEntity2 relatedEntity)
+		private void SetupSyncPrivacyLevel(IEntityCore relatedEntity)
 		{
 			if(_privacyLevel!=relatedEntity)
 			{
@@ -511,7 +511,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _termsAndConditions</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncTermsAndConditions(IEntity2 relatedEntity)
+		private void SetupSyncTermsAndConditions(IEntityCore relatedEntity)
 		{
 			if(_termsAndConditions!=relatedEntity)
 			{
@@ -544,7 +544,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _aspnetUser</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUser(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUser(IEntityCore relatedEntity)
 		{
 			if(_aspnetUser!=relatedEntity)
 			{
@@ -645,7 +645,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)UserProfileFieldIndex.Id, true); }
@@ -655,7 +655,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The FirstName property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."FirstName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String FirstName
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.FirstName, true); }
@@ -665,7 +665,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LastName property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."LastName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String LastName
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.LastName, true); }
@@ -675,7 +675,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The BirthDate property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."BirthDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> BirthDate
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)UserProfileFieldIndex.BirthDate, false); }
@@ -685,7 +685,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Address property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."Address"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Address
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.Address, true); }
@@ -695,7 +695,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The City property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."City"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String City
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.City, true); }
@@ -705,7 +705,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ZipCode property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."ZipCode"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ZipCode
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.ZipCode, true); }
@@ -715,7 +715,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Country property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."Country"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Country
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.Country, true); }
@@ -725,7 +725,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The AboutMySelf property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."AboutMySelf"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String AboutMySelf
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.AboutMySelf, true); }
@@ -735,7 +735,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The WebSites property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."WebSites"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String WebSites
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.WebSites, true); }
@@ -745,7 +745,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EmailVerified property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."EMailVerified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean EmailVerified
 		{
 			get { return (System.Boolean)GetValue((int)UserProfileFieldIndex.EmailVerified, true); }
@@ -755,7 +755,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MyStatus property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."MyStatus"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String MyStatus
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.MyStatus, true); }
@@ -765,7 +765,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MyStatusPrivacyLevelId property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."MyStatusPrivacyLevelId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> MyStatusPrivacyLevelId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)UserProfileFieldIndex.MyStatusPrivacyLevelId, false); }
@@ -775,7 +775,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The TermsAndConditionsId property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."TermsAndConditionsId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> TermsAndConditionsId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)UserProfileFieldIndex.TermsAndConditionsId, false); }
@@ -785,7 +785,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The TermsAndConditionsAgreedDate property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."TermsAndConditionsAgreedDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> TermsAndConditionsAgreedDate
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)UserProfileFieldIndex.TermsAndConditionsAgreedDate, false); }
@@ -795,7 +795,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateEntered property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."DateEntered"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateEntered
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)UserProfileFieldIndex.DateEntered, false); }
@@ -805,7 +805,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateModified
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)UserProfileFieldIndex.DateModified, false); }
@@ -815,7 +815,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ReputationScore property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."ReputationScore"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Int32> ReputationScore
 		{
 			get { return (Nullable<System.Int32>)GetValue((int)UserProfileFieldIndex.ReputationScore, false); }
@@ -825,7 +825,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The TimeZoneId property of the Entity UserProfile<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "UserProfile"."TimeZoneId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String TimeZoneId
 		{
 			get { return (System.String)GetValue((int)UserProfileFieldIndex.TimeZoneId, true); }
@@ -833,7 +833,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'PrivacyLevelEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual PrivacyLevelEntity PrivacyLevel
 		{
 			get	{ return _privacyLevel; }
@@ -851,7 +851,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'TermsAndConditionsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual TermsAndConditionsEntity TermsAndConditions
 		{
 			get	{ return _termsAndConditions; }
@@ -870,7 +870,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUser
 		{
 			get { return _aspnetUser; }

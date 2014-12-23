@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--LLBLGen Pro v3.1 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
-<Project Version="3.1" TargetFrameworkName="LLBLGen Pro Runtime Framework">
+<!--LLBLGen Pro v4.1 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="4.1" TargetFrameworkName="LLBLGen Pro Runtime Framework">
   <Properties>
     <Abbreviations />
     <Property Name="AdditionalTaskPerformerFolder" Value="" />
     <Property Name="AdditionalTasksFolder" Value="" />
-    <Property Name="AdditionalTemplatesFolder" Value=".\DataLayer\Templates\" />
+    <Property Name="AdditionalTemplatesFolder" Value=".\Templates\" />
     <Property Name="AdditionalTypeConverterFolder" Value="" />
     <Property Name="AddNewElementsAfterRefresh" Value="0" />
     <Property Name="AddNewFieldsAfterRefresh" Value="0" />
@@ -15,6 +15,8 @@
     <Property Name="AutoAssignTypeConverterToFieldMapping" Value="false" />
     <Property Name="CleanUpVsNetProjects" Value="true" />
     <Property Name="ConnectionStringKeyNamePattern" Value="Main.ConnectionString.{$ProviderName}" />
+    <Property Name="DefaultDeleteRuleAction" Value="1" />
+    <Property Name="DefaultUpdateRuleAction" Value="0" />
     <Property Name="EncodingToUse" Value="0" />
     <Property Name="EnforcePascalCasingAlways" Value="true" />
     <Property Name="EntityFieldNameStripPattern" Value="{}{}" />
@@ -26,6 +28,7 @@
     <Property Name="ForeignKeyFieldPattern" Value="{$NavigatorName}{$RelatedFieldName}" />
     <Property Name="GroupUsage" Value="0" />
     <Property Name="IdentifyingFieldsFollowDBPrimaryKeyConstraints" Value="0" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseInsensitiveDBs" Value="false" />
     <Property Name="InsertUnderscoreAtWordBreakCaseSensitiveDBs" Value="false" />
     <Property Name="LengthPrecisionScaleFollowDBLengthPrecisionScale" Value="0" />
     <Property Name="MakeElementNamePascalCasing" Value="true" />
@@ -35,9 +38,12 @@
     <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
     <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
     <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
     <Property Name="PreferVariableLengthTypes" Value="true" />
     <Property Name="ProjectCreator" Value="Denis Susac" />
     <Property Name="ProjectName" Value="MonoX" />
+    <Property Name="ReflectNullabilityOfElementFieldInTargetField" Value="0" />
+    <Property Name="RelationalModelDataElementNameCasingCaseInsensitiveDBs" Value="3" />
     <Property Name="RelationalModelDataElementNameCasingCaseSensitiveDBs" Value="3" />
     <Property Name="RelationshipsFollowDBForeignKeyConstraints" Value="0" />
     <Property Name="RemoveUnderscoresFromElementName" Value="true" />
@@ -53,8 +59,10 @@
     <Property Name="SyncMappedElementNamesAfterRefresh" Value="0" />
     <Property Name="SyncRelationalModelDataElementNameAfterRename" Value="0" />
     <Property Name="SyncRenamedMappedElementNamesAfterRefresh" Value="0" />
+    <Property Name="TableValuedFunctionNameStripPattern" Value="{fn_, pr_, sp_}{}" />
     <Property Name="TargetPerEntityEdgesRequireBackingFkConstraint" Value="true" />
     <Property Name="TypedViewFieldNameStripPattern" Value="{}{}" />
+    <Property Name="TypedViewMappedOnResultsetPattern" Value="{$ProcFunctionName}{$ResultsetName}Result" />
     <Property Name="TypedViewNameStripPattern" Value="{vw_}{}" />
     <Property Name="UniqueConstraintsFollowDBUniqueConstraints" Value="0" />
     <Property Name="UpdateCustomPropertiesAfterRefresh" Value="0" />
@@ -68,14 +76,14 @@
         <FrameworkName Value="LLBLGen Pro Runtime Framework" />
         <LanguageName Value="C#" />
         <PlatformName Value=".NET 4.0" />
-        <PresetName Value="SD.Presets.Adapter.General2010" />
+        <PresetName Value="SD.Presets.Adapter.General" />
         <RootNamespace Value="MonoSoftware.MonoX.DAL" />
         <TemplateGroup Value="Adapter" />
         <TemplateBindings>
-          <Binding Name="SD.TemplateBindings.SqlServerSpecific.NET20" />
           <Binding Name="SD.TemplateBindings.SharedTemplates.NET40" />
-          <Binding Name="SD.TemplateBindings.SharedTemplates.NET35" />
-          <Binding Name="SD.TemplateBindings.SharedTemplates.NET20" />
+          <Binding Name="MonoX.TemplateBindings.General" />
+          <Binding Name="SD.TemplateBindings.SqlServerSpecific" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates" />
           <Binding Name="SD.TemplateBindings.General" />
         </TemplateBindings>
       </LastUsedPreferences>
@@ -272,6 +280,25 @@
           <Field Name="MachineName" Type="string" MaxLength="256" FieldIndex="11" />
           <Field Name="Message" Type="string" IsOptional="true" MaxLength="1024" FieldIndex="8" />
           <Field Name="RequestUrl" Type="string" IsOptional="true" MaxLength="1024" FieldIndex="12" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="AuditInfo">
+        <Fields>
+          <Field Name="ActionData" Type="string" IsOptional="true" MaxLength="2147483647" FieldIndex="7" />
+          <Field Name="ActionDataBinary" Type="byte[]" IsOptional="true" MaxLength="2147483647" FieldIndex="8" />
+          <Field Name="ActionDateTime" Type="datetime" FieldIndex="3" />
+          <Field Name="ActionPerformedByUser" Type="string" IsOptional="true" MaxLength="250" FieldIndex="6" />
+          <Field Name="ActionType" Type="int" Precision="10" FieldIndex="4" />
+          <Field Name="ActionTypeName" Type="string" IsOptional="true" MaxLength="150" FieldIndex="5" />
+          <Field Name="AffectedEntityName" Type="string" IsOptional="true" MaxLength="250" FieldIndex="2" />
+          <Field Name="ConcurrencyTimeStamp" Type="byte[]" IsReadOnly="true" IsOptional="true" FieldIndex="11" />
+          <Field Name="DateCreated" Type="datetime" FieldIndex="9" />
+          <Field Name="DateUpdated" Type="datetime" FieldIndex="10" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="IpAddress" Type="string" IsOptional="true" MaxLength="50" FieldIndex="12" />
+          <Field Name="Referrer" Type="string" IsOptional="true" MaxLength="500" FieldIndex="14" />
+          <Field Name="UserAgent" Type="string" IsOptional="true" MaxLength="255" FieldIndex="13" />
+          <Field Name="UserId" Type="guid" FieldIndex="1" />
         </Fields>
       </EntityDefinition>
       <EntityDefinition Name="Blog">
@@ -1214,22 +1241,22 @@
       </EntityDefinition>
     </EntityDefinitions>
     <Relationships>
-      <NormalRelationship Name="Ad.Campaign-Campaign.Ad" Start=":Ad" End=":Campaign" StartNavigator="Campaign" EndNavigator="Ad" Type="4">
+      <NormalRelationship Name="Ad.Campaign-Campaign.Ad" Start=":Ad" End=":Campaign" StartNavigator="Campaign" EndNavigator="Ad" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="CampaignId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="AdPage.Ad-Ad.AdPage" Start=":AdPage" End=":Ad" StartNavigator="Ad" EndNavigator="AdPage" Type="4">
+      <NormalRelationship Name="AdPage.Ad-Ad.AdPage" Start=":AdPage" End=":Ad" StartNavigator="Ad" EndNavigator="AdPage" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="AdId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="AdPage.Language-Language." Start=":AdPage" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="AdPage.Language-Language." Start=":AdPage" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="AdPage.Page-Page.AdPage" Start=":AdPage" End=":Page" StartNavigator="Page" EndNavigator="AdPage" Type="4">
+      <NormalRelationship Name="AdPage.Page-Page.AdPage" Start=":AdPage" End=":Page" StartNavigator="Page" EndNavigator="AdPage" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PageId" PkField="Id" />
         </FieldRelationships>
@@ -1289,6 +1316,11 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
+      <NormalRelationship Name="AuditInfo.AspnetUser-AspnetUsers.AuditInfos" Start=":AuditInfo" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="AuditInfos" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="UserId" PkField="UserId" />
+        </FieldRelationships>
+      </NormalRelationship>
       <NormalRelationship Name="Blog.AspnetApplication-AspnetApplications." Start=":Blog" End=":AspnetApplications" StartNavigator="AspnetApplication" Type="4">
         <FieldRelationships>
           <FieldFieldRelationship FkField="ApplicationId" PkField="ApplicationId" />
@@ -1314,7 +1346,7 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="BlogEditor.Blog-Blog.BlogEditors" Start=":BlogEditor" End=":Blog" StartNavigator="Blog" EndNavigator="BlogEditors" Type="4">
+      <NormalRelationship Name="BlogEditor.Blog-Blog.BlogEditors" Start=":BlogEditor" End=":Blog" StartNavigator="Blog" EndNavigator="BlogEditors" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="BlogId" PkField="Id" />
         </FieldRelationships>
@@ -1324,27 +1356,27 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="BlogPost.Blog-Blog.BlogPosts" Start=":BlogPost" End=":Blog" StartNavigator="Blog" EndNavigator="BlogPosts" Type="4">
+      <NormalRelationship Name="BlogPost.Blog-Blog.BlogPosts" Start=":BlogPost" End=":Blog" StartNavigator="Blog" EndNavigator="BlogPosts" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="BlogId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="BlogPostCategory.BlogCategory-BlogCategory.BlogPostCategory" Start=":BlogPostCategory" End=":BlogCategory" StartNavigator="BlogCategory" EndNavigator="BlogPostCategory" Type="4">
+      <NormalRelationship Name="BlogPostCategory.BlogCategory-BlogCategory.BlogPostCategory" Start=":BlogPostCategory" End=":BlogCategory" StartNavigator="BlogCategory" EndNavigator="BlogPostCategory" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="BlogCategoryId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="BlogPostCategory.BlogPost-BlogPost.BlogPostCategories" Start=":BlogPostCategory" End=":BlogPost" StartNavigator="BlogPost" EndNavigator="BlogPostCategories" Type="4">
+      <NormalRelationship Name="BlogPostCategory.BlogPost-BlogPost.BlogPostCategories" Start=":BlogPostCategory" End=":BlogPost" StartNavigator="BlogPost" EndNavigator="BlogPostCategories" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="BlogPostId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="BlogPostRole.AspnetRole-AspnetRoles." Start=":BlogPostRole" End=":AspnetRoles" StartNavigator="AspnetRole" Type="4">
+      <NormalRelationship Name="BlogPostRole.AspnetRole-AspnetRoles." Start=":BlogPostRole" End=":AspnetRoles" StartNavigator="AspnetRole" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="BlogPostRole.BlogPost-BlogPost.BlogPostRoles" Start=":BlogPostRole" End=":BlogPost" StartNavigator="BlogPost" EndNavigator="BlogPostRoles" Type="4">
+      <NormalRelationship Name="BlogPostRole.BlogPost-BlogPost.BlogPostRoles" Start=":BlogPostRole" End=":BlogPost" StartNavigator="BlogPost" EndNavigator="BlogPostRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="BlogPostId" PkField="Id" />
         </FieldRelationships>
@@ -1354,12 +1386,12 @@
           <FieldFieldRelationship FkField="OwnerId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="CalendarEditRole.AspnetRoles-AspnetRoles.CalendarEditRoles" Start=":CalendarEditRole" End=":AspnetRoles" StartNavigator="AspnetRoles" EndNavigator="CalendarEditRoles" Type="4">
+      <NormalRelationship Name="CalendarEditRole.AspnetRoles-AspnetRoles.CalendarEditRoles" Start=":CalendarEditRole" End=":AspnetRoles" StartNavigator="AspnetRoles" EndNavigator="CalendarEditRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="CalendarEditRole.Calendar-Calendar.CalendarEditRoles" Start=":CalendarEditRole" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarEditRoles" Type="4">
+      <NormalRelationship Name="CalendarEditRole.Calendar-Calendar.CalendarEditRoles" Start=":CalendarEditRole" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarEditRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="CalendarId" PkField="Id" />
         </FieldRelationships>
@@ -1369,17 +1401,17 @@
           <FieldFieldRelationship FkField="AuthorId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="CalendarEvent.Calendar-Calendar.CalendarEvents" Start=":CalendarEvent" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarEvents" Type="4">
+      <NormalRelationship Name="CalendarEvent.Calendar-Calendar.CalendarEvents" Start=":CalendarEvent" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarEvents" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="OwnerCalendarId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="CalendarEvent.CalendarEventRecurringDefinition-CalendarEventRecurringDefinition.CalendarEvents" Start=":CalendarEvent" End=":CalendarEventRecurringDefinition" StartNavigator="CalendarEventRecurringDefinition" EndNavigator="CalendarEvents" Type="4" EndIsOptional="true">
+      <NormalRelationship Name="CalendarEvent.CalendarEventRecurringDefinition-CalendarEventRecurringDefinition.CalendarEvents" Start=":CalendarEvent" End=":CalendarEventRecurringDefinition" StartNavigator="CalendarEventRecurringDefinition" EndNavigator="CalendarEvents" Type="4" EndIsOptional="true" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="RecurringDefinitionId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="CalendarEventEntry.Calendar-Calendar.CalendarEventEntries" Start=":CalendarEventEntry" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarEventEntries" Type="4">
+      <NormalRelationship Name="CalendarEventEntry.Calendar-Calendar.CalendarEventEntries" Start=":CalendarEventEntry" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarEventEntries" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="CalendarId" PkField="Id" />
         </FieldRelationships>
@@ -1404,12 +1436,12 @@
           <FieldFieldRelationship FkField="CalendarId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="CalendarViewRole.AspnetRoles-AspnetRoles.CalendarViewRoles" Start=":CalendarViewRole" End=":AspnetRoles" StartNavigator="AspnetRoles" EndNavigator="CalendarViewRoles" Type="4">
+      <NormalRelationship Name="CalendarViewRole.AspnetRoles-AspnetRoles.CalendarViewRoles" Start=":CalendarViewRole" End=":AspnetRoles" StartNavigator="AspnetRoles" EndNavigator="CalendarViewRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="CalendarViewRole.Calendar-Calendar.CalendarViewRoles" Start=":CalendarViewRole" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarViewRoles" Type="4">
+      <NormalRelationship Name="CalendarViewRole.Calendar-Calendar.CalendarViewRoles" Start=":CalendarViewRole" End=":Calendar" StartNavigator="Calendar" EndNavigator="CalendarViewRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="CalendarId" PkField="Id" />
         </FieldRelationships>
@@ -1424,17 +1456,17 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="Document.Language-Language." Start=":Document" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="Document.Language-Language." Start=":Document" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="Document.Page-Page.Documents" Start=":Document" End=":Page" StartNavigator="Page" EndNavigator="Documents" Type="4" EndIsOptional="true">
+      <NormalRelationship Name="Document.Page-Page.Documents" Start=":Document" End=":Page" StartNavigator="Page" EndNavigator="Documents" Type="4" EndIsOptional="true" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="List.AspnetApplication-AspnetApplications." Start=":List" End=":AspnetApplications" StartNavigator="AspnetApplication" Type="4">
+      <NormalRelationship Name="List.AspnetApplication-AspnetApplications." Start=":List" End=":AspnetApplications" StartNavigator="AspnetApplication" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="ApplicationId" PkField="ApplicationId" />
         </FieldRelationships>
@@ -1444,32 +1476,32 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="ListItem.List-List.ListItems" Start=":ListItem" End=":List" StartNavigator="List" EndNavigator="ListItems" Type="4">
+      <NormalRelationship Name="ListItem.List-List.ListItems" Start=":ListItem" End=":List" StartNavigator="List" EndNavigator="ListItems" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="ListId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="ListItemLocalization.Language-Language." Start=":ListItemLocalization" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="ListItemLocalization.Language-Language." Start=":ListItemLocalization" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="ListItemLocalization.ListItem-ListItem.ListItemLocalizations" Start=":ListItemLocalization" End=":ListItem" StartNavigator="ListItem" EndNavigator="ListItemLocalizations" Type="4">
+      <NormalRelationship Name="ListItemLocalization.ListItem-ListItem.ListItemLocalizations" Start=":ListItemLocalization" End=":ListItem" StartNavigator="ListItem" EndNavigator="ListItemLocalizations" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="ListItemId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="LocalizationBinary.LocalizationSource-LocalizationSource.LocalizationBinary" Start=":LocalizationBinary" End=":LocalizationSource" StartNavigator="LocalizationSource" EndNavigator="LocalizationBinary" Type="1">
+      <NormalRelationship Name="LocalizationBinary.LocalizationSource-LocalizationSource.LocalizationBinary" Start=":LocalizationBinary" End=":LocalizationSource" StartNavigator="LocalizationSource" EndNavigator="LocalizationBinary" Type="1" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="Id" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="LocalizationSource.Language-Language." Start=":LocalizationSource" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="LocalizationSource.Language-Language." Start=":LocalizationSource" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="LocalizationString.LocalizationSource-LocalizationSource.LocalizationString" Start=":LocalizationString" End=":LocalizationSource" StartNavigator="LocalizationSource" EndNavigator="LocalizationString" Type="1">
+      <NormalRelationship Name="LocalizationString.LocalizationSource-LocalizationSource.LocalizationString" Start=":LocalizationString" End=":LocalizationSource" StartNavigator="LocalizationSource" EndNavigator="LocalizationString" Type="1" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="Id" PkField="Id" />
         </FieldRelationships>
@@ -1479,7 +1511,7 @@
           <FieldFieldRelationship FkField="ApplicationId" PkField="ApplicationId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="Navigation.Page-Page.NavigationItems" Start=":Navigation" End=":Page" StartNavigator="Page" EndNavigator="NavigationItems" Type="4">
+      <NormalRelationship Name="Navigation.Page-Page.NavigationItems" Start=":Navigation" End=":Page" StartNavigator="Page" EndNavigator="NavigationItems" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PageId" PkField="Id" />
         </FieldRelationships>
@@ -1489,22 +1521,22 @@
           <FieldFieldRelationship FkField="ParentId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NavigationLocalization.Language-Language." Start=":NavigationLocalization" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="NavigationLocalization.Language-Language." Start=":NavigationLocalization" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NavigationLocalization.Navigation-Navigation.NavigationLocalizations" Start=":NavigationLocalization" End=":Navigation" StartNavigator="Navigation" EndNavigator="NavigationLocalizations" Type="4">
+      <NormalRelationship Name="NavigationLocalization.Navigation-Navigation.NavigationLocalizations" Start=":NavigationLocalization" End=":Navigation" StartNavigator="Navigation" EndNavigator="NavigationLocalizations" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NavigationId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NavigationRole.AspnetRoles-AspnetRoles." Start=":NavigationRole" End=":AspnetRoles" StartNavigator="AspnetRoles" Type="4">
+      <NormalRelationship Name="NavigationRole.AspnetRoles-AspnetRoles." Start=":NavigationRole" End=":AspnetRoles" StartNavigator="AspnetRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NavigationRole.Navigation-Navigation.NavigationRoles" Start=":NavigationRole" End=":Navigation" StartNavigator="Navigation" EndNavigator="NavigationRoles" Type="4">
+      <NormalRelationship Name="NavigationRole.Navigation-Navigation.NavigationRoles" Start=":NavigationRole" End=":Navigation" StartNavigator="Navigation" EndNavigator="NavigationRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NavigationId" PkField="Id" />
         </FieldRelationships>
@@ -1524,47 +1556,47 @@
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsCategoryInRole.NewsCategory-NewsCategory.NewsCategoryInRoles" Start=":NewsCategoryInRole" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsCategoryInRoles" Type="4">
+      <NormalRelationship Name="NewsCategoryInRole.NewsCategory-NewsCategory.NewsCategoryInRoles" Start=":NewsCategoryInRole" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsCategoryInRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsCategoryId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsCategoryLocalization.Language-Language." Start=":NewsCategoryLocalization" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="NewsCategoryLocalization.Language-Language." Start=":NewsCategoryLocalization" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsCategoryLocalization.NewsCategory-NewsCategory.NewsCategoryLocalizations" Start=":NewsCategoryLocalization" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsCategoryLocalizations" Type="4">
+      <NormalRelationship Name="NewsCategoryLocalization.NewsCategory-NewsCategory.NewsCategoryLocalizations" Start=":NewsCategoryLocalization" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsCategoryLocalizations" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsCategoryId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsCategoryTemplate.NewsCategory-NewsCategory.NewsCategoryTemplate" Start=":NewsCategoryTemplate" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsCategoryTemplate" Type="1">
+      <NormalRelationship Name="NewsCategoryTemplate.NewsCategory-NewsCategory.NewsCategoryTemplate" Start=":NewsCategoryTemplate" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsCategoryTemplate" Type="1" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="Id" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsFile.NewsItem-NewsItem.NewsFiles" Start=":NewsFile" End=":NewsItem" StartNavigator="NewsItem" EndNavigator="NewsFiles" Type="4">
+      <NormalRelationship Name="NewsFile.NewsItem-NewsItem.NewsFiles" Start=":NewsFile" End=":NewsItem" StartNavigator="NewsItem" EndNavigator="NewsFiles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsItemId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsItem.AspnetUser-AspnetUsers.NewsItems" Start=":NewsItem" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="NewsItems" Type="4">
+      <NormalRelationship Name="NewsItem.AspnetUser-AspnetUsers.NewsItems" Start=":NewsItem" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="NewsItems" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsItem.NewsCategory-NewsCategory.NewsItems" Start=":NewsItem" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsItems" Type="4">
+      <NormalRelationship Name="NewsItem.NewsCategory-NewsCategory.NewsItems" Start=":NewsItem" End=":NewsCategory" StartNavigator="NewsCategory" EndNavigator="NewsItems" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsCategoryId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsItemLocalization.Language-Language." Start=":NewsItemLocalization" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="NewsItemLocalization.Language-Language." Start=":NewsItemLocalization" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsItemLocalization.NewsItem-NewsItem.NewsItemLocalizations" Start=":NewsItemLocalization" End=":NewsItem" StartNavigator="NewsItem" EndNavigator="NewsItemLocalizations" Type="4">
+      <NormalRelationship Name="NewsItemLocalization.NewsItem-NewsItem.NewsItemLocalizations" Start=":NewsItemLocalization" End=":NewsItem" StartNavigator="NewsItem" EndNavigator="NewsItemLocalizations" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsId" PkField="Id" />
         </FieldRelationships>
@@ -1579,27 +1611,27 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="Newsletter.Language-Language." Start=":Newsletter" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="Newsletter.Language-Language." Start=":Newsletter" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsletterLog.Newsletter-Newsletter.NewsletterLogs" Start=":NewsletterLog" End=":Newsletter" StartNavigator="Newsletter" EndNavigator="NewsletterLogs" Type="4">
+      <NormalRelationship Name="NewsletterLog.Newsletter-Newsletter.NewsletterLogs" Start=":NewsletterLog" End=":Newsletter" StartNavigator="Newsletter" EndNavigator="NewsletterLogs" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsletterId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsletterRole.AspnetRole-AspnetRoles." Start=":NewsletterRole" End=":AspnetRoles" StartNavigator="AspnetRole" Type="4">
+      <NormalRelationship Name="NewsletterRole.AspnetRole-AspnetRoles." Start=":NewsletterRole" End=":AspnetRoles" StartNavigator="AspnetRole" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsletterRole.Newsletter-Newsletter.NewsletterRoles" Start=":NewsletterRole" End=":Newsletter" StartNavigator="Newsletter" EndNavigator="NewsletterRoles" Type="4">
+      <NormalRelationship Name="NewsletterRole.Newsletter-Newsletter.NewsletterRoles" Start=":NewsletterRole" End=":Newsletter" StartNavigator="Newsletter" EndNavigator="NewsletterRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsletterId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsMetaIgnoredWord.Language-Language." Start=":NewsMetaIgnoredWord" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="NewsMetaIgnoredWord.Language-Language." Start=":NewsMetaIgnoredWord" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
@@ -1609,7 +1641,7 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="NewsPublishQueue.NewsItem-NewsItem.NewsPublishQueues" Start=":NewsPublishQueue" End=":NewsItem" StartNavigator="NewsItem" EndNavigator="NewsPublishQueues" Type="4">
+      <NormalRelationship Name="NewsPublishQueue.NewsItem-NewsItem.NewsPublishQueues" Start=":NewsPublishQueue" End=":NewsItem" StartNavigator="NewsItem" EndNavigator="NewsPublishQueues" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="NewsItemId" PkField="Id" />
         </FieldRelationships>
@@ -1624,7 +1656,7 @@
           <FieldFieldRelationship FkField="ConsumerId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="Page.AspnetApplications-AspnetApplications." Start=":Page" End=":AspnetApplications" StartNavigator="AspnetApplications" Type="4">
+      <NormalRelationship Name="Page.AspnetApplications-AspnetApplications." Start=":Page" End=":AspnetApplications" StartNavigator="AspnetApplications" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="ApplicationId" PkField="ApplicationId" />
         </FieldRelationships>
@@ -1639,17 +1671,17 @@
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PageEditRole.Page-Page.PageEditRoles" Start=":PageEditRole" End=":Page" StartNavigator="Page" EndNavigator="PageEditRoles" Type="4">
+      <NormalRelationship Name="PageEditRole.Page-Page.PageEditRoles" Start=":PageEditRole" End=":Page" StartNavigator="Page" EndNavigator="PageEditRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PageLocalization.Language-Language." Start=":PageLocalization" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="PageLocalization.Language-Language." Start=":PageLocalization" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PageLocalization.Page-Page.PageLocalizations" Start=":PageLocalization" End=":Page" StartNavigator="Page" EndNavigator="PageLocalizations" Type="4">
+      <NormalRelationship Name="PageLocalization.Page-Page.PageLocalizations" Start=":PageLocalization" End=":Page" StartNavigator="Page" EndNavigator="PageLocalizations" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PageId" PkField="Id" />
         </FieldRelationships>
@@ -1659,7 +1691,7 @@
           <FieldFieldRelationship FkField="RoleId" PkField="RoleId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PageRole.Page-Page.PageRoles" Start=":PageRole" End=":Page" StartNavigator="Page" EndNavigator="PageRoles" Type="4">
+      <NormalRelationship Name="PageRole.Page-Page.PageRoles" Start=":PageRole" End=":Page" StartNavigator="Page" EndNavigator="PageRoles" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PageId" PkField="Id" />
         </FieldRelationships>
@@ -1669,42 +1701,42 @@
           <FieldFieldRelationship FkField="ApplicationId" PkField="ApplicationId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="Poll.AspnetUser-AspnetUsers.Polls" Start=":Poll" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="Polls" Type="4">
+      <NormalRelationship Name="Poll.AspnetUser-AspnetUsers.Polls" Start=":Poll" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="Polls" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PollAnswer.Poll-Poll.PollAnswers" Start=":PollAnswer" End=":Poll" StartNavigator="Poll" EndNavigator="PollAnswers" Type="4">
+      <NormalRelationship Name="PollAnswer.Poll-Poll.PollAnswers" Start=":PollAnswer" End=":Poll" StartNavigator="Poll" EndNavigator="PollAnswers" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PollId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PollAnswerLocalization.Language-Language." Start=":PollAnswerLocalization" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="PollAnswerLocalization.Language-Language." Start=":PollAnswerLocalization" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PollAnswerLocalization.PollAnswer-PollAnswer.PollAnswerLocalizations" Start=":PollAnswerLocalization" End=":PollAnswer" StartNavigator="PollAnswer" EndNavigator="PollAnswerLocalizations" Type="4">
+      <NormalRelationship Name="PollAnswerLocalization.PollAnswer-PollAnswer.PollAnswerLocalizations" Start=":PollAnswerLocalization" End=":PollAnswer" StartNavigator="PollAnswer" EndNavigator="PollAnswerLocalizations" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PollAnswerId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PollLocalization.Language-Language." Start=":PollLocalization" End=":Language" StartNavigator="Language" Type="4">
+      <NormalRelationship Name="PollLocalization.Language-Language." Start=":PollLocalization" End=":Language" StartNavigator="Language" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PollLocalization.Poll-Poll.PollLocalizations" Start=":PollLocalization" End=":Poll" StartNavigator="Poll" EndNavigator="PollLocalizations" Type="4">
+      <NormalRelationship Name="PollLocalization.Poll-Poll.PollLocalizations" Start=":PollLocalization" End=":Poll" StartNavigator="Poll" EndNavigator="PollLocalizations" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PollId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PrivacyLevelDefinition.AspnetUsers-AspnetUsers.PrivacyLevelDefinition" Start=":PrivacyLevelDefinition" End=":AspnetUsers" StartNavigator="AspnetUsers" EndNavigator="PrivacyLevelDefinition" Type="4">
+      <NormalRelationship Name="PrivacyLevelDefinition.AspnetUsers-AspnetUsers.PrivacyLevelDefinition" Start=":PrivacyLevelDefinition" End=":AspnetUsers" StartNavigator="AspnetUsers" EndNavigator="PrivacyLevelDefinition" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="PrivacyLevelDefinition.PrivacyLevel-PrivacyLevel.PrivacyLevelDefinitions" Start=":PrivacyLevelDefinition" End=":PrivacyLevel" StartNavigator="PrivacyLevel" EndNavigator="PrivacyLevelDefinitions" Type="4">
+      <NormalRelationship Name="PrivacyLevelDefinition.PrivacyLevel-PrivacyLevel.PrivacyLevelDefinitions" Start=":PrivacyLevelDefinition" End=":PrivacyLevel" StartNavigator="PrivacyLevel" EndNavigator="PrivacyLevelDefinitions" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="PrivacyLevelId" PkField="Id" />
         </FieldRelationships>
@@ -1734,7 +1766,7 @@
           <FieldFieldRelationship FkField="SnGroupId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnBlockUser.AspnetUser-AspnetUsers.SnBlockUsers" Start=":SnBlockUser" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnBlockUsers" Type="4">
+      <NormalRelationship Name="SnBlockUser.AspnetUser-AspnetUsers.SnBlockUsers" Start=":SnBlockUser" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnBlockUsers" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
@@ -1744,7 +1776,7 @@
           <FieldFieldRelationship FkField="BlockedUserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnComment.AspnetUser-AspnetUsers.SnComments" Start=":SnComment" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnComments" Type="4">
+      <NormalRelationship Name="SnComment.AspnetUser-AspnetUsers.SnComments" Start=":SnComment" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnComments" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
@@ -1794,7 +1826,7 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnDiscussionBoardModerator.SnDiscussionBoard-SnDiscussionBoard.SnDiscussionBoardModerators" Start=":SnDiscussionBoardModerator" End=":SnDiscussionBoard" StartNavigator="SnDiscussionBoard" EndNavigator="SnDiscussionBoardModerators" Type="4">
+      <NormalRelationship Name="SnDiscussionBoardModerator.SnDiscussionBoard-SnDiscussionBoard.SnDiscussionBoardModerators" Start=":SnDiscussionBoardModerator" End=":SnDiscussionBoard" StartNavigator="SnDiscussionBoard" EndNavigator="SnDiscussionBoardModerators" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="SnDiscussionBoardId" PkField="Id" />
         </FieldRelationships>
@@ -1819,7 +1851,7 @@
           <FieldFieldRelationship FkField="PinnedByUserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnDiscussionMessage.SnDiscussionTopic-SnDiscussionTopic.SnDiscussionMessages" Start=":SnDiscussionMessage" End=":SnDiscussionTopic" StartNavigator="SnDiscussionTopic" EndNavigator="SnDiscussionMessages" Type="4">
+      <NormalRelationship Name="SnDiscussionMessage.SnDiscussionTopic-SnDiscussionTopic.SnDiscussionMessages" Start=":SnDiscussionMessage" End=":SnDiscussionTopic" StartNavigator="SnDiscussionTopic" EndNavigator="SnDiscussionMessages" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="SnDiscussionTopicId" PkField="Id" />
         </FieldRelationships>
@@ -1834,12 +1866,12 @@
           <FieldFieldRelationship FkField="PinnedByUserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnDiscussionTopic.SnDiscussionBoard-SnDiscussionBoard.SnDiscussionTopics" Start=":SnDiscussionTopic" End=":SnDiscussionBoard" StartNavigator="SnDiscussionBoard" EndNavigator="SnDiscussionTopics" Type="4">
+      <NormalRelationship Name="SnDiscussionTopic.SnDiscussionBoard-SnDiscussionBoard.SnDiscussionTopics" Start=":SnDiscussionTopic" End=":SnDiscussionBoard" StartNavigator="SnDiscussionBoard" EndNavigator="SnDiscussionTopics" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="SnDiscussionBoardId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnEvent.AspnetUsers-AspnetUsers.SnEvents" Start=":SnEvent" End=":AspnetUsers" StartNavigator="AspnetUsers" EndNavigator="SnEvents" Type="4">
+      <NormalRelationship Name="SnEvent.AspnetUsers-AspnetUsers.SnEvents" Start=":SnEvent" End=":AspnetUsers" StartNavigator="AspnetUsers" EndNavigator="SnEvents" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
@@ -1889,7 +1921,7 @@
           <FieldFieldRelationship FkField="SnGroupId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnEvent.SnNote-SnNote.SnEvents" Start=":SnEvent" End=":SnNote" StartNavigator="SnNote" EndNavigator="SnEvents" Type="4" EndIsOptional="true">
+      <NormalRelationship Name="SnEvent.SnNote-SnNote.SnEvents" Start=":SnEvent" End=":SnNote" StartNavigator="SnNote" EndNavigator="SnEvents" Type="4" EndIsOptional="true" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="SnNoteId" PkField="Id" />
         </FieldRelationships>
@@ -1914,7 +1946,7 @@
           <FieldFieldRelationship FkField="RelationshipId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnFriend.AspnetUser-AspnetUsers.SnFriendsUsers" Start=":SnFriend" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnFriendsUsers" Type="4">
+      <NormalRelationship Name="SnFriend.AspnetUser-AspnetUsers.SnFriendsUsers" Start=":SnFriend" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnFriendsUsers" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
@@ -1929,12 +1961,12 @@
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnFriendListMember.AspnetUser-AspnetUsers.SnFriendListMembers" Start=":SnFriendListMember" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnFriendListMembers" Type="4">
+      <NormalRelationship Name="SnFriendListMember.AspnetUser-AspnetUsers.SnFriendListMembers" Start=":SnFriendListMember" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnFriendListMembers" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnFriendListMember.SnFriendList-SnFriendList.SnFriendListMembers" Start=":SnFriendListMember" End=":SnFriendList" StartNavigator="SnFriendList" EndNavigator="SnFriendListMembers" Type="4">
+      <NormalRelationship Name="SnFriendListMember.SnFriendList-SnFriendList.SnFriendListMembers" Start=":SnFriendListMember" End=":SnFriendList" StartNavigator="SnFriendList" EndNavigator="SnFriendListMembers" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="FriendListId" PkField="Id" />
         </FieldRelationships>
@@ -1969,22 +2001,22 @@
           <FieldFieldRelationship FkField="LanguageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnGroupMember.AspnetUser-AspnetUsers.SnGroupMembers" Start=":SnGroupMember" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnGroupMembers" Type="4">
+      <NormalRelationship Name="SnGroupMember.AspnetUser-AspnetUsers.SnGroupMembers" Start=":SnGroupMember" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnGroupMembers" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnGroupMember.SnGroup-SnGroup.SnGroupMembers" Start=":SnGroupMember" End=":SnGroup" StartNavigator="SnGroup" EndNavigator="SnGroupMembers" Type="4">
+      <NormalRelationship Name="SnGroupMember.SnGroup-SnGroup.SnGroupMembers" Start=":SnGroupMember" End=":SnGroup" StartNavigator="SnGroup" EndNavigator="SnGroupMembers" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="GroupId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnGroupRequest.AspnetUser-AspnetUsers.SnGroupRequests" Start=":SnGroupRequest" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnGroupRequests" Type="4">
+      <NormalRelationship Name="SnGroupRequest.AspnetUser-AspnetUsers.SnGroupRequests" Start=":SnGroupRequest" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnGroupRequests" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnGroupRequest.SnGroup-SnGroup.SnGroupRequests" Start=":SnGroupRequest" End=":SnGroup" StartNavigator="SnGroup" EndNavigator="SnGroupRequests" Type="4">
+      <NormalRelationship Name="SnGroupRequest.SnGroup-SnGroup.SnGroupRequests" Start=":SnGroupRequest" End=":SnGroup" StartNavigator="SnGroup" EndNavigator="SnGroupRequests" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="GroupId" PkField="Id" />
         </FieldRelationships>
@@ -1999,17 +2031,17 @@
           <FieldFieldRelationship FkField="InReplyToMessageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnMessageRecipient.AspnetUser-AspnetUsers.SnMessageRecipients" Start=":SnMessageRecipient" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnMessageRecipients" Type="4">
+      <NormalRelationship Name="SnMessageRecipient.AspnetUser-AspnetUsers.SnMessageRecipients" Start=":SnMessageRecipient" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="SnMessageRecipients" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="UserId" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnMessageRecipient.SnMessage-SnMessage.SnMessageRecipients" Start=":SnMessageRecipient" End=":SnMessage" StartNavigator="SnMessage" EndNavigator="SnMessageRecipients" Type="4">
+      <NormalRelationship Name="SnMessageRecipient.SnMessage-SnMessage.SnMessageRecipients" Start=":SnMessageRecipient" End=":SnMessage" StartNavigator="SnMessage" EndNavigator="SnMessageRecipients" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="MessageId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnNote.AspnetApplication-AspnetApplications." Start=":SnNote" End=":AspnetApplications" StartNavigator="AspnetApplication" Type="4">
+      <NormalRelationship Name="SnNote.AspnetApplication-AspnetApplications." Start=":SnNote" End=":AspnetApplications" StartNavigator="AspnetApplication" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="ApplicationId" PkField="ApplicationId" />
         </FieldRelationships>
@@ -2034,7 +2066,7 @@
           <FieldFieldRelationship FkField="PrivacyLevelId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="SnNote.SnGroup-SnGroup.SnNotes" Start=":SnNote" End=":SnGroup" StartNavigator="SnGroup" EndNavigator="SnNotes" Type="4">
+      <NormalRelationship Name="SnNote.SnGroup-SnGroup.SnNotes" Start=":SnNote" End=":SnGroup" StartNavigator="SnGroup" EndNavigator="SnNotes" Type="4" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="GroupId" PkField="Id" />
         </FieldRelationships>
@@ -2169,12 +2201,12 @@
           <FieldFieldRelationship FkField="RelationshipId" PkField="Id" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="UserAvatar.AspnetUsers-AspnetUsers.UserAvatar" Start=":UserAvatar" End=":AspnetUsers" StartNavigator="AspnetUsers" EndNavigator="UserAvatar" Type="1">
+      <NormalRelationship Name="UserAvatar.AspnetUsers-AspnetUsers.UserAvatar" Start=":UserAvatar" End=":AspnetUsers" StartNavigator="AspnetUsers" EndNavigator="UserAvatar" Type="1" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="Id" PkField="UserId" />
         </FieldRelationships>
       </NormalRelationship>
-      <NormalRelationship Name="UserProfile.AspnetUser-AspnetUsers.UserProfile" Start=":UserProfile" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="UserProfile" Type="1">
+      <NormalRelationship Name="UserProfile.AspnetUser-AspnetUsers.UserProfile" Start=":UserProfile" End=":AspnetUsers" StartNavigator="AspnetUser" EndNavigator="UserProfile" Type="1" DeleteRuleAction="1">
         <FieldRelationships>
           <FieldFieldRelationship FkField="Id" PkField="UserId" />
         </FieldRelationships>
@@ -2379,6 +2411,25 @@
                     <Field Name="RequestUrl" Ordinal="13" IsOptional="true" DbType="12" Length="1024" />
                     <Field Name="ExceptionType" Ordinal="14" IsOptional="true" DbType="12" Length="256" />
                     <Field Name="Details" Ordinal="15" IsOptional="true" DbType="11" Length="1073741823" />
+                  </Fields>
+                </Table>
+                <Table Name="AuditInfo">
+                  <Fields>
+                    <Field Name="Id" Ordinal="1" IsPrimaryKey="true" PkConstraintName="PK_AuditInfo" DbType="25" />
+                    <Field Name="UserId" Ordinal="2" DbType="25" />
+                    <Field Name="AffectedEntityName" Ordinal="3" IsOptional="true" DbType="12" Length="250" />
+                    <Field Name="ActionDateTime" Ordinal="4" DbType="4" />
+                    <Field Name="ActionType" Ordinal="5" DbType="8" Precision="10" />
+                    <Field Name="ActionTypeName" Ordinal="6" IsOptional="true" DbType="12" Length="150" />
+                    <Field Name="ActionPerformedByUser" Ordinal="7" IsOptional="true" DbType="12" Length="250" />
+                    <Field Name="ActionData" Ordinal="8" IsOptional="true" DbType="12" Length="2147483647" />
+                    <Field Name="ActionDataBinary" Ordinal="9" IsOptional="true" DbType="23" Length="2147483647" />
+                    <Field Name="DateCreated" Ordinal="10" DefaultValue="(getutcdate())" DbType="4" />
+                    <Field Name="DateUpdated" Ordinal="11" DefaultValue="(getutcdate())" DbType="4" />
+                    <Field Name="ConcurrencyTimeStamp" Ordinal="12" IsOptional="true" IsTimestamp="true" DbType="21" />
+                    <Field Name="IpAddress" Ordinal="13" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="UserAgent" Ordinal="14" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="Referrer" Ordinal="15" IsOptional="true" DbType="12" Length="500" />
                   </Fields>
                 </Table>
                 <Table Name="Blog">
@@ -3349,22 +3400,22 @@
             </Schema>
           </Schemas>
           <ForeignKeyConstraints>
-            <ForeignKeyConstraint Name="dbo:Ad:FK_Ad_Campaign">
+            <ForeignKeyConstraint Name="dbo:Ad:FK_Ad_Campaign" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Campaign:Id" FkField="dbo:Ad:CampaignId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:AdPage:FK_AdPage_Ad">
+            <ForeignKeyConstraint Name="dbo:AdPage:FK_AdPage_Ad" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Ad:Id" FkField="dbo:AdPage:AdId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:AdPage:FK_AdPage_Language">
+            <ForeignKeyConstraint Name="dbo:AdPage:FK_AdPage_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:AdPage:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:AdPage:FK_AdPage_Page">
+            <ForeignKeyConstraint Name="dbo:AdPage:FK_AdPage_Page" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Page:Id" FkField="dbo:AdPage:PageId" />
               </FieldPairs>
@@ -3424,6 +3475,11 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:aspnet_UsersInRoles:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:AuditInfo:FK_AuditInfo_aspnet_Users" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:AuditInfo:UserId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
             <ForeignKeyConstraint Name="dbo:Blog:FK_Blog_aspnet_Applications">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Applications:ApplicationId" FkField="dbo:Blog:ApplicationId" />
@@ -3449,12 +3505,12 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:BlogEditor:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:BlogEditor:FK_BlogEditor_Blog">
+            <ForeignKeyConstraint Name="dbo:BlogEditor:FK_BlogEditor_Blog" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Blog:Id" FkField="dbo:BlogEditor:BlogId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:BlogPost:FK_Blog_BlogPost">
+            <ForeignKeyConstraint Name="dbo:BlogPost:FK_Blog_BlogPost" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Blog:Id" FkField="dbo:BlogPost:BlogId" />
               </FieldPairs>
@@ -3464,22 +3520,22 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:BlogPost:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:BlogPostCategory:FK_BlogPostCategory_BlogCategory">
+            <ForeignKeyConstraint Name="dbo:BlogPostCategory:FK_BlogPostCategory_BlogCategory" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:BlogCategory:Id" FkField="dbo:BlogPostCategory:BlogCategoryId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:BlogPostCategory:FK_BlogPostCategory_BlogPost">
+            <ForeignKeyConstraint Name="dbo:BlogPostCategory:FK_BlogPostCategory_BlogPost" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:BlogPost:Id" FkField="dbo:BlogPostCategory:BlogPostId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:BlogPostRole:FK_BlogPostRole_aspnet_Roles">
+            <ForeignKeyConstraint Name="dbo:BlogPostRole:FK_BlogPostRole_aspnet_Roles" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:BlogPostRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:BlogPostRole:FK_BlogPostRole_BlogPost">
+            <ForeignKeyConstraint Name="dbo:BlogPostRole:FK_BlogPostRole_BlogPost" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:BlogPost:Id" FkField="dbo:BlogPostRole:BlogPostId" />
               </FieldPairs>
@@ -3489,12 +3545,12 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:Calendar:OwnerId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:CalendarEditRole:FK_CalendarEditRole_aspnet_Roles">
+            <ForeignKeyConstraint Name="dbo:CalendarEditRole:FK_CalendarEditRole_aspnet_Roles" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:CalendarEditRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:CalendarEditRole:FK_CalendarEditRole_Calendar">
+            <ForeignKeyConstraint Name="dbo:CalendarEditRole:FK_CalendarEditRole_Calendar" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Calendar:Id" FkField="dbo:CalendarEditRole:CalendarId" />
               </FieldPairs>
@@ -3504,17 +3560,17 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:CalendarEvent:AuthorId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:CalendarEvent:FK_CalendarEvent_Calendar">
+            <ForeignKeyConstraint Name="dbo:CalendarEvent:FK_CalendarEvent_Calendar" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Calendar:Id" FkField="dbo:CalendarEvent:OwnerCalendarId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:CalendarEvent:FK_CalendarEvent_CalendarEventRecurringDefinition">
+            <ForeignKeyConstraint Name="dbo:CalendarEvent:FK_CalendarEvent_CalendarEventRecurringDefinition" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:CalendarEventRecurringDefinition:Id" FkField="dbo:CalendarEvent:RecurringDefinitionId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:CalendarEventEntry:FK_CalendarEventEntry_Calendar">
+            <ForeignKeyConstraint Name="dbo:CalendarEventEntry:FK_CalendarEventEntry_Calendar" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Calendar:Id" FkField="dbo:CalendarEventEntry:CalendarId" />
               </FieldPairs>
@@ -3539,12 +3595,12 @@
                 <FieldPair PkField="dbo:Calendar:Id" FkField="dbo:CalendarModerator:CalendarId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:CalendarViewRole:FK_CalendarInRole_aspnet_Roles">
+            <ForeignKeyConstraint Name="dbo:CalendarViewRole:FK_CalendarInRole_aspnet_Roles" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:CalendarViewRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:CalendarViewRole:FK_CalendarInRole_Calendar">
+            <ForeignKeyConstraint Name="dbo:CalendarViewRole:FK_CalendarInRole_Calendar" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Calendar:Id" FkField="dbo:CalendarViewRole:CalendarId" />
               </FieldPairs>
@@ -3559,17 +3615,17 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:Document:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:Document:FK_Document_Language">
+            <ForeignKeyConstraint Name="dbo:Document:FK_Document_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:Document:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:Document:FK_Document_Page">
+            <ForeignKeyConstraint Name="dbo:Document:FK_Document_Page" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Page:Id" FkField="dbo:Document:PageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:List:FK_List_aspnet_Applications">
+            <ForeignKeyConstraint Name="dbo:List:FK_List_aspnet_Applications" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Applications:ApplicationId" FkField="dbo:List:ApplicationId" />
               </FieldPairs>
@@ -3579,32 +3635,32 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:List:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:ListItem:FK_ListItem_List">
+            <ForeignKeyConstraint Name="dbo:ListItem:FK_ListItem_List" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:List:Id" FkField="dbo:ListItem:ListId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:ListItemLocalization:FK_ListItemLocalization_Language">
+            <ForeignKeyConstraint Name="dbo:ListItemLocalization:FK_ListItemLocalization_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:ListItemLocalization:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:ListItemLocalization:FK_ListItemLocalization_ListItem">
+            <ForeignKeyConstraint Name="dbo:ListItemLocalization:FK_ListItemLocalization_ListItem" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:ListItem:Id" FkField="dbo:ListItemLocalization:ListItemId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:LocalizationBinary:FK_LocalizationBinary_LocalizationSource">
+            <ForeignKeyConstraint Name="dbo:LocalizationBinary:FK_LocalizationBinary_LocalizationSource" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:LocalizationSource:Id" FkField="dbo:LocalizationBinary:Id" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:LocalizationSource:FK_LocalizationSource_Language">
+            <ForeignKeyConstraint Name="dbo:LocalizationSource:FK_LocalizationSource_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:LocalizationSource:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:LocalizationString:FK_LocalizationStrings_LocalizationSource">
+            <ForeignKeyConstraint Name="dbo:LocalizationString:FK_LocalizationStrings_LocalizationSource" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:LocalizationSource:Id" FkField="dbo:LocalizationString:Id" />
               </FieldPairs>
@@ -3619,27 +3675,27 @@
                 <FieldPair PkField="dbo:Navigation:Id" FkField="dbo:Navigation:ParentId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:Navigation:FK_Navigation_Page">
+            <ForeignKeyConstraint Name="dbo:Navigation:FK_Navigation_Page" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Page:Id" FkField="dbo:Navigation:PageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NavigationLocalization:FK_NavigationLocalization_Language">
+            <ForeignKeyConstraint Name="dbo:NavigationLocalization:FK_NavigationLocalization_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:NavigationLocalization:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NavigationLocalization:FK_NavigationLocalization_Navigation">
+            <ForeignKeyConstraint Name="dbo:NavigationLocalization:FK_NavigationLocalization_Navigation" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Navigation:Id" FkField="dbo:NavigationLocalization:NavigationId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NavigationRole:FK_NavigationRole_aspnet_Roles">
+            <ForeignKeyConstraint Name="dbo:NavigationRole:FK_NavigationRole_aspnet_Roles" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:NavigationRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NavigationRole:FK_NavigationRole_Navigation">
+            <ForeignKeyConstraint Name="dbo:NavigationRole:FK_NavigationRole_Navigation" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Navigation:Id" FkField="dbo:NavigationRole:NavigationId" />
               </FieldPairs>
@@ -3659,47 +3715,47 @@
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:NewsCategoryInRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsCategoryInRole:FK_NewsCategories_InRoles_NewsCategories">
+            <ForeignKeyConstraint Name="dbo:NewsCategoryInRole:FK_NewsCategories_InRoles_NewsCategories" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:NewsCategory:Id" FkField="dbo:NewsCategoryInRole:NewsCategoryId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsCategoryLocalization:FK_NewsCategoriesLocalization_Language">
+            <ForeignKeyConstraint Name="dbo:NewsCategoryLocalization:FK_NewsCategoriesLocalization_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:NewsCategoryLocalization:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsCategoryLocalization:FK_NewsCategoriesLocalization_NewsCategories">
+            <ForeignKeyConstraint Name="dbo:NewsCategoryLocalization:FK_NewsCategoriesLocalization_NewsCategories" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:NewsCategory:Id" FkField="dbo:NewsCategoryLocalization:NewsCategoryId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsCategoryTemplate:FK_NewsCategoryTemplate_NewsCategory1">
+            <ForeignKeyConstraint Name="dbo:NewsCategoryTemplate:FK_NewsCategoryTemplate_NewsCategory1" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:NewsCategory:Id" FkField="dbo:NewsCategoryTemplate:Id" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsFile:FK_NewsFiles_NewsItems">
+            <ForeignKeyConstraint Name="dbo:NewsFile:FK_NewsFiles_NewsItems" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:NewsItem:Id" FkField="dbo:NewsFile:NewsItemId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsItem:FK_NewsItems_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:NewsItem:FK_NewsItems_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:NewsItem:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsItem:FK_NewsItems_NewsCategories">
+            <ForeignKeyConstraint Name="dbo:NewsItem:FK_NewsItems_NewsCategories" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:NewsCategory:Id" FkField="dbo:NewsItem:NewsCategoryId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsItemLocalization:FK_NewsItemLocalization_Language">
+            <ForeignKeyConstraint Name="dbo:NewsItemLocalization:FK_NewsItemLocalization_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:NewsItemLocalization:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsItemLocalization:FK_NewsItemsLocalization_NewsItems">
+            <ForeignKeyConstraint Name="dbo:NewsItemLocalization:FK_NewsItemsLocalization_NewsItems" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:NewsItem:Id" FkField="dbo:NewsItemLocalization:NewsId" />
               </FieldPairs>
@@ -3714,27 +3770,27 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:Newsletter:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:Newsletter:FK_Newsletter_Language">
+            <ForeignKeyConstraint Name="dbo:Newsletter:FK_Newsletter_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:Newsletter:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsletterLog:FK_NewsletterLog_Newsletter">
+            <ForeignKeyConstraint Name="dbo:NewsletterLog:FK_NewsletterLog_Newsletter" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Newsletter:Id" FkField="dbo:NewsletterLog:NewsletterId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsletterRole:FK_NewsletterRole_aspnet_Roles">
+            <ForeignKeyConstraint Name="dbo:NewsletterRole:FK_NewsletterRole_aspnet_Roles" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:NewsletterRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsletterRole:FK_NewsletterRole_Newsletter">
+            <ForeignKeyConstraint Name="dbo:NewsletterRole:FK_NewsletterRole_Newsletter" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Newsletter:Id" FkField="dbo:NewsletterRole:NewsletterId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsMetaIgnoredWord:FK_NewsMetaIgnoredWords_Language">
+            <ForeignKeyConstraint Name="dbo:NewsMetaIgnoredWord:FK_NewsMetaIgnoredWords_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:NewsMetaIgnoredWord:LanguageId" />
               </FieldPairs>
@@ -3744,7 +3800,7 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:NewsPublishQueue:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:NewsPublishQueue:FK_NewsPublishQueue_NewsItem">
+            <ForeignKeyConstraint Name="dbo:NewsPublishQueue:FK_NewsPublishQueue_NewsItem" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:NewsItem:Id" FkField="dbo:NewsPublishQueue:NewsItemId" />
               </FieldPairs>
@@ -3759,7 +3815,7 @@
                 <FieldPair PkField="dbo:oaConsumer:Id" FkField="dbo:oaToken:ConsumerId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:Page:FK_Page_aspnet_Applications">
+            <ForeignKeyConstraint Name="dbo:Page:FK_Page_aspnet_Applications" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Applications:ApplicationId" FkField="dbo:Page:ApplicationId" />
               </FieldPairs>
@@ -3774,17 +3830,17 @@
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:PageEditRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PageEditRole:FK_PageEditRole_Page">
+            <ForeignKeyConstraint Name="dbo:PageEditRole:FK_PageEditRole_Page" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Page:Id" FkField="dbo:PageEditRole:PageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PageLocalization:FK_PageLocalization_Language">
+            <ForeignKeyConstraint Name="dbo:PageLocalization:FK_PageLocalization_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:PageLocalization:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PageLocalization:FK_PageLocalization_Page">
+            <ForeignKeyConstraint Name="dbo:PageLocalization:FK_PageLocalization_Page" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Page:Id" FkField="dbo:PageLocalization:PageId" />
               </FieldPairs>
@@ -3794,7 +3850,7 @@
                 <FieldPair PkField="dbo:aspnet_Roles:RoleId" FkField="dbo:PageRole:RoleId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PageRole:FK_PageRole_Page">
+            <ForeignKeyConstraint Name="dbo:PageRole:FK_PageRole_Page" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Page:Id" FkField="dbo:PageRole:PageId" />
               </FieldPairs>
@@ -3804,42 +3860,42 @@
                 <FieldPair PkField="dbo:aspnet_Applications:ApplicationId" FkField="dbo:Poll:ApplicationId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:Poll:FK_Poll_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:Poll:FK_Poll_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:Poll:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PollAnswer:FK_PollAnswer_Poll">
+            <ForeignKeyConstraint Name="dbo:PollAnswer:FK_PollAnswer_Poll" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Poll:Id" FkField="dbo:PollAnswer:PollId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PollAnswerLocalization:FK_PollAnswerLocalization_Language">
+            <ForeignKeyConstraint Name="dbo:PollAnswerLocalization:FK_PollAnswerLocalization_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:PollAnswerLocalization:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PollAnswerLocalization:FK_PollAnswerLocalization_PollAnswer">
+            <ForeignKeyConstraint Name="dbo:PollAnswerLocalization:FK_PollAnswerLocalization_PollAnswer" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:PollAnswer:Id" FkField="dbo:PollAnswerLocalization:PollAnswerId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PollLocalization:FK_PollLocalization_Language">
+            <ForeignKeyConstraint Name="dbo:PollLocalization:FK_PollLocalization_Language" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:PollLocalization:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PollLocalization:FK_PollLocalization_Poll">
+            <ForeignKeyConstraint Name="dbo:PollLocalization:FK_PollLocalization_Poll" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:Poll:Id" FkField="dbo:PollLocalization:PollId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PrivacyLevelDefinition:FK_PrivacyLevelDefinition_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:PrivacyLevelDefinition:FK_PrivacyLevelDefinition_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:PrivacyLevelDefinition:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:PrivacyLevelDefinition:FK_PrivacyLevelDefinition_PrivacyLevel">
+            <ForeignKeyConstraint Name="dbo:PrivacyLevelDefinition:FK_PrivacyLevelDefinition_PrivacyLevel" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:PrivacyLevel:Id" FkField="dbo:PrivacyLevelDefinition:PrivacyLevelId" />
               </FieldPairs>
@@ -3869,7 +3925,7 @@
                 <FieldPair PkField="dbo:SnGroup:Id" FkField="dbo:SnAlbum:SnGroupId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnBlockUsers:FK_dbo.SnBlockUsers_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:SnBlockUsers:FK_dbo.SnBlockUsers_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnBlockUsers:UserId" />
               </FieldPairs>
@@ -3879,7 +3935,7 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnBlockUsers:BlockedUserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnComment:FK_SnComment_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:SnComment:FK_SnComment_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnComment:UserId" />
               </FieldPairs>
@@ -3929,7 +3985,7 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnDiscussionBoardModerator:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnDiscussionBoardModerator:FK_SnDiscussionBoardModerator_SnDiscussionBoard">
+            <ForeignKeyConstraint Name="dbo:SnDiscussionBoardModerator:FK_SnDiscussionBoardModerator_SnDiscussionBoard" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnDiscussionBoard:Id" FkField="dbo:SnDiscussionBoardModerator:SnDiscussionBoardId" />
               </FieldPairs>
@@ -3954,7 +4010,7 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnDiscussionMessage:AdminAttentionReportedByUserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnDiscussionMessage:FK_SnDiscussionMessage_SnDiscussionTopic">
+            <ForeignKeyConstraint Name="dbo:SnDiscussionMessage:FK_SnDiscussionMessage_SnDiscussionTopic" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnDiscussionTopic:Id" FkField="dbo:SnDiscussionMessage:SnDiscussionTopicId" />
               </FieldPairs>
@@ -3969,7 +4025,7 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnDiscussionTopic:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnDiscussionTopic:FK_SnDiscussionTopic_SnDiscussionBoard">
+            <ForeignKeyConstraint Name="dbo:SnDiscussionTopic:FK_SnDiscussionTopic_SnDiscussionBoard" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnDiscussionBoard:Id" FkField="dbo:SnDiscussionTopic:SnDiscussionBoardId" />
               </FieldPairs>
@@ -3979,7 +4035,7 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnEvent:FriendId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnEvent:FK_SnEvent_aspnet_Users_UserId">
+            <ForeignKeyConstraint Name="dbo:SnEvent:FK_SnEvent_aspnet_Users_UserId" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnEvent:UserId" />
               </FieldPairs>
@@ -4024,7 +4080,7 @@
                 <FieldPair PkField="dbo:SnGroup:Id" FkField="dbo:SnEvent:SnGroupId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnEvent:FK_SnEvent_SnNote">
+            <ForeignKeyConstraint Name="dbo:SnEvent:FK_SnEvent_SnNote" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnNote:Id" FkField="dbo:SnEvent:SnNoteId" />
               </FieldPairs>
@@ -4049,7 +4105,7 @@
                 <FieldPair PkField="dbo:SnRelationship:Id" FkField="dbo:SnFile:RelationshipId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnFriend:FK_SnFriend_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:SnFriend:FK_SnFriend_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnFriend:UserId" />
               </FieldPairs>
@@ -4064,12 +4120,12 @@
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnFriendList:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnFriendListMember:FK_SnFriendListMember_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:SnFriendListMember:FK_SnFriendListMember_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnFriendListMember:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnFriendListMember:FK_SnFriendListMember_SnFriendList">
+            <ForeignKeyConstraint Name="dbo:SnFriendListMember:FK_SnFriendListMember_SnFriendList" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnFriendList:Id" FkField="dbo:SnFriendListMember:FriendListId" />
               </FieldPairs>
@@ -4104,22 +4160,22 @@
                 <FieldPair PkField="dbo:Language:Id" FkField="dbo:SnGroupCategory:LanguageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnGroupMember:FK_SnGroupMember_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:SnGroupMember:FK_SnGroupMember_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnGroupMember:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnGroupMember:FK_SnGroupMember_SnGroup">
+            <ForeignKeyConstraint Name="dbo:SnGroupMember:FK_SnGroupMember_SnGroup" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnGroup:Id" FkField="dbo:SnGroupMember:GroupId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnGroupRequest:FK_SnGroupRequest_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:SnGroupRequest:FK_SnGroupRequest_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnGroupRequest:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnGroupRequest:FK_SnGroupRequest_SnGroup">
+            <ForeignKeyConstraint Name="dbo:SnGroupRequest:FK_SnGroupRequest_SnGroup" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnGroup:Id" FkField="dbo:SnGroupRequest:GroupId" />
               </FieldPairs>
@@ -4134,17 +4190,17 @@
                 <FieldPair PkField="dbo:SnMessage:Id" FkField="dbo:SnMessage:InReplyToMessageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnMessageRecipient:FK_SnMessageRecipient_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:SnMessageRecipient:FK_SnMessageRecipient_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:SnMessageRecipient:UserId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnMessageRecipient:FK_SnMessageRecipient_SnMessage">
+            <ForeignKeyConstraint Name="dbo:SnMessageRecipient:FK_SnMessageRecipient_SnMessage" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnMessage:Id" FkField="dbo:SnMessageRecipient:MessageId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnNote:FK_SnNote_Applications">
+            <ForeignKeyConstraint Name="dbo:SnNote:FK_SnNote_Applications" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Applications:ApplicationId" FkField="dbo:SnNote:ApplicationId" />
               </FieldPairs>
@@ -4169,7 +4225,7 @@
                 <FieldPair PkField="dbo:PrivacyLevel:Id" FkField="dbo:SnNote:PrivacyLevelId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:SnNote:FK_SnNote_SnGroup">
+            <ForeignKeyConstraint Name="dbo:SnNote:FK_SnNote_SnGroup" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:SnGroup:Id" FkField="dbo:SnNote:GroupId" />
               </FieldPairs>
@@ -4304,12 +4360,12 @@
                 <FieldPair PkField="dbo:SnRelationship:Id" FkField="dbo:SnTag:RelationshipId" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:UserAvatar:FK_UserAvatar_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:UserAvatar:FK_UserAvatar_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:UserAvatar:Id" />
               </FieldPairs>
             </ForeignKeyConstraint>
-            <ForeignKeyConstraint Name="dbo:UserProfile:FK_UserProfile_aspnet_Users">
+            <ForeignKeyConstraint Name="dbo:UserProfile:FK_UserProfile_aspnet_Users" DeleteRuleAction="1">
               <FieldPairs>
                 <FieldPair PkField="dbo:aspnet_Users:UserId" FkField="dbo:UserProfile:Id" />
               </FieldPairs>
@@ -4480,6 +4536,25 @@
             <FieldMapping FieldName="MachineName" TargetFieldName="MachineName" />
             <FieldMapping FieldName="Message" TargetFieldName="Message" />
             <FieldMapping FieldName="RequestUrl" TargetFieldName="RequestUrl" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":AuditInfo" TargetName="MonoX2:dbo:AuditInfo">
+          <FieldMappings>
+            <FieldMapping FieldName="ActionData" TargetFieldName="ActionData" />
+            <FieldMapping FieldName="ActionDataBinary" TargetFieldName="ActionDataBinary" />
+            <FieldMapping FieldName="ActionDateTime" TargetFieldName="ActionDateTime" />
+            <FieldMapping FieldName="ActionPerformedByUser" TargetFieldName="ActionPerformedByUser" />
+            <FieldMapping FieldName="ActionType" TargetFieldName="ActionType" />
+            <FieldMapping FieldName="ActionTypeName" TargetFieldName="ActionTypeName" />
+            <FieldMapping FieldName="AffectedEntityName" TargetFieldName="AffectedEntityName" />
+            <FieldMapping FieldName="ConcurrencyTimeStamp" TargetFieldName="ConcurrencyTimeStamp" />
+            <FieldMapping FieldName="DateCreated" TargetFieldName="DateCreated" />
+            <FieldMapping FieldName="DateUpdated" TargetFieldName="DateUpdated" />
+            <FieldMapping FieldName="Id" TargetFieldName="Id" />
+            <FieldMapping FieldName="IpAddress" TargetFieldName="IpAddress" />
+            <FieldMapping FieldName="Referrer" TargetFieldName="Referrer" />
+            <FieldMapping FieldName="UserAgent" TargetFieldName="UserAgent" />
+            <FieldMapping FieldName="UserId" TargetFieldName="UserId" />
           </FieldMappings>
         </EntityMapping>
         <EntityMapping EntityName=":Blog" TargetName="MonoX2:dbo:Blog">
@@ -5427,6 +5502,7 @@
           </FieldMappings>
         </SPCallMapping>
       </SPCallMappings>
+      <TvfCallMappings />
       <TypeConversionDefinitions />
     </MappingStore>
   </MappingStores>

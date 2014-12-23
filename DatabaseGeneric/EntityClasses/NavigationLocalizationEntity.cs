@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -146,7 +146,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -210,7 +210,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -229,7 +229,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -410,7 +410,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _language</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncLanguage(IEntity2 relatedEntity)
+		private void SetupSyncLanguage(IEntityCore relatedEntity)
 		{
 			if(_language!=relatedEntity)
 			{
@@ -443,7 +443,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _navigation</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncNavigation(IEntity2 relatedEntity)
+		private void SetupSyncNavigation(IEntityCore relatedEntity)
 		{
 			if(_navigation!=relatedEntity)
 			{
@@ -537,7 +537,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity NavigationLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NavigationLocalization"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)NavigationLocalizationFieldIndex.Id, true); }
@@ -547,7 +547,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LanguageId property of the Entity NavigationLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NavigationLocalization"."LanguageId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid LanguageId
 		{
 			get { return (System.Guid)GetValue((int)NavigationLocalizationFieldIndex.LanguageId, true); }
@@ -557,7 +557,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The NavigationId property of the Entity NavigationLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NavigationLocalization"."NavigationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid NavigationId
 		{
 			get { return (System.Guid)GetValue((int)NavigationLocalizationFieldIndex.NavigationId, true); }
@@ -567,7 +567,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Title property of the Entity NavigationLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NavigationLocalization"."Title"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Title
 		{
 			get { return (System.String)GetValue((int)NavigationLocalizationFieldIndex.Title, true); }
@@ -577,7 +577,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ToolTip property of the Entity NavigationLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NavigationLocalization"."ToolTip"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 500<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ToolTip
 		{
 			get { return (System.String)GetValue((int)NavigationLocalizationFieldIndex.ToolTip, true); }
@@ -585,7 +585,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'LanguageEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual LanguageEntity Language
 		{
 			get	{ return _language; }
@@ -603,7 +603,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'NavigationEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual NavigationEntity Navigation
 		{
 			get	{ return _navigation; }

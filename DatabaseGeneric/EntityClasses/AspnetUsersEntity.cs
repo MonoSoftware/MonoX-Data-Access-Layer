@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -34,6 +34,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		#region Class Member Declarations
 		private EntityCollection<AspnetPersonalizationPerUserEntity> _aspnetPersonalizationPerUser;
 		private EntityCollection<AspnetUsersInRolesEntity> _aspnetUsersInRoles;
+		private EntityCollection<AuditInfoEntity> _auditInfos;
 		private EntityCollection<BlogEntity> _blogs;
 		private EntityCollection<BlogEditorEntity> _blogEditors;
 		private EntityCollection<BlogPostEntity> _blogPosts;
@@ -97,6 +98,8 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			public static readonly string AspnetPersonalizationPerUser = "AspnetPersonalizationPerUser";
 			/// <summary>Member name AspnetUsersInRoles</summary>
 			public static readonly string AspnetUsersInRoles = "AspnetUsersInRoles";
+			/// <summary>Member name AuditInfos</summary>
+			public static readonly string AuditInfos = "AuditInfos";
 			/// <summary>Member name Blogs</summary>
 			public static readonly string Blogs = "Blogs";
 			/// <summary>Member name BlogEditors</summary>
@@ -244,6 +247,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			{
 				_aspnetPersonalizationPerUser = (EntityCollection<AspnetPersonalizationPerUserEntity>)info.GetValue("_aspnetPersonalizationPerUser", typeof(EntityCollection<AspnetPersonalizationPerUserEntity>));
 				_aspnetUsersInRoles = (EntityCollection<AspnetUsersInRolesEntity>)info.GetValue("_aspnetUsersInRoles", typeof(EntityCollection<AspnetUsersInRolesEntity>));
+				_auditInfos = (EntityCollection<AuditInfoEntity>)info.GetValue("_auditInfos", typeof(EntityCollection<AuditInfoEntity>));
 				_blogs = (EntityCollection<BlogEntity>)info.GetValue("_blogs", typeof(EntityCollection<BlogEntity>));
 				_blogEditors = (EntityCollection<BlogEditorEntity>)info.GetValue("_blogEditors", typeof(EntityCollection<BlogEditorEntity>));
 				_blogPosts = (EntityCollection<BlogPostEntity>)info.GetValue("_blogPosts", typeof(EntityCollection<BlogPostEntity>));
@@ -335,7 +339,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -347,6 +351,9 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 					break;
 				case "AspnetUsersInRoles":
 					this.AspnetUsersInRoles.Add((AspnetUsersInRolesEntity)entity);
+					break;
+				case "AuditInfos":
+					this.AuditInfos.Add((AuditInfoEntity)entity);
 					break;
 				case "Blogs":
 					this.Blogs.Add((BlogEntity)entity);
@@ -511,6 +518,9 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 				case "AspnetUsersInRoles":
 					toReturn.Add(Relations.AspnetUsersInRolesEntityUsingUserId);
 					break;
+				case "AuditInfos":
+					toReturn.Add(Relations.AuditInfoEntityUsingUserId);
+					break;
 				case "Blogs":
 					toReturn.Add(Relations.BlogEntityUsingUserId);
 					break;
@@ -669,7 +679,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -681,6 +691,9 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 					break;
 				case "AspnetUsersInRoles":
 					this.AspnetUsersInRoles.Add((AspnetUsersInRolesEntity)relatedEntity);
+					break;
+				case "AuditInfos":
+					this.AuditInfos.Add((AuditInfoEntity)relatedEntity);
 					break;
 				case "Blogs":
 					this.Blogs.Add((BlogEntity)relatedEntity);
@@ -823,7 +836,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -835,6 +848,9 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 					break;
 				case "AspnetUsersInRoles":
 					this.PerformRelatedEntityRemoval(this.AspnetUsersInRoles, relatedEntity, signalRelatedEntityManyToOne);
+					break;
+				case "AuditInfos":
+					this.PerformRelatedEntityRemoval(this.AuditInfos, relatedEntity, signalRelatedEntityManyToOne);
 					break;
 				case "Blogs":
 					this.PerformRelatedEntityRemoval(this.Blogs, relatedEntity, signalRelatedEntityManyToOne);
@@ -1029,6 +1045,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			List<IEntityCollection2> toReturn = new List<IEntityCollection2>();
 			toReturn.Add(this.AspnetPersonalizationPerUser);
 			toReturn.Add(this.AspnetUsersInRoles);
+			toReturn.Add(this.AuditInfos);
 			toReturn.Add(this.Blogs);
 			toReturn.Add(this.BlogEditors);
 			toReturn.Add(this.BlogPosts);
@@ -1082,6 +1099,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			{
 				info.AddValue("_aspnetPersonalizationPerUser", ((_aspnetPersonalizationPerUser!=null) && (_aspnetPersonalizationPerUser.Count>0) && !this.MarkedForDeletion)?_aspnetPersonalizationPerUser:null);
 				info.AddValue("_aspnetUsersInRoles", ((_aspnetUsersInRoles!=null) && (_aspnetUsersInRoles.Count>0) && !this.MarkedForDeletion)?_aspnetUsersInRoles:null);
+				info.AddValue("_auditInfos", ((_auditInfos!=null) && (_auditInfos.Count>0) && !this.MarkedForDeletion)?_auditInfos:null);
 				info.AddValue("_blogs", ((_blogs!=null) && (_blogs.Count>0) && !this.MarkedForDeletion)?_blogs:null);
 				info.AddValue("_blogEditors", ((_blogEditors!=null) && (_blogEditors.Count>0) && !this.MarkedForDeletion)?_blogEditors:null);
 				info.AddValue("_blogPosts", ((_blogPosts!=null) && (_blogPosts.Count>0) && !this.MarkedForDeletion)?_blogPosts:null);
@@ -1157,6 +1175,15 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		{
 			IRelationPredicateBucket bucket = new RelationPredicateBucket();
 			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(AspnetUsersInRolesFields.UserId, null, ComparisonOperator.Equal, this.UserId));
+			return bucket;
+		}
+
+		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'AuditInfo' to this entity.</summary>
+		/// <returns></returns>
+		public virtual IRelationPredicateBucket GetRelationInfoAuditInfos()
+		{
+			IRelationPredicateBucket bucket = new RelationPredicateBucket();
+			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(AuditInfoFields.UserId, null, ComparisonOperator.Equal, this.UserId));
 			return bucket;
 		}
 
@@ -1579,6 +1606,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			base.AddToMemberEntityCollectionsQueue(collectionsQueue);
 			collectionsQueue.Enqueue(this._aspnetPersonalizationPerUser);
 			collectionsQueue.Enqueue(this._aspnetUsersInRoles);
+			collectionsQueue.Enqueue(this._auditInfos);
 			collectionsQueue.Enqueue(this._blogs);
 			collectionsQueue.Enqueue(this._blogEditors);
 			collectionsQueue.Enqueue(this._blogPosts);
@@ -1628,6 +1656,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			base.GetFromMemberEntityCollectionsQueue(collectionsQueue);
 			this._aspnetPersonalizationPerUser = (EntityCollection<AspnetPersonalizationPerUserEntity>) collectionsQueue.Dequeue();
 			this._aspnetUsersInRoles = (EntityCollection<AspnetUsersInRolesEntity>) collectionsQueue.Dequeue();
+			this._auditInfos = (EntityCollection<AuditInfoEntity>) collectionsQueue.Dequeue();
 			this._blogs = (EntityCollection<BlogEntity>) collectionsQueue.Dequeue();
 			this._blogEditors = (EntityCollection<BlogEditorEntity>) collectionsQueue.Dequeue();
 			this._blogPosts = (EntityCollection<BlogPostEntity>) collectionsQueue.Dequeue();
@@ -1678,6 +1707,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			bool toReturn = false;
 			toReturn |=(this._aspnetPersonalizationPerUser != null);
 			toReturn |=(this._aspnetUsersInRoles != null);
+			toReturn |=(this._auditInfos != null);
 			toReturn |=(this._blogs != null);
 			toReturn |=(this._blogEditors != null);
 			toReturn |=(this._blogPosts != null);
@@ -1729,6 +1759,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			base.CreateMemberEntityCollectionsQueue(collectionsQueue, requiredQueue);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<AspnetPersonalizationPerUserEntity>(EntityFactoryCache2.GetEntityFactory(typeof(AspnetPersonalizationPerUserEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<AspnetUsersInRolesEntity>(EntityFactoryCache2.GetEntityFactory(typeof(AspnetUsersInRolesEntityFactory))) : null);
+			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<AuditInfoEntity>(EntityFactoryCache2.GetEntityFactory(typeof(AuditInfoEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<BlogEntity>(EntityFactoryCache2.GetEntityFactory(typeof(BlogEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<BlogEditorEntity>(EntityFactoryCache2.GetEntityFactory(typeof(BlogEditorEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<BlogPostEntity>(EntityFactoryCache2.GetEntityFactory(typeof(BlogPostEntityFactory))) : null);
@@ -1779,6 +1810,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 			toReturn.Add("AspnetApplications", _aspnetApplications);
 			toReturn.Add("AspnetPersonalizationPerUser", _aspnetPersonalizationPerUser);
 			toReturn.Add("AspnetUsersInRoles", _aspnetUsersInRoles);
+			toReturn.Add("AuditInfos", _auditInfos);
 			toReturn.Add("Blogs", _blogs);
 			toReturn.Add("BlogEditors", _blogEditors);
 			toReturn.Add("BlogPosts", _blogPosts);
@@ -1872,7 +1904,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetApplications</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetApplications(IEntity2 relatedEntity)
+		private void SetupSyncAspnetApplications(IEntityCore relatedEntity)
 		{
 			if(_aspnetApplications!=relatedEntity)
 			{
@@ -1905,7 +1937,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _aspnetMembership</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetMembership(IEntity2 relatedEntity)
+		private void SetupSyncAspnetMembership(IEntityCore relatedEntity)
 		{
 			if(_aspnetMembership!=relatedEntity)
 			{
@@ -1938,7 +1970,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _aspnetProfile</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetProfile(IEntity2 relatedEntity)
+		private void SetupSyncAspnetProfile(IEntityCore relatedEntity)
 		{
 			if(_aspnetProfile!=relatedEntity)
 			{
@@ -1971,7 +2003,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _userAvatar</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncUserAvatar(IEntity2 relatedEntity)
+		private void SetupSyncUserAvatar(IEntityCore relatedEntity)
 		{
 			if(_userAvatar!=relatedEntity)
 			{
@@ -2004,7 +2036,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		
 		/// <summary> setups the sync logic for member _userProfile</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncUserProfile(IEntity2 relatedEntity)
+		private void SetupSyncUserProfile(IEntityCore relatedEntity)
 		{
 			if(_userProfile!=relatedEntity)
 			{
@@ -2069,6 +2101,13 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		public static IPrefetchPathElement2 PrefetchPathAspnetUsersInRoles
 		{
 			get	{ return new PrefetchPathElement2( new EntityCollection<AspnetUsersInRolesEntity>(EntityFactoryCache2.GetEntityFactory(typeof(AspnetUsersInRolesEntityFactory))), (IEntityRelation)GetRelationsForField("AspnetUsersInRoles")[0], (int)MonoSoftware.MonoX.DAL.EntityType.AspnetUsersEntity, (int)MonoSoftware.MonoX.DAL.EntityType.AspnetUsersInRolesEntity, 0, null, null, null, null, "AspnetUsersInRoles", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
+		}
+
+		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'AuditInfo' for this entity.</summary>
+		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
+		public static IPrefetchPathElement2 PrefetchPathAuditInfos
+		{
+			get	{ return new PrefetchPathElement2( new EntityCollection<AuditInfoEntity>(EntityFactoryCache2.GetEntityFactory(typeof(AuditInfoEntityFactory))), (IEntityRelation)GetRelationsForField("AuditInfos")[0], (int)MonoSoftware.MonoX.DAL.EntityType.AspnetUsersEntity, (int)MonoSoftware.MonoX.DAL.EntityType.AuditInfoEntity, 0, null, null, null, null, "AuditInfos", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
 		}
 
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Blog' for this entity.</summary>
@@ -2413,7 +2452,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity AspnetUsers<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Users"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)AspnetUsersFieldIndex.ApplicationId, true); }
@@ -2423,7 +2462,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity AspnetUsers<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Users"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid UserId
 		{
 			get { return (System.Guid)GetValue((int)AspnetUsersFieldIndex.UserId, true); }
@@ -2433,7 +2472,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserName property of the Entity AspnetUsers<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Users"."UserName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String UserName
 		{
 			get { return (System.String)GetValue((int)AspnetUsersFieldIndex.UserName, true); }
@@ -2443,7 +2482,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LoweredUserName property of the Entity AspnetUsers<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Users"."LoweredUserName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String LoweredUserName
 		{
 			get { return (System.String)GetValue((int)AspnetUsersFieldIndex.LoweredUserName, true); }
@@ -2453,7 +2492,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MobileAlias property of the Entity AspnetUsers<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Users"."MobileAlias"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 16<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String MobileAlias
 		{
 			get { return (System.String)GetValue((int)AspnetUsersFieldIndex.MobileAlias, true); }
@@ -2463,7 +2502,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The IsAnonymous property of the Entity AspnetUsers<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Users"."IsAnonymous"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean IsAnonymous
 		{
 			get { return (System.Boolean)GetValue((int)AspnetUsersFieldIndex.IsAnonymous, true); }
@@ -2473,7 +2512,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LastActivityDate property of the Entity AspnetUsers<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Users"."LastActivityDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime LastActivityDate
 		{
 			get { return (System.DateTime)GetValue((int)AspnetUsersFieldIndex.LastActivityDate, true); }
@@ -2481,301 +2520,308 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'AspnetPersonalizationPerUserEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(AspnetPersonalizationPerUserEntity))]
+		[TypeContainedAttribute(typeof(AspnetPersonalizationPerUserEntity))]		
 		public virtual EntityCollection<AspnetPersonalizationPerUserEntity> AspnetPersonalizationPerUser
 		{
 			get { return GetOrCreateEntityCollection<AspnetPersonalizationPerUserEntity, AspnetPersonalizationPerUserEntityFactory>("AspnetUsers", true, false, ref _aspnetPersonalizationPerUser);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'AspnetUsersInRolesEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(AspnetUsersInRolesEntity))]
+		[TypeContainedAttribute(typeof(AspnetUsersInRolesEntity))]		
 		public virtual EntityCollection<AspnetUsersInRolesEntity> AspnetUsersInRoles
 		{
 			get { return GetOrCreateEntityCollection<AspnetUsersInRolesEntity, AspnetUsersInRolesEntityFactory>("AspnetUsers", true, false, ref _aspnetUsersInRoles);	}
 		}
 
+		/// <summary> Gets the EntityCollection with the related entities of type 'AuditInfoEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
+		[TypeContainedAttribute(typeof(AuditInfoEntity))]		
+		public virtual EntityCollection<AuditInfoEntity> AuditInfos
+		{
+			get { return GetOrCreateEntityCollection<AuditInfoEntity, AuditInfoEntityFactory>("AspnetUser", true, false, ref _auditInfos);	}
+		}
+
 		/// <summary> Gets the EntityCollection with the related entities of type 'BlogEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(BlogEntity))]
+		[TypeContainedAttribute(typeof(BlogEntity))]		
 		public virtual EntityCollection<BlogEntity> Blogs
 		{
 			get { return GetOrCreateEntityCollection<BlogEntity, BlogEntityFactory>("AspnetUser", true, false, ref _blogs);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'BlogEditorEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(BlogEditorEntity))]
+		[TypeContainedAttribute(typeof(BlogEditorEntity))]		
 		public virtual EntityCollection<BlogEditorEntity> BlogEditors
 		{
 			get { return GetOrCreateEntityCollection<BlogEditorEntity, BlogEditorEntityFactory>("AspnetUser", true, false, ref _blogEditors);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'BlogPostEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(BlogPostEntity))]
+		[TypeContainedAttribute(typeof(BlogPostEntity))]		
 		public virtual EntityCollection<BlogPostEntity> BlogPosts
 		{
 			get { return GetOrCreateEntityCollection<BlogPostEntity, BlogPostEntityFactory>("AspnetUser", true, false, ref _blogPosts);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'CalendarEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(CalendarEntity))]
+		[TypeContainedAttribute(typeof(CalendarEntity))]		
 		public virtual EntityCollection<CalendarEntity> Calendars
 		{
 			get { return GetOrCreateEntityCollection<CalendarEntity, CalendarEntityFactory>("AspnetUsers", true, false, ref _calendars);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'CalendarEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(CalendarEventEntity))]
+		[TypeContainedAttribute(typeof(CalendarEventEntity))]		
 		public virtual EntityCollection<CalendarEventEntity> CalendarEvents
 		{
 			get { return GetOrCreateEntityCollection<CalendarEventEntity, CalendarEventEntityFactory>("AspnetUsers", true, false, ref _calendarEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'CalendarModeratorEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(CalendarModeratorEntity))]
+		[TypeContainedAttribute(typeof(CalendarModeratorEntity))]		
 		public virtual EntityCollection<CalendarModeratorEntity> CalendarModerators
 		{
 			get { return GetOrCreateEntityCollection<CalendarModeratorEntity, CalendarModeratorEntityFactory>("AspnetUsers", true, false, ref _calendarModerators);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'DocumentEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(DocumentEntity))]
+		[TypeContainedAttribute(typeof(DocumentEntity))]		
 		public virtual EntityCollection<DocumentEntity> Documents
 		{
 			get { return GetOrCreateEntityCollection<DocumentEntity, DocumentEntityFactory>("AspnetUsers", true, false, ref _documents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'ListEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(ListEntity))]
+		[TypeContainedAttribute(typeof(ListEntity))]		
 		public virtual EntityCollection<ListEntity> Lists
 		{
 			get { return GetOrCreateEntityCollection<ListEntity, ListEntityFactory>("AspnetUser", true, false, ref _lists);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'NewsItemEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(NewsItemEntity))]
+		[TypeContainedAttribute(typeof(NewsItemEntity))]		
 		public virtual EntityCollection<NewsItemEntity> NewsItems
 		{
 			get { return GetOrCreateEntityCollection<NewsItemEntity, NewsItemEntityFactory>("AspnetUser", true, false, ref _newsItems);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'NewsletterEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(NewsletterEntity))]
+		[TypeContainedAttribute(typeof(NewsletterEntity))]		
 		public virtual EntityCollection<NewsletterEntity> Newsletters
 		{
 			get { return GetOrCreateEntityCollection<NewsletterEntity, NewsletterEntityFactory>("AspnetUser", true, false, ref _newsletters);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'NewsPublishQueueEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(NewsPublishQueueEntity))]
+		[TypeContainedAttribute(typeof(NewsPublishQueueEntity))]		
 		public virtual EntityCollection<NewsPublishQueueEntity> NewsPublishQueue
 		{
 			get { return GetOrCreateEntityCollection<NewsPublishQueueEntity, NewsPublishQueueEntityFactory>("AspnetUser", true, false, ref _newsPublishQueue);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'OaTokenEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(OaTokenEntity))]
+		[TypeContainedAttribute(typeof(OaTokenEntity))]		
 		public virtual EntityCollection<OaTokenEntity> OaTokens
 		{
 			get { return GetOrCreateEntityCollection<OaTokenEntity, OaTokenEntityFactory>("AspnetUsers", true, false, ref _oaTokens);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'PageEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(PageEntity))]
+		[TypeContainedAttribute(typeof(PageEntity))]		
 		public virtual EntityCollection<PageEntity> Page
 		{
 			get { return GetOrCreateEntityCollection<PageEntity, PageEntityFactory>("AspnetUsers", true, false, ref _page);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'PollEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(PollEntity))]
+		[TypeContainedAttribute(typeof(PollEntity))]		
 		public virtual EntityCollection<PollEntity> Polls
 		{
 			get { return GetOrCreateEntityCollection<PollEntity, PollEntityFactory>("AspnetUser", true, false, ref _polls);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'PrivacyLevelDefinitionEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(PrivacyLevelDefinitionEntity))]
+		[TypeContainedAttribute(typeof(PrivacyLevelDefinitionEntity))]		
 		public virtual EntityCollection<PrivacyLevelDefinitionEntity> PrivacyLevelDefinition
 		{
 			get { return GetOrCreateEntityCollection<PrivacyLevelDefinitionEntity, PrivacyLevelDefinitionEntityFactory>("AspnetUsers", true, false, ref _privacyLevelDefinition);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnAlbumEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnAlbumEntity))]
+		[TypeContainedAttribute(typeof(SnAlbumEntity))]		
 		public virtual EntityCollection<SnAlbumEntity> SnAlbums
 		{
 			get { return GetOrCreateEntityCollection<SnAlbumEntity, SnAlbumEntityFactory>("AspnetUser", true, false, ref _snAlbums);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnBlockUserEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnBlockUserEntity))]
+		[TypeContainedAttribute(typeof(SnBlockUserEntity))]		
 		public virtual EntityCollection<SnBlockUserEntity> SnBlockUsers
 		{
 			get { return GetOrCreateEntityCollection<SnBlockUserEntity, SnBlockUserEntityFactory>("AspnetUser", true, false, ref _snBlockUsers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnBlockUserEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnBlockUserEntity))]
+		[TypeContainedAttribute(typeof(SnBlockUserEntity))]		
 		public virtual EntityCollection<SnBlockUserEntity> SnBlockUsers_
 		{
 			get { return GetOrCreateEntityCollection<SnBlockUserEntity, SnBlockUserEntityFactory>("BlockedAspnetUser", true, false, ref _snBlockUsers_);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnCommentEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnCommentEntity))]
+		[TypeContainedAttribute(typeof(SnCommentEntity))]		
 		public virtual EntityCollection<SnCommentEntity> SnComments
 		{
 			get { return GetOrCreateEntityCollection<SnCommentEntity, SnCommentEntityFactory>("AspnetUser", true, false, ref _snComments);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnDiscussionMessageEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnDiscussionMessageEntity))]
+		[TypeContainedAttribute(typeof(SnDiscussionMessageEntity))]		
 		public virtual EntityCollection<SnDiscussionMessageEntity> SnDiscussionMessage
 		{
 			get { return GetOrCreateEntityCollection<SnDiscussionMessageEntity, SnDiscussionMessageEntityFactory>("PinnedByUser", true, false, ref _snDiscussionMessage);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnEventEntity))]
+		[TypeContainedAttribute(typeof(SnEventEntity))]		
 		public virtual EntityCollection<SnEventEntity> SnEvents
 		{
 			get { return GetOrCreateEntityCollection<SnEventEntity, SnEventEntityFactory>("AspnetUsers", true, false, ref _snEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnEventEntity))]
+		[TypeContainedAttribute(typeof(SnEventEntity))]		
 		public virtual EntityCollection<SnEventEntity> SnFriendEvents
 		{
 			get { return GetOrCreateEntityCollection<SnEventEntity, SnEventEntityFactory>("FriendAspnetUsers", true, false, ref _snFriendEvents);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFileEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFileEntity))]
+		[TypeContainedAttribute(typeof(SnFileEntity))]		
 		public virtual EntityCollection<SnFileEntity> SnFiles
 		{
 			get { return GetOrCreateEntityCollection<SnFileEntity, SnFileEntityFactory>("AspnetUser", true, false, ref _snFiles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFriendEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFriendEntity))]
+		[TypeContainedAttribute(typeof(SnFriendEntity))]		
 		public virtual EntityCollection<SnFriendEntity> SnFriendsUsers
 		{
 			get { return GetOrCreateEntityCollection<SnFriendEntity, SnFriendEntityFactory>("AspnetUser", true, false, ref _snFriendsUsers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFriendEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFriendEntity))]
+		[TypeContainedAttribute(typeof(SnFriendEntity))]		
 		public virtual EntityCollection<SnFriendEntity> SnFriendsFriends
 		{
 			get { return GetOrCreateEntityCollection<SnFriendEntity, SnFriendEntityFactory>("AspnetUserFriend", true, false, ref _snFriendsFriends);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFriendListEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFriendListEntity))]
+		[TypeContainedAttribute(typeof(SnFriendListEntity))]		
 		public virtual EntityCollection<SnFriendListEntity> SnFriendLists
 		{
 			get { return GetOrCreateEntityCollection<SnFriendListEntity, SnFriendListEntityFactory>("AspnetUser", true, false, ref _snFriendLists);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFriendListMemberEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFriendListMemberEntity))]
+		[TypeContainedAttribute(typeof(SnFriendListMemberEntity))]		
 		public virtual EntityCollection<SnFriendListMemberEntity> SnFriendListMembers
 		{
 			get { return GetOrCreateEntityCollection<SnFriendListMemberEntity, SnFriendListMemberEntityFactory>("AspnetUser", true, false, ref _snFriendListMembers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFriendRequestEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFriendRequestEntity))]
+		[TypeContainedAttribute(typeof(SnFriendRequestEntity))]		
 		public virtual EntityCollection<SnFriendRequestEntity> SnFriendRequestsFriends
 		{
 			get { return GetOrCreateEntityCollection<SnFriendRequestEntity, SnFriendRequestEntityFactory>("AspnetUser", true, false, ref _snFriendRequestsFriends);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFriendRequestEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFriendRequestEntity))]
+		[TypeContainedAttribute(typeof(SnFriendRequestEntity))]		
 		public virtual EntityCollection<SnFriendRequestEntity> SnFriendRequestsUsers
 		{
 			get { return GetOrCreateEntityCollection<SnFriendRequestEntity, SnFriendRequestEntityFactory>("AspnetUserFriend", true, false, ref _snFriendRequestsUsers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnGroupEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnGroupEntity))]
+		[TypeContainedAttribute(typeof(SnGroupEntity))]		
 		public virtual EntityCollection<SnGroupEntity> SnGroups
 		{
 			get { return GetOrCreateEntityCollection<SnGroupEntity, SnGroupEntityFactory>("AspnetUser", true, false, ref _snGroups);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnGroupMemberEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnGroupMemberEntity))]
+		[TypeContainedAttribute(typeof(SnGroupMemberEntity))]		
 		public virtual EntityCollection<SnGroupMemberEntity> SnGroupMembers
 		{
 			get { return GetOrCreateEntityCollection<SnGroupMemberEntity, SnGroupMemberEntityFactory>("AspnetUser", true, false, ref _snGroupMembers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnGroupRequestEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnGroupRequestEntity))]
+		[TypeContainedAttribute(typeof(SnGroupRequestEntity))]		
 		public virtual EntityCollection<SnGroupRequestEntity> SnGroupRequests
 		{
 			get { return GetOrCreateEntityCollection<SnGroupRequestEntity, SnGroupRequestEntityFactory>("AspnetUser", true, false, ref _snGroupRequests);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnMessageEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnMessageEntity))]
+		[TypeContainedAttribute(typeof(SnMessageEntity))]		
 		public virtual EntityCollection<SnMessageEntity> SnMessages
 		{
 			get { return GetOrCreateEntityCollection<SnMessageEntity, SnMessageEntityFactory>("AspnetUser", true, false, ref _snMessages);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnMessageRecipientEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnMessageRecipientEntity))]
+		[TypeContainedAttribute(typeof(SnMessageRecipientEntity))]		
 		public virtual EntityCollection<SnMessageRecipientEntity> SnMessageRecipients
 		{
 			get { return GetOrCreateEntityCollection<SnMessageRecipientEntity, SnMessageRecipientEntityFactory>("AspnetUser", true, false, ref _snMessageRecipients);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnNoteEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnNoteEntity))]
+		[TypeContainedAttribute(typeof(SnNoteEntity))]		
 		public virtual EntityCollection<SnNoteEntity> SnNotesPostedTo
 		{
 			get { return GetOrCreateEntityCollection<SnNoteEntity, SnNoteEntityFactory>("AspnetUserAuthor", true, false, ref _snNotesPostedTo);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnNoteEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnNoteEntity))]
+		[TypeContainedAttribute(typeof(SnNoteEntity))]		
 		public virtual EntityCollection<SnNoteEntity> SnNotesAuthoredBy
 		{
 			get { return GetOrCreateEntityCollection<SnNoteEntity, SnNoteEntityFactory>("AspnetUserPostedTo", true, false, ref _snNotesAuthoredBy);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRatingEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRatingEntity))]
+		[TypeContainedAttribute(typeof(SnRatingEntity))]		
 		public virtual EntityCollection<SnRatingEntity> SnRating
 		{
 			get { return GetOrCreateEntityCollection<SnRatingEntity, SnRatingEntityFactory>("AspnetUsers", true, false, ref _snRating);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnRelationshipEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnRelationshipEntity))]
+		[TypeContainedAttribute(typeof(SnRelationshipEntity))]		
 		public virtual EntityCollection<SnRelationshipEntity> SnRelationshipss
 		{
 			get { return GetOrCreateEntityCollection<SnRelationshipEntity, SnRelationshipEntityFactory>("AspnetUser", true, false, ref _snRelationshipss);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnSubscriberEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnSubscriberEntity))]
+		[TypeContainedAttribute(typeof(SnSubscriberEntity))]		
 		public virtual EntityCollection<SnSubscriberEntity> SnSubscribers
 		{
 			get { return GetOrCreateEntityCollection<SnSubscriberEntity, SnSubscriberEntityFactory>("AspnetUsers", true, false, ref _snSubscribers);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'UserSocialIdentityEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(UserSocialIdentityEntity))]
+		[TypeContainedAttribute(typeof(UserSocialIdentityEntity))]		
 		public virtual EntityCollection<UserSocialIdentityEntity> UserSocialIdentities
 		{
 			get { return GetOrCreateEntityCollection<UserSocialIdentityEntity, UserSocialIdentityEntityFactory>("AspnetUser", true, false, ref _userSocialIdentities);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetApplicationsEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetApplicationsEntity AspnetApplications
 		{
 			get	{ return _aspnetApplications; }
@@ -2794,7 +2840,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'AspnetMembershipEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetMembershipEntity AspnetMembership
 		{
 			get { return _aspnetMembership; }
@@ -2830,7 +2876,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'AspnetProfileEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetProfileEntity AspnetProfile
 		{
 			get { return _aspnetProfile; }
@@ -2866,7 +2912,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'UserAvatarEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual UserAvatarEntity UserAvatar
 		{
 			get { return _userAvatar; }
@@ -2902,7 +2948,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> Gets / sets related entity of type 'UserProfileEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned.<br/><br/>
 		/// </summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual UserProfileEntity UserProfile
 		{
 			get { return _userProfile; }

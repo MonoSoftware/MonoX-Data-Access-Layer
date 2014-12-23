@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -146,7 +146,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -210,7 +210,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -229,7 +229,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -418,7 +418,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _language</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncLanguage(IEntity2 relatedEntity)
+		private void SetupSyncLanguage(IEntityCore relatedEntity)
 		{
 			if(_language!=relatedEntity)
 			{
@@ -451,7 +451,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _newsCategory</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncNewsCategory(IEntity2 relatedEntity)
+		private void SetupSyncNewsCategory(IEntityCore relatedEntity)
 		{
 			if(_newsCategory!=relatedEntity)
 			{
@@ -545,7 +545,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)NewsCategoryLocalizationFieldIndex.Id, true); }
@@ -555,7 +555,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The NewsCategoryId property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."NewsCategoryId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid NewsCategoryId
 		{
 			get { return (System.Guid)GetValue((int)NewsCategoryLocalizationFieldIndex.NewsCategoryId, true); }
@@ -565,7 +565,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LanguageId property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."LanguageId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid LanguageId
 		{
 			get { return (System.Guid)GetValue((int)NewsCategoryLocalizationFieldIndex.LanguageId, true); }
@@ -575,7 +575,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Title property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."Title"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 150<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Title
 		{
 			get { return (System.String)GetValue((int)NewsCategoryLocalizationFieldIndex.Title, true); }
@@ -585,7 +585,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Name property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."Name"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 150<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Name
 		{
 			get { return (System.String)GetValue((int)NewsCategoryLocalizationFieldIndex.Name, true); }
@@ -595,7 +595,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)NewsCategoryLocalizationFieldIndex.Description, true); }
@@ -605,7 +605,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Published property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."Published"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Published
 		{
 			get { return (System.Boolean)GetValue((int)NewsCategoryLocalizationFieldIndex.Published, true); }
@@ -615,7 +615,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateEntered property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."DateEntered"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateEntered
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)NewsCategoryLocalizationFieldIndex.DateEntered, false); }
@@ -625,7 +625,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity NewsCategoryLocalization<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "NewsCategoryLocalization"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateModified
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)NewsCategoryLocalizationFieldIndex.DateModified, false); }
@@ -633,7 +633,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'LanguageEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual LanguageEntity Language
 		{
 			get	{ return _language; }
@@ -651,7 +651,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'NewsCategoryEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual NewsCategoryEntity NewsCategory
 		{
 			get	{ return _newsCategory; }

@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -112,7 +112,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -162,7 +162,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -175,7 +175,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -229,7 +229,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		public IPredicateExpression ConstructFilterForUCApplicationName()
 		{
 			IPredicateExpression filter = new PredicateExpression();
-			filter.Add(new FieldCompareValuePredicate(this.Fields[(int)AspnetApplicationsFieldIndex.ApplicationName], null, ComparisonOperator.Equal));
+			filter.Add(MonoSoftware.MonoX.DAL.HelperClasses.AspnetApplicationsFields.ApplicationName == this.Fields.GetCurrentValue((int)AspnetApplicationsFieldIndex.ApplicationName));
  			return filter;
 		}
 
@@ -239,7 +239,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		public IPredicateExpression ConstructFilterForUCLoweredApplicationName()
 		{
 			IPredicateExpression filter = new PredicateExpression();
-			filter.Add(new FieldCompareValuePredicate(this.Fields[(int)AspnetApplicationsFieldIndex.LoweredApplicationName], null, ComparisonOperator.Equal));
+			filter.Add(MonoSoftware.MonoX.DAL.HelperClasses.AspnetApplicationsFields.LoweredApplicationName == this.Fields.GetCurrentValue((int)AspnetApplicationsFieldIndex.LoweredApplicationName));
  			return filter;
 		}
 
@@ -385,7 +385,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationName property of the Entity AspnetApplications<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Applications"."ApplicationName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String ApplicationName
 		{
 			get { return (System.String)GetValue((int)AspnetApplicationsFieldIndex.ApplicationName, true); }
@@ -395,7 +395,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The LoweredApplicationName property of the Entity AspnetApplications<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Applications"."LoweredApplicationName"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String LoweredApplicationName
 		{
 			get { return (System.String)GetValue((int)AspnetApplicationsFieldIndex.LoweredApplicationName, true); }
@@ -405,7 +405,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ApplicationId property of the Entity AspnetApplications<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Applications"."ApplicationId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid ApplicationId
 		{
 			get { return (System.Guid)GetValue((int)AspnetApplicationsFieldIndex.ApplicationId, true); }
@@ -415,7 +415,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Description property of the Entity AspnetApplications<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "aspnet_Applications"."Description"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 256<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Description
 		{
 			get { return (System.String)GetValue((int)AspnetApplicationsFieldIndex.Description, true); }

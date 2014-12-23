@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -139,7 +139,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -201,7 +201,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -220,7 +220,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -418,7 +418,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _campaign</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncCampaign(IEntity2 relatedEntity)
+		private void SetupSyncCampaign(IEntityCore relatedEntity)
 		{
 			if(_campaign!=relatedEntity)
 			{
@@ -512,7 +512,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)AdFieldIndex.Id, true); }
@@ -522,7 +522,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The CampaignId property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."CampaignId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid CampaignId
 		{
 			get { return (System.Guid)GetValue((int)AdFieldIndex.CampaignId, true); }
@@ -532,7 +532,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ImageUrl property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."ImageUrl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String ImageUrl
 		{
 			get { return (System.String)GetValue((int)AdFieldIndex.ImageUrl, true); }
@@ -542,7 +542,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The AdContent property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."AdContent"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 2147483647<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String AdContent
 		{
 			get { return (System.String)GetValue((int)AdFieldIndex.AdContent, true); }
@@ -552,7 +552,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The NavigateUrl property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."NavigateUrl"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String NavigateUrl
 		{
 			get { return (System.String)GetValue((int)AdFieldIndex.NavigateUrl, true); }
@@ -562,7 +562,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Keyword property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."Keyword"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Keyword
 		{
 			get { return (System.String)GetValue((int)AdFieldIndex.Keyword, true); }
@@ -572,7 +572,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The AlternateText property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."AlternateText"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String AlternateText
 		{
 			get { return (System.String)GetValue((int)AdFieldIndex.AlternateText, true); }
@@ -582,7 +582,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Caption property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."Caption"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 255<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Caption
 		{
 			get { return (System.String)GetValue((int)AdFieldIndex.Caption, true); }
@@ -592,7 +592,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Weight property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."Weight"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 Weight
 		{
 			get { return (System.Int32)GetValue((int)AdFieldIndex.Weight, true); }
@@ -602,7 +602,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ValidFrom property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."ValidFrom"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> ValidFrom
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)AdFieldIndex.ValidFrom, false); }
@@ -612,7 +612,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The ValidTo property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."ValidTo"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> ValidTo
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)AdFieldIndex.ValidTo, false); }
@@ -622,7 +622,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateEntered property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."DateEntered"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateEntered
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)AdFieldIndex.DateEntered, false); }
@@ -632,7 +632,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity Ad<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Ad"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateModified
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)AdFieldIndex.DateModified, false); }
@@ -640,14 +640,14 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'AdPageEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(AdPageEntity))]
+		[TypeContainedAttribute(typeof(AdPageEntity))]		
 		public virtual EntityCollection<AdPageEntity> AdPage
 		{
 			get { return GetOrCreateEntityCollection<AdPageEntity, AdPageEntityFactory>("Ad", true, false, ref _adPage);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'CampaignEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual CampaignEntity Campaign
 		{
 			get	{ return _campaign; }

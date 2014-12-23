@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -49,7 +49,7 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 		/// <summary>Method which initializes the internal datastores.</summary>
 		private void Init()
 		{
-			this.InitClass( (95 + 0));
+			this.InitClass( (96 + 0));
 			InitAdEntityInfos();
 			InitAdPageEntityInfos();
 			InitAspnetApplicationsEntityInfos();
@@ -63,6 +63,7 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 			InitAspnetUsersEntityInfos();
 			InitAspnetUsersInRolesEntityInfos();
 			InitAspnetWebEventEventsEntityInfos();
+			InitAuditInfoEntityInfos();
 			InitBlogEntityInfos();
 			InitBlogCategoryEntityInfos();
 			InitBlogEditorEntityInfos();
@@ -306,6 +307,26 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 			this.AddElementFieldInfo("AspnetWebEventEventsEntity", "RequestUrl", typeof(System.String), false, false, false, true,  (int)AspnetWebEventEventsFieldIndex.RequestUrl, 1024, 0, 0);
 			this.AddElementFieldInfo("AspnetWebEventEventsEntity", "ExceptionType", typeof(System.String), false, false, false, true,  (int)AspnetWebEventEventsFieldIndex.ExceptionType, 256, 0, 0);
 			this.AddElementFieldInfo("AspnetWebEventEventsEntity", "Details", typeof(System.String), false, false, false, true,  (int)AspnetWebEventEventsFieldIndex.Details, 1073741823, 0, 0);
+		}
+		/// <summary>Inits AuditInfoEntity's FieldInfo objects</summary>
+		private void InitAuditInfoEntityInfos()
+		{
+			this.AddFieldIndexEnumForElementName(typeof(AuditInfoFieldIndex), "AuditInfoEntity");
+			this.AddElementFieldInfo("AuditInfoEntity", "Id", typeof(System.Guid), true, false, false, false,  (int)AuditInfoFieldIndex.Id, 0, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "UserId", typeof(System.Guid), false, true, false, false,  (int)AuditInfoFieldIndex.UserId, 0, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "AffectedEntityName", typeof(System.String), false, false, false, true,  (int)AuditInfoFieldIndex.AffectedEntityName, 250, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "ActionDateTime", typeof(System.DateTime), false, false, false, false,  (int)AuditInfoFieldIndex.ActionDateTime, 0, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "ActionType", typeof(System.Int32), false, false, false, false,  (int)AuditInfoFieldIndex.ActionType, 0, 0, 10);
+			this.AddElementFieldInfo("AuditInfoEntity", "ActionTypeName", typeof(System.String), false, false, false, true,  (int)AuditInfoFieldIndex.ActionTypeName, 150, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "ActionPerformedByUser", typeof(System.String), false, false, false, true,  (int)AuditInfoFieldIndex.ActionPerformedByUser, 250, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "ActionData", typeof(System.String), false, false, false, true,  (int)AuditInfoFieldIndex.ActionData, 2147483647, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "ActionDataBinary", typeof(System.Byte[]), false, false, false, true,  (int)AuditInfoFieldIndex.ActionDataBinary, 2147483647, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "DateCreated", typeof(System.DateTime), false, false, false, false,  (int)AuditInfoFieldIndex.DateCreated, 0, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "DateUpdated", typeof(System.DateTime), false, false, false, false,  (int)AuditInfoFieldIndex.DateUpdated, 0, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "ConcurrencyTimeStamp", typeof(System.Byte[]), false, false, true, true,  (int)AuditInfoFieldIndex.ConcurrencyTimeStamp, 2147483647, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "IpAddress", typeof(System.String), false, false, false, true,  (int)AuditInfoFieldIndex.IpAddress, 50, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "UserAgent", typeof(System.String), false, false, false, true,  (int)AuditInfoFieldIndex.UserAgent, 255, 0, 0);
+			this.AddElementFieldInfo("AuditInfoEntity", "Referrer", typeof(System.String), false, false, false, true,  (int)AuditInfoFieldIndex.Referrer, 500, 0, 0);
 		}
 		/// <summary>Inits BlogEntity's FieldInfo objects</summary>
 		private void InitBlogEntityInfos()

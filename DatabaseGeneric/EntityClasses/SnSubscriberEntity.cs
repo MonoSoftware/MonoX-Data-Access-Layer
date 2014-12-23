@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -146,7 +146,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -208,7 +208,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -227,7 +227,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -414,7 +414,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _aspnetUsers</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncAspnetUsers(IEntity2 relatedEntity)
+		private void SetupSyncAspnetUsers(IEntityCore relatedEntity)
 		{
 			if(_aspnetUsers!=relatedEntity)
 			{
@@ -447,7 +447,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _snRelationship</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncSnRelationship(IEntity2 relatedEntity)
+		private void SetupSyncSnRelationship(IEntityCore relatedEntity)
 		{
 			if(_snRelationship!=relatedEntity)
 			{
@@ -541,7 +541,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)SnSubscriberFieldIndex.Id, true); }
@@ -551,7 +551,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RelationshipId property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."RelationshipId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid RelationshipId
 		{
 			get { return (System.Guid)GetValue((int)SnSubscriberFieldIndex.RelationshipId, true); }
@@ -561,7 +561,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The UserId property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."UserId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Guid> UserId
 		{
 			get { return (Nullable<System.Guid>)GetValue((int)SnSubscriberFieldIndex.UserId, false); }
@@ -571,7 +571,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Email property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."Email"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 250<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual System.String Email
 		{
 			get { return (System.String)GetValue((int)SnSubscriberFieldIndex.Email, true); }
@@ -581,7 +581,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SubscriptionDate property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."SubscriptionDate"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime SubscriptionDate
 		{
 			get { return (System.DateTime)GetValue((int)SnSubscriberFieldIndex.SubscriptionDate, true); }
@@ -591,7 +591,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Active property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."Active"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Active
 		{
 			get { return (System.Boolean)GetValue((int)SnSubscriberFieldIndex.Active, true); }
@@ -601,7 +601,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The SubscriptionOrder property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."SubscriptionOrder"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, true</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, true</remarks>		
 		public virtual System.Int32 SubscriptionOrder
 		{
 			get { return (System.Int32)GetValue((int)SnSubscriberFieldIndex.SubscriptionOrder, true); }
@@ -611,7 +611,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity SnSubscriber<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "SnSubscriber"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateModified
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)SnSubscriberFieldIndex.DateModified, false); }
@@ -619,7 +619,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'AspnetUsersEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual AspnetUsersEntity AspnetUsers
 		{
 			get	{ return _aspnetUsers; }
@@ -637,7 +637,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets / sets related entity of type 'SnRelationshipEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual SnRelationshipEntity SnRelationship
 		{
 			get	{ return _snRelationship; }

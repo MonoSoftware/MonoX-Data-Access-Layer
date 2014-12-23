@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -541,6 +541,86 @@ namespace MonoSoftware.MonoX.DAL.HelperClasses
 		public static EntityField2 Details
 		{
 			get { return (EntityField2)EntityFieldFactory.Create(AspnetWebEventEventsFieldIndex.Details);}
+		}
+	}
+
+	/// <summary>Field Creation Class for entity AuditInfoEntity</summary>
+	public partial class AuditInfoFields
+	{
+		/// <summary>Creates a new AuditInfoEntity.Id field instance</summary>
+		public static EntityField2 Id
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.Id);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.UserId field instance</summary>
+		public static EntityField2 UserId
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.UserId);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.AffectedEntityName field instance</summary>
+		public static EntityField2 AffectedEntityName
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.AffectedEntityName);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.ActionDateTime field instance</summary>
+		public static EntityField2 ActionDateTime
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.ActionDateTime);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.ActionType field instance</summary>
+		public static EntityField2 ActionType
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.ActionType);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.ActionTypeName field instance</summary>
+		public static EntityField2 ActionTypeName
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.ActionTypeName);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.ActionPerformedByUser field instance</summary>
+		public static EntityField2 ActionPerformedByUser
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.ActionPerformedByUser);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.ActionData field instance</summary>
+		public static EntityField2 ActionData
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.ActionData);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.ActionDataBinary field instance</summary>
+		public static EntityField2 ActionDataBinary
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.ActionDataBinary);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.DateCreated field instance</summary>
+		public static EntityField2 DateCreated
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.DateCreated);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.DateUpdated field instance</summary>
+		public static EntityField2 DateUpdated
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.DateUpdated);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.ConcurrencyTimeStamp field instance</summary>
+		public static EntityField2 ConcurrencyTimeStamp
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.ConcurrencyTimeStamp);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.IpAddress field instance</summary>
+		public static EntityField2 IpAddress
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.IpAddress);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.UserAgent field instance</summary>
+		public static EntityField2 UserAgent
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.UserAgent);}
+		}
+		/// <summary>Creates a new AuditInfoEntity.Referrer field instance</summary>
+		public static EntityField2 Referrer
+		{
+			get { return (EntityField2)EntityFieldFactory.Create(AuditInfoFieldIndex.Referrer);}
 		}
 	}
 

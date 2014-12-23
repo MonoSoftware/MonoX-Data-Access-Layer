@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -139,7 +139,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -201,7 +201,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -220,7 +220,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -420,7 +420,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 
 		/// <summary> setups the sync logic for member _calendarEventRecurringDefinitionType</summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncCalendarEventRecurringDefinitionType(IEntity2 relatedEntity)
+		private void SetupSyncCalendarEventRecurringDefinitionType(IEntityCore relatedEntity)
 		{
 			if(_calendarEventRecurringDefinitionType!=relatedEntity)
 			{
@@ -514,7 +514,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Id, true); }
@@ -524,7 +524,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RecurringTypeId property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."RecurringTypeId"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Guid RecurringTypeId
 		{
 			get { return (System.Guid)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.RecurringTypeId, true); }
@@ -534,7 +534,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The RepeatFactor property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."RepeatFactor"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 RepeatFactor
 		{
 			get { return (System.Int32)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.RepeatFactor, true); }
@@ -544,7 +544,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Sunday property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Sunday"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Sunday
 		{
 			get { return (System.Boolean)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Sunday, true); }
@@ -554,7 +554,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Monday property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Monday"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Monday
 		{
 			get { return (System.Boolean)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Monday, true); }
@@ -564,7 +564,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Tuesday property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Tuesday"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Tuesday
 		{
 			get { return (System.Boolean)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Tuesday, true); }
@@ -574,7 +574,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Wednesday property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Wednesday"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Wednesday
 		{
 			get { return (System.Boolean)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Wednesday, true); }
@@ -584,7 +584,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Thursday property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Thursday"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Thursday
 		{
 			get { return (System.Boolean)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Thursday, true); }
@@ -594,7 +594,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Friday property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Friday"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Friday
 		{
 			get { return (System.Boolean)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Friday, true); }
@@ -604,7 +604,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Saturday property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."Saturday"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Bit, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Boolean Saturday
 		{
 			get { return (System.Boolean)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.Saturday, true); }
@@ -614,7 +614,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DayOfMonth property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."DayOfMonth"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Int32> DayOfMonth
 		{
 			get { return (Nullable<System.Int32>)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.DayOfMonth, false); }
@@ -624,7 +624,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The MonthOfYear property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."MonthOfYear"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.Int32> MonthOfYear
 		{
 			get { return (Nullable<System.Int32>)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.MonthOfYear, false); }
@@ -634,7 +634,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The StartsOn property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."StartsOn"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime StartsOn
 		{
 			get { return (System.DateTime)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.StartsOn, true); }
@@ -644,7 +644,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The EndsOn property of the Entity CalendarEventRecurringDefinition<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "CalendarEventRecurringDefinition"."EndsOn"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.DateTime EndsOn
 		{
 			get { return (System.DateTime)GetValue((int)CalendarEventRecurringDefinitionFieldIndex.EndsOn, true); }
@@ -652,14 +652,14 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'CalendarEventEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(CalendarEventEntity))]
+		[TypeContainedAttribute(typeof(CalendarEventEntity))]		
 		public virtual EntityCollection<CalendarEventEntity> CalendarEvents
 		{
 			get { return GetOrCreateEntityCollection<CalendarEventEntity, CalendarEventEntityFactory>("CalendarEventRecurringDefinition", true, false, ref _calendarEvents);	}
 		}
 
 		/// <summary> Gets / sets related entity of type 'CalendarEventRecurringDefinitionTypeEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(true)]
+		[Browsable(true)]		
 		public virtual CalendarEventRecurringDefinitionTypeEntity CalendarEventRecurringDefinitionType
 		{
 			get	{ return _calendarEventRecurringDefinitionType; }

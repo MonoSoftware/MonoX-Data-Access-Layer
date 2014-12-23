@@ -1,9 +1,9 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 3.1
+// Code is generated using LLBLGen Pro version: 4.1
 // Code is generated on: 
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated using templates: MonoX.TemplateBindings.General
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -132,7 +132,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="propertyName">Name of the property.</param>
 		/// <param name="entity">Entity to set as an related entity</param>
 		/// <remarks>Used by prefetch path logic.</remarks>
-		protected override void SetRelatedEntityProperty(string propertyName, IEntity2 entity)
+		protected override void SetRelatedEntityProperty(string propertyName, IEntityCore entity)
 		{
 			switch(propertyName)
 			{
@@ -212,7 +212,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> Sets the internal parameter related to the fieldname passed to the instance relatedEntity. </summary>
 		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
-		protected override void SetRelatedEntity(IEntity2 relatedEntity, string fieldName)
+		protected override void SetRelatedEntity(IEntityCore relatedEntity, string fieldName)
 		{
 			switch(fieldName)
 			{
@@ -240,7 +240,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <param name="relatedEntity">Instance to unset as the related entity of type entityType</param>
 		/// <param name="fieldName">Name of field mapped onto the relation which resolves in the instance relatedEntity</param>
 		/// <param name="signalRelatedEntityManyToOne">if set to true it will notify the manytoone side, if applicable.</param>
-		protected override void UnsetRelatedEntity(IEntity2 relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
+		protected override void UnsetRelatedEntity(IEntityCore relatedEntity, string fieldName, bool signalRelatedEntityManyToOne)
 		{
 			switch(fieldName)
 			{
@@ -564,7 +564,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Id property of the Entity PrivacyLevel<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevel"."Id"<br/>
 		/// Table field type characteristics (type, precision, scale, length): UniqueIdentifier, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, true, false</remarks>		
 		public virtual System.Guid Id
 		{
 			get { return (System.Guid)GetValue((int)PrivacyLevelFieldIndex.Id, true); }
@@ -574,7 +574,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The PrivacyLevel property of the Entity PrivacyLevel<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevel"."PrivacyLevel"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 100<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String PrivacyLevel
 		{
 			get { return (System.String)GetValue((int)PrivacyLevelFieldIndex.PrivacyLevel, true); }
@@ -584,7 +584,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Sort property of the Entity PrivacyLevel<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevel"."Sort"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.Int32 Sort
 		{
 			get { return (System.Int32)GetValue((int)PrivacyLevelFieldIndex.Sort, true); }
@@ -594,7 +594,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateEntered property of the Entity PrivacyLevel<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevel"."DateEntered"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateEntered
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)PrivacyLevelFieldIndex.DateEntered, false); }
@@ -604,7 +604,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The DateModified property of the Entity PrivacyLevel<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevel"."DateModified"<br/>
 		/// Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>		
 		public virtual Nullable<System.DateTime> DateModified
 		{
 			get { return (Nullable<System.DateTime>)GetValue((int)PrivacyLevelFieldIndex.DateModified, false); }
@@ -614,7 +614,7 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		/// <summary> The Abrv property of the Entity PrivacyLevel<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "PrivacyLevel"."Abrv"<br/>
 		/// Table field type characteristics (type, precision, scale, length): NVarChar, 0, 0, 50<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		/// Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>		
 		public virtual System.String Abrv
 		{
 			get { return (System.String)GetValue((int)PrivacyLevelFieldIndex.Abrv, true); }
@@ -622,35 +622,35 @@ namespace MonoSoftware.MonoX.DAL.EntityClasses
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'PrivacyLevelDefinitionEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(PrivacyLevelDefinitionEntity))]
+		[TypeContainedAttribute(typeof(PrivacyLevelDefinitionEntity))]		
 		public virtual EntityCollection<PrivacyLevelDefinitionEntity> PrivacyLevelDefinitions
 		{
 			get { return GetOrCreateEntityCollection<PrivacyLevelDefinitionEntity, PrivacyLevelDefinitionEntityFactory>("PrivacyLevel", true, false, ref _privacyLevelDefinitions);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnAlbumEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnAlbumEntity))]
+		[TypeContainedAttribute(typeof(SnAlbumEntity))]		
 		public virtual EntityCollection<SnAlbumEntity> SnAlbums
 		{
 			get { return GetOrCreateEntityCollection<SnAlbumEntity, SnAlbumEntityFactory>("PrivacyLevel", true, false, ref _snAlbums);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnFileEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnFileEntity))]
+		[TypeContainedAttribute(typeof(SnFileEntity))]		
 		public virtual EntityCollection<SnFileEntity> SnFiles
 		{
 			get { return GetOrCreateEntityCollection<SnFileEntity, SnFileEntityFactory>("PrivacyLevel", true, false, ref _snFiles);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'SnNoteEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(SnNoteEntity))]
+		[TypeContainedAttribute(typeof(SnNoteEntity))]		
 		public virtual EntityCollection<SnNoteEntity> SnNotes
 		{
 			get { return GetOrCreateEntityCollection<SnNoteEntity, SnNoteEntityFactory>("PrivacyLevel", true, false, ref _snNotes);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'UserProfileEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(UserProfileEntity))]
+		[TypeContainedAttribute(typeof(UserProfileEntity))]		
 		public virtual EntityCollection<UserProfileEntity> UserProfile
 		{
 			get { return GetOrCreateEntityCollection<UserProfileEntity, UserProfileEntityFactory>("PrivacyLevel", true, false, ref _userProfile);	}
